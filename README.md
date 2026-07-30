@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CalculatorMint
 
-## Getting Started
+SEO-focused calculator marketplace built with Next.js. Accurate free tools plus keyword-rich guides so each calculator can rank on Google.
 
-First, run the development server:
+## Live calculators
+
+- **[ABV Calculator](/calculators/abv-calculator)** — alcohol by volume from OG/FG (SG or Plato), standard + alternate formulas, apparent attenuation, ASBC calories
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## SEO notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- App Router metadata, canonical URLs, Open Graph
+- `sitemap.xml` and `robots.txt`
+- JSON-LD for Organization, WebSite, WebApplication, FAQPage, Article
+- Dedicated blog post supporting the ABV calculator keywords
 
-## Learn More
+Set your production domain:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Accuracy (ABV)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Verified against Brewer's Friend defaults (OG 1.050, FG 1.010, standard):
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Metric | Expected |
+| --- | --- |
+| ABV | 5.25% |
+| Apparent attenuation | 79% |
+| Calories (12 oz) | 163.7 |
+| OG / FG (°P) | 12.39 / 2.56 |
