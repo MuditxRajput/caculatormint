@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Figtree, Outfit } from "next/font/google";
-import Script from "next/script";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -17,6 +16,8 @@ const body = Figtree({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
+
+const ADSENSE_CLIENT = "ca-pub-8884977910314227";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -56,9 +57,10 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    google: [
-      "dCmRYjR0_1Mwcr74_WXbMHjubcGaQQ2mU9BiRHUuFbI",
-    ],
+    google: ["dCmRYjR0_1Mwcr74_WXbMHjubcGaQQ2mU9BiRHUuFbI"],
+  },
+  other: {
+    "google-adsense-account": ADSENSE_CLIENT,
   },
 };
 
@@ -89,13 +91,16 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
-      <body className="site-shell antialiased">
-        <Script
+      <head>
+        {/* Raw head tags so AdSense crawlers can verify without executing JS */}
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+        <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8884977910314227"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
+      </head>
+      <body className="site-shell antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
