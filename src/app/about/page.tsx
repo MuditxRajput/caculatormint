@@ -93,9 +93,13 @@ export default function AboutPage() {
           <Link href="/calculators/pay-raise-calculator">
             USA Pay Raise Calculator
           </Link>
-          , and the{" "}
+          , the{" "}
           <Link href="/calculators/dog-bite-compensation-calculator">
             USA Dog Bite Compensation Calculator
+          </Link>
+          , and the{" "}
+          <Link href="/calculators/pft-calculator">
+            USA PFT Calculator (GLI-2012)
           </Link>
           . Each has a matching guide in the{" "}
           <Link href="/blog">blog</Link> so readers can learn the “why” behind the

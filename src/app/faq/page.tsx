@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Which calculators are live right now?",
-    a: "Live tools currently include the ABV Calculator, USA Pay Raise Calculator, and USA Dog Bite Compensation Calculator. The calculators directory always shows the current list and coming-soon items.",
+    a: "Live tools currently include the ABV Calculator, USA Pay Raise Calculator, USA Dog Bite Compensation Calculator, and USA PFT Calculator (GLI-2012). The calculators directory always shows the current list and coming-soon items.",
   },
   {
     q: "Why do you publish blog posts for each calculator?",

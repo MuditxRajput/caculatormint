@@ -893,6 +893,27 @@ img {
   color: white;
 }
 
+.pft-ethnicity-grid {
+  grid-template-columns: 1fr;
+}
+
+.pft-notes {
+  margin: 1.1rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--result-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.pft-notes li + li {
+  margin-top: 0.35rem;
+}
+
+.pft-results-table th,
+.pft-results-table td {
+  white-space: nowrap;
+}
+
 .pay-compare-table {
   width: 100%;
   margin-top: 1.2rem;
@@ -1014,6 +1035,10 @@ img {
 
   .pay-freq-grid {
     grid-template-columns: repeat(6, 1fr);
+  }
+
+  .pft-ethnicity-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .site-footer__inner {

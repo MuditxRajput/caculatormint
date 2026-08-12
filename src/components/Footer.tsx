@@ -22,6 +22,7 @@ export function Footer() {
             <Link href="/calculators/dog-bite-compensation-calculator">
               Dog Bite Compensation
             </Link>
+            <Link href="/calculators/pft-calculator">PFT Calculator</Link>
           </div>
         </div>
 

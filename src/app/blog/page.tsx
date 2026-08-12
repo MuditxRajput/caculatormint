@@ -4,17 +4,25 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Calculator Guides & Blog",
   description:
-    "SEO guides for CalculatorMint tools — ABV, U.S. pay raises, dog bite settlements, and more.",
+    "SEO guides for CalculatorMint tools — ABV, U.S. pay raises, dog bite settlements, GLI-2012 PFTs, and more.",
   alternates: { canonical: "/blog" },
   keywords: [
     "abv calculator guide",
     "pay raise calculator guide",
     "dog bite settlement guide",
+    "PFT GLI-2012 guide",
     "calculatorMint blog",
   ],
 };
 
 const posts = [
+  {
+    href: "/blog/how-to-interpret-pft-gli-2012-usa",
+    title: "How to Interpret PFTs with GLI-2012 in the USA",
+    excerpt:
+      "FEV1, FVC, FEV1/FVC, predicted values, Z-scores, LLN, obstruction severity, and when restriction needs TLC.",
+    meta: "Health · PFT Calculator",
+  },
   {
     href: "/blog/how-dog-bite-settlements-work-in-the-usa",
     title: "How Dog Bite Settlements Work in the USA",

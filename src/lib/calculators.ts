@@ -62,6 +62,23 @@ export const calculators: CalculatorMeta[] = [
     href: "/calculators/dog-bite-compensation-calculator",
   },
   {
+    slug: "pft-calculator",
+    name: "PFT Calculator (GLI-2012)",
+    shortName: "PFT",
+    description:
+      "USA pulmonary function calculator for FEV1, FVC, and FEV1/FVC predicted values, Z-scores, LLN, and obstruction severity using GLI-2012.",
+    keywords: [
+      "PFT calculator",
+      "GLI-2012 calculator",
+      "FEV1 predicted",
+      "spirometry Z-score",
+      "pulmonary function calculator USA",
+    ],
+    category: "Health",
+    status: "live",
+    href: "/calculators/pft-calculator",
+  },
+  {
     slug: "bmi-calculator",
     name: "BMI Calculator",
     shortName: "BMI",

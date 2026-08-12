@@ -13,11 +13,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       changeFrequency: "weekly",
     },
+    { path: "/calculators/pft-calculator", priority: 0.9, changeFrequency: "weekly" },
     { path: "/blog", priority: 0.8, changeFrequency: "weekly" },
     { path: "/blog/how-to-calculate-beer-abv", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/how-to-calculate-a-pay-raise", priority: 0.8, changeFrequency: "monthly" },
     {
       path: "/blog/how-dog-bite-settlements-work-in-the-usa",
+      priority: 0.8,
+      changeFrequency: "monthly",
+    },
+    {
+      path: "/blog/how-to-interpret-pft-gli-2012-usa",
       priority: 0.8,
       changeFrequency: "monthly",
     },
