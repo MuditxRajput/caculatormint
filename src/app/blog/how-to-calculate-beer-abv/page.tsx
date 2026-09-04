@@ -4,7 +4,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 
 const title = "How to Calculate Beer ABV from OG and FG";
 const description =
-  "Learn how to calculate beer ABV with original gravity and final gravity. Covers the standard formula, alternate Hall equation, attenuation, calories, and hydrometer tips.";
+  "Homebrew ABV pitfalls: temperature-skewed hydrometers, refractometer FG errors, priming sugar mistakes, and when standard vs Hall readings diverge — without rehashing the calculator formulas.";
 
 export const metadata: Metadata = {
   title,
@@ -35,7 +35,7 @@ export default function HowToCalculateAbvPost() {
     headline: title,
     description,
     datePublished: "2026-07-30",
-    dateModified: "2026-07-30",
+    dateModified: "2026-09-04",
     author: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -65,8 +65,8 @@ export default function HowToCalculateAbvPost() {
         </nav>
         <h1>How to calculate beer ABV from OG and FG</h1>
         <p>
-          A practical guide for homebrewers: take gravity readings, pick the
-          right formula, and check your batch with the{" "}
+          Why two brewers with “the same” beer get different ABVs — and how to
+          avoid the measurement traps. Run clean readings in the{" "}
           <Link href="/calculators/abv-calculator">CalculatorMint ABV calculator</Link>
           .
         </p>
@@ -74,95 +74,88 @@ export default function HowToCalculateAbvPost() {
 
       <article className="content-stack" style={{ marginBottom: "3rem" }}>
         <div className="prose-panel">
-          <h2>What ABV means</h2>
+          <h2>A worked brew day: two ABVs from one batch</h2>
           <p>
-            Alcohol by volume (ABV) is the percentage of ethanol in your finished
-            beer. Brewers estimate it from the drop in density between original
-            gravity (before fermentation) and final gravity (after fermentation).
-            Yeast converts sugars into alcohol and CO₂, so a larger gravity drop
-            usually means higher ABV.
+            Jordan and Priya brew the same pale ale. Jordan cools the wort sample
+            properly and records OG near 1.052. Priya samples hot wort, skips
+            temperature correction, and writes 1.046. After fermentation both
+            measure FG around 1.012 — but Jordan reports ~5.3% ABV while Priya
+            gets something closer to 4.5%. The beer did not change; the{" "}
+            <em>measurement discipline</em> did.
+          </p>
+          <p>
+            The calculator page already documents the standard and Hall equations,
+            attenuation, and ASBC calories. This article focuses on the human
+            errors that make those equations look “wrong.”
           </p>
         </div>
 
         <div className="prose-panel">
-          <h2>Step 1: Measure original gravity (OG)</h2>
+          <h2>When standard and Hall disagree (and who is right)</h2>
           <p>
-            Cool a wort sample and measure with a hydrometer or refractometer
-            before pitching yeast. Record the reading as Specific Gravity (for
-            example 1.050) or degrees Plato. Temperature matters — correct
-            hydrometer readings to the instrument&apos;s calibration temperature.
+            On everyday session beers the two methods sit close together. On
+            big stouts, barleywines, and imperial IPAs the gap widens — often by
+            several tenths of a percent. That is not a bug in your calculator; it
+            is the simple constant running out of steam at high gravity.
+          </p>
+          <p>
+            Practical rule many competition brewers use: trust the simpler method
+            for normal-strength beer, switch to the alternate Hall approach when
+            OG climbs into the high 1.070s or the beer is clearly above ~8% ABV.
+            If a label or BJCP entry asks for one number, pick a method and stick
+            with it for the whole batch log — do not mix methods mid-fermentation.
           </p>
         </div>
 
         <div className="prose-panel">
-          <h2>Step 2: Measure final gravity (FG)</h2>
-          <p>
-            When fermentation is finished and gravity is stable for a few days,
-            take another sample. Measure FG before adding priming sugar for
-            bottling. Priming sugar adds fermentables and would inflate ABV if
-            included in FG.
-          </p>
-        </div>
-
-        <div className="prose-panel">
-          <h2>Step 3: Apply an ABV formula</h2>
-          <h3>Standard formula</h3>
-          <code className="formula-block">ABV = (OG − FG) × 131.25</code>
-          <p>
-            Example: OG 1.050, FG 1.010 → 0.040 × 131.25 = <strong>5.25% ABV</strong>.
-            This is the default most homebrewers use.
-          </p>
-          <h3>Alternate Hall formula</h3>
-          <code className="formula-block">
-            ABV = (76.08 × (OG − FG) / (1.775 − OG)) × (FG / 0.794)
-          </code>
-          <p>
-            Use this for stronger beers where the simple constant underestimates
-            alcohol. The same 1.050 / 1.010 example returns about{" "}
-            <strong>5.34% ABV</strong>.
-          </p>
-          <p>
-            Prefer not to do the math by hand? Use our free{" "}
-            <Link href="/calculators/abv-calculator">ABV calculator</Link> —
-            it supports SG and Plato plus both equations.
-          </p>
-        </div>
-
-        <div className="prose-panel">
-          <h2>Check attenuation and calories</h2>
-          <p>
-            Apparent attenuation shows fermentation efficiency:
-          </p>
-          <code className="formula-block">
-            Apparent attenuation = (1 − FG°P / OG°P) × 100
-          </code>
-          <p>
-            For OG 1.050 / FG 1.010 you should see about <strong>79%</strong>{" "}
-            attenuation and roughly <strong>163.7 calories</strong> per 12 oz
-            using the ASBC Beer-33 calorie method.
-          </p>
-        </div>
-
-        <div className="prose-panel">
-          <h2>Common mistakes</h2>
+          <h2>Common mistakes that fake high or low ABV</h2>
           <ul>
-            <li>Skipping temperature correction on hydrometer samples</li>
-            <li>Using a refractometer FG without alcohol correction</li>
-            <li>Measuring FG after priming sugar is added</li>
-            <li>Mixing Plato and SG values in the same formula</li>
-            <li>Expecting lab-perfect ABV from approximate home readings</li>
+            <li>
+              <strong>Hot hydrometer samples</strong> — warm wort reads lighter
+              than it is; uncorrected OG understates potential alcohol.
+            </li>
+            <li>
+              <strong>Refractometer FG without alcohol correction</strong> —
+              ethanol skews Brix; raw FG looks too high and ABV looks too low.
+            </li>
+            <li>
+              <strong>Measuring FG after priming sugar</strong> — added
+              fermentables push FG up and understate finished ABV for the beer
+              you actually bottled.
+            </li>
+            <li>
+              <strong>Mixing Plato and SG in one mental formula</strong> — 12 °P
+              is not “1.012.” Convert first, or let the calculator do it.
+            </li>
+            <li>
+              <strong>Chasing lab precision from kitchen samples</strong> —
+              homebrew ABV is an estimate; packaging labs use distillation or
+              densitometry under controlled conditions.
+            </li>
           </ul>
         </div>
 
         <div className="prose-panel">
-          <h2>Try it now</h2>
+          <h2>Edge case: stuck fermentation vs finished beer</h2>
           <p>
-            Open the{" "}
+            A gravity that “won&apos;t drop” can be finished dryness for a malt
+            bill — or a stuck ferment. Before you publish ABV, confirm stability
+            over a few days, check temperature and yeast health, and compare
+            attenuation to the yeast&apos;s expected range. Inflating ABV from
+            an unfinished FG is how brew logs claim 7% while bottles later referment
+            or taste sweet.
+          </p>
+        </div>
+
+        <div className="prose-panel">
+          <h2>Try it with clean readings</h2>
+          <p>
+            Once OG and FG are temperature-corrected and taken before priming,
+            open the{" "}
             <Link href="/calculators/abv-calculator">
               CalculatorMint ABV calculator
             </Link>{" "}
-            and enter your OG and FG. Results update instantly with ABV,
-            attenuation, calories, and dual-unit gravity readouts.
+            for ABV, attenuation, calories, and SG/Plato conversion in one place.
           </p>
         </div>
       </article>
