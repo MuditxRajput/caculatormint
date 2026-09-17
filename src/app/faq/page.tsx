@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is CalculatorMint free to use?",
-    a: "Yes. The calculators and guides are free. You do not need an account to run the core tools. We may introduce optional features later, but the baseline experience is built to stay accessible.",
+    a: "Yes. The calculators and guides are free. You do not need an account. Advertising (including Google AdSense) may appear on some pages to support the site.",
   },
   {
     q: "How do you keep calculators accurate?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Which calculators are live right now?",
-    a: "Live tools currently include the ABV Calculator, USA Pay Raise Calculator, USA Dog Bite Compensation Calculator, and USA PFT Calculator (GLI-2012). The calculators directory always shows the current list and coming-soon items.",
+    a: "Live tools currently include the ABV Calculator, USA Pay Raise Calculator, USA Dog Bite Compensation Calculator, and USA PFT Calculator (GLI-2012). The calculators directory always shows the current list.",
   },
   {
     q: "Why do you publish blog posts for each calculator?",
@@ -49,6 +49,10 @@ const faqs = [
   {
     q: "Can I request a new calculator?",
     a: "Absolutely. Email us with the audience, required inputs, and any trusted formula source. Clear requests are easier to prioritize than vague ones.",
+  },
+  {
+    q: "Does CalculatorMint show ads?",
+    a: "Yes. Google AdSense may display ads so the calculators stay free. You can control personalized ads through Google Ads Settings. See the Privacy Policy and Cookies Policy.",
   },
 ];
 
@@ -96,9 +100,11 @@ export default function FaqPage() {
 
         <h2>Is CalculatorMint free to use?</h2>
         <p>
-          Yes. The calculators and guides are free. You do not need an account to
-          run the core tools. We may introduce optional features later, but the
-          baseline experience is built to stay accessible.
+          Yes. The calculators and guides are free. You do not need an account.
+          Advertising (including Google AdSense) may appear on some pages so we
+          can keep the tools available without a paywall. Details are in the{" "}
+          <Link href="/privacy-policy">Privacy Policy</Link> and{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link>.
         </p>
 
         <h2>How do you keep calculators accurate?</h2>
@@ -135,8 +141,7 @@ export default function FaqPage() {
         </ul>
         <p>
           Browse everything on the{" "}
-          <Link href="/calculators">calculators page</Link>, including coming-soon
-          items.
+          <Link href="/calculators">calculators page</Link>.
         </p>
 
         <h2>Why do you publish blog posts for each calculator?</h2>
@@ -173,12 +178,29 @@ export default function FaqPage() {
           specific the request, the easier it is to evaluate.
         </p>
 
+        <h2>Does CalculatorMint show ads?</h2>
+        <p>
+          Yes. Google AdSense may display ads so the calculators and guides stay
+          free. You can opt out of personalized ads in{" "}
+          <a
+            href="https://www.google.com/settings/ads"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Google Ads Settings
+          </a>
+          . See the <Link href="/privacy-policy">Privacy Policy</Link> and{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link>.
+        </p>
+
         <h2>Where should I go next?</h2>
         <p>
           If you are new here, start with <Link href="/about">About</Link>, pick a
           tool from <Link href="/calculators">Calculators</Link>, or browse the{" "}
           <Link href="/blog">Blog</Link>. For legal terms of using the site, see{" "}
-          <Link href="/terms">Terms of Use</Link>.
+          <Link href="/terms">Terms of Use</Link>. Privacy and cookies:{" "}
+          <Link href="/privacy-policy">Privacy Policy</Link>,{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link>.
         </p>
       </article>
     </div>

@@ -5,8 +5,8 @@ import { siteConfig } from "@/lib/site";
 const nav = [
   { href: "/calculators", label: "Calculators" },
   { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {

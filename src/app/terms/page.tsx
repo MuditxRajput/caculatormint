@@ -19,7 +19,7 @@ export default function TermsPage() {
           <span>Terms of Use</span>
         </nav>
         <h1>Terms of Use</h1>
-        <p>Last updated: July 30, 2026</p>
+        <p>Last updated: September 17, 2026</p>
       </header>
 
       <article className="blog-article">
@@ -30,7 +30,8 @@ export default function TermsPage() {
         </p>
         <p>
           By using the site, you agree to these Terms, our{" "}
-          <Link href="/privacy-policy">Privacy Policy</Link>, and our{" "}
+          <Link href="/privacy-policy">Privacy Policy</Link>, our{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link>, and our{" "}
           <Link href="/disclaimer">Disclaimer</Link>. If you do not agree, please
           do not use CalculatorMint.
         </p>
@@ -94,6 +95,17 @@ export default function TermsPage() {
           resources. We do not control those sites and are not responsible for
           their content, availability, or policies. Visiting them is at your own
           risk.
+        </p>
+
+        <h2>Advertising</h2>
+        <p>
+          The site may display third-party advertisements, including ads served by
+          Google AdSense. Ads help keep the calculators and guides free. Advertisers
+          and ad networks are responsible for their own content. Clicking an ad
+          takes you to a third-party site we do not control. Advertising cookies
+          and opt-out choices are described in the{" "}
+          <Link href="/privacy-policy">Privacy Policy</Link> and{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link>.
         </p>
 
         <h2>Disclaimer of warranties</h2>

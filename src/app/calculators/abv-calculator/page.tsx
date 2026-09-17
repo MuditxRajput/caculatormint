@@ -106,6 +106,21 @@ export default function AbvCalculatorPage() {
           },
         })),
       },
+      {
+        "@type": "Article",
+        headline: "How to Calculate Beer ABV from Original Gravity and Final Gravity",
+        description,
+        author: {
+          "@type": "Organization",
+          name: siteConfig.name,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+        mainEntityOfPage: absoluteUrl("/calculators/abv-calculator"),
+      },
     ],
   };
 
@@ -136,112 +151,124 @@ export default function AbvCalculatorPage() {
         <AbvCalculator />
       </section>
 
-      <div className="content-stack" style={{ marginBottom: "3rem" }}>
-        <article className="prose-panel">
-          <h2>How to use this ABV calculator</h2>
-          <ol>
-            <li>
-              Measure <strong>original gravity (OG)</strong> of your wort before
-              fermentation.
-            </li>
-            <li>
-              Measure <strong>final gravity (FG)</strong> after fermentation is
-              complete (before priming sugar).
-            </li>
-            <li>
-              Choose SG or Plato to match your instrument, pick Standard or
-              Alternate, and read ABV instantly.
-            </li>
-          </ol>
-          <p>
-            Hydrometer readings should be temperature-corrected. If you used a
-            refractometer during fermentation, convert Brix/°P carefully —
-            alcohol skews refractometer readings.
-          </p>
-        </article>
+      <article className="blog-article">
+        <p className="meta-line">Brewing · ABV Calculator · Homebrewing</p>
+        <p>
+          An ABV calculator tells you how much alcohol is in a finished beer from
+          two hydrometer (or converted refractometer) readings: original gravity
+          (OG) and final gravity (FG). Homebrewers, brew-day notes, and
+          competition entries all use alcohol by volume because it is the number
+          on a commercial label. This free beer ABV calculator supports specific
+          gravity and Plato, the standard homebrew equation, the alternate Hall
+          formula for high-gravity beers, apparent attenuation, and calories per
+          12 oz.
+        </p>
+        <p>
+          Use the tool above first, then keep reading for the formulas, a worked
+          example, and the measurement mistakes that make two brewers report
+          different ABVs for the same batch.
+        </p>
 
-        <article className="prose-panel">
-          <h2>ABV formulas used by CalculatorMint</h2>
-          <h3>Standard ABV formula</h3>
-          <p>
-            Best for everyday beer strengths. Widely used by homebrewers:
-          </p>
-          <code className="formula-block">ABV = (OG − FG) × 131.25</code>
-          <p>
-            Example: OG 1.050 and FG 1.010 → (1.050 − 1.010) × 131.25 ={" "}
-            <strong>5.25% ABV</strong>.
-          </p>
+        <h2>How to calculate beer ABV from OG and FG</h2>
+        <p>
+          Measure original gravity of the wort before fermentation. After yeast
+          finishes, measure final gravity before priming sugar. Subtract FG from
+          OG and scale the difference. Temperature-correct hydrometer samples.
+          If you used a refractometer after alcohol is present, do not treat raw
+          Brix as FG — ethanol skews the reading.
+        </p>
+        <ol>
+          <li>
+            Enter <strong>original gravity (OG)</strong> to match your
+            instrument (SG such as 1.050, or °Plato).
+          </li>
+          <li>
+            Enter <strong>final gravity (FG)</strong> after fermentation is
+            stable.
+          </li>
+          <li>
+            Choose the <strong>standard</strong> formula for everyday strengths
+            or the <strong>alternate (Hall)</strong> formula when OG is high.
+          </li>
+        </ol>
 
-          <h3>Alternate (Hall) ABV formula</h3>
-          <p>
-            More accurate for high-gravity beers (Dr. Michael Hall / Zymurgy):
-          </p>
-          <code className="formula-block">
-            ABV = (76.08 × (OG − FG) / (1.775 − OG)) × (FG / 0.794)
-          </code>
-          <p>
-            Same example yields about <strong>5.34% ABV</strong> with the
-            alternate equation.
-          </p>
-        </article>
+        <h2>ABV formulas this calculator uses</h2>
+        <p>
+          The standard alcohol by volume formula is the one most homebrewers
+          memorize:
+        </p>
+        <code className="formula-block">ABV = (OG − FG) × 131.25</code>
+        <p>
+          Example: OG 1.050 and FG 1.010 → (1.050 − 1.010) × 131.25 ={" "}
+          <strong>5.25% ABV</strong>. Session ales, pale lagers, and most
+          house beers sit in this range, so the standard equation is usually
+          enough.
+        </p>
+        <p>
+          For bigger beers, Dr. Michael Hall’s alternate equation (often cited
+          from Zymurgy) accounts for the changing relationship between extract
+          and alcohol:
+        </p>
+        <code className="formula-block">
+          ABV = (76.08 × (OG − FG) / (1.775 − OG)) × (FG / 0.794)
+        </code>
+        <p>
+          The same 1.050 / 1.010 example is about <strong>5.34% ABV</strong>.
+          The gap widens on imperial stouts, barleywines, and other worts much
+          above 1.070 OG. Switch formulas in the calculator when you are
+          packaging a high-gravity beer, not because one equation is “more
+          official” for every style.
+        </p>
 
-        <article className="prose-panel">
-          <h2>Apparent attenuation and calories</h2>
-          <p>
-            <strong>Apparent attenuation</strong> estimates how much sugar yeast
-            consumed: (1 − FG°P / OG°P) × 100. With OG 1.050 and FG 1.010 that is
-            about <strong>79%</strong>.
-          </p>
-          <p>
-            <strong>Calories per 12 oz</strong> follow the ASBC Beer-33 method
-            (real extract + alcohol by weight). The same sample returns about{" "}
-            <strong>163.7 calories</strong> per 12 oz bottle. Calorie math is
-            independent of which ABV equation you select.
-          </p>
-        </article>
+        <h2>Apparent attenuation and calories per 12 oz</h2>
+        <p>
+          Apparent attenuation estimates how much sugar yeast consumed: (1 −
+          FG°P / OG°P) × 100. With OG 1.050 and FG 1.010 that is about{" "}
+          <strong>79%</strong>. A healthy attenuation number is a fermentation
+          check; it is not a second ABV.
+        </p>
+        <p>
+          Calories per 12 oz follow the ASBC Beer-33 approach (real extract plus
+          alcohol by weight). The same sample is about{" "}
+          <strong>163.7 calories</strong> per 12 oz. Calorie math does not
+          change when you toggle standard vs Hall ABV.
+        </p>
 
-        <article className="prose-panel">
-          <h2>Essential brewing terms</h2>
-          <h3>Original gravity (OG)</h3>
-          <p>
-            Density of wort before fermentation — a measure of available sugars.
-            Higher OG usually means higher potential ABV.
-          </p>
-          <h3>Final gravity (FG)</h3>
-          <p>
-            Density after fermentation. Lower FG means a drier beer; higher FG
-            means more residual sweetness and body.
-          </p>
-          <h3>Specific gravity vs Plato</h3>
-          <p>
-            Specific gravity compares density to water (e.g. 1.050). Degrees
-            Plato (°P) express dissolved solids as a percentage by weight. This
-            calculator converts between both.
-          </p>
-          <h3>Alcohol by volume (ABV)</h3>
-          <p>
-            Percent of the finished beer that is ethanol by volume — the number
-            on most beer labels.
-          </p>
-        </article>
+        <h2>Original gravity, final gravity, SG, and Plato</h2>
+        <p>
+          Original gravity is the density of wort before fermentation — a
+          snapshot of available sugars and potential alcohol. Final gravity is
+          density after fermentation: a lower FG is a drier beer; a higher FG
+          leaves more residual sweetness and body. Specific gravity compares
+          density to water (1.050). Degrees Plato (°P) express dissolved solids
+          as a percentage by weight. This OG FG calculator converts between
+          both so you can match a hydrometer scale or a Plato lab reading
+          without doing the conversion by hand.
+        </p>
+        <p>
+          Alcohol by volume is the percent of the finished beer that is ethanol
+          by volume. If two people get different ABVs, the usual cause is the
+          sample (hot wort, uncorrected hydrometer, priming sugar in the FG
+          sample), not a rounding difference of a few hundredths of a percent.
+        </p>
 
-        <article className="prose-panel faq">
-          <h2>ABV calculator FAQ</h2>
+        <h2>ABV calculator FAQ</h2>
+        <div className="faq">
           {faqs.map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>
               <p>{faq.a}</p>
             </details>
           ))}
-          <p style={{ marginTop: "1rem" }}>
-            Want a deeper walkthrough? Read{" "}
-            <Link href="/blog/how-to-calculate-beer-abv">
-              How to calculate beer ABV from OG and FG
-            </Link>
-            .
-          </p>
-        </article>
-      </div>
+        </div>
+        <p>
+          For brew-day traps in more depth, read{" "}
+          <Link href="/blog/how-to-calculate-beer-abv">
+            How to calculate beer ABV from OG and FG
+          </Link>
+          .
+        </p>
+      </article>
     </div>
   );
 }

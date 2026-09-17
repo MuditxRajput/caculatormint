@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BlogList } from "@/components/BlogList";
 import { calculators } from "@/lib/calculators";
+import { posts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -9,93 +11,80 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const teasers: Record<string, string> = {
+  "abv-calculator": "Beer ABV from original and final gravity.",
+  "pay-raise-calculator": "Salary or hourly raise, U.S. pay schedules included.",
+  "dog-bite-compensation-calculator":
+    "Educational settlement range from medical costs and state rules.",
+  "pft-calculator": "FEV1, FVC, Z-scores, and LLN using GLI-2012.",
+};
+
 export default function HomePage() {
+  const tools = calculators.filter((c) => c.status === "live");
+
   return (
-    <>
+    <div className="home">
       <section className="hero">
-        <div className="container hero__grid">
-          <div>
-            <h1 className="hero__brand">{siteConfig.name}</h1>
-            <p className="hero__headline">
-              A marketplace of accurate calculators people actually use.
-            </p>
-            <p className="hero__support">
-              Fast, accurate tools with clear results — pay raises, dog bite
-              estimates, brewing ABV, and more.
-            </p>
-            <div className="hero__actions">
-              <Link href="/calculators" className="button button--primary">
-                Browse calculators
-              </Link>
-              <Link href="/blog" className="button button--ghost">
-                Read guides
-              </Link>
-            </div>
-          </div>
-          <div className="hero__visual" aria-hidden="true">
-            <div className="hero__visual-copy">
-              <strong>Clear answers</strong>
-              <span>Inputs on the left · results that stand out</span>
-            </div>
+        <div className="container hero__inner">
+          <p className="hero__eyebrow">Free online calculators</p>
+          <h1>Clear math. Honest formulas. No clutter.</h1>
+          <p className="hero__support">
+            Pay raises, brewing ABV, dog bite estimates, and spirometry — each
+            tool shows how the result is calculated.
+          </p>
+          <div className="hero__actions">
+            <Link href="/calculators" className="button button--primary">
+              Browse calculators
+            </Link>
+            <Link href="/blog" className="button button--ghost">
+              Read guides
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="calculators">
         <div className="container">
-          <p className="section__eyebrow">Calculator marketplace</p>
-          <h2 className="section__title">Pick a calculator</h2>
-          <p className="section__lead">
-            Every tool gets accurate math first, then a dedicated guide so people
-            searching Google can find — and trust — CalculatorMint.
-          </p>
-          <div className="calc-grid">
-            {calculators.map((calc) => (
-              <article key={calc.slug} className="calc-card">
-                <span className="calc-card__category">{calc.category}</span>
-                <h3>{calc.name}</h3>
-                <p>{calc.description}</p>
-                <div className="calc-card__meta">
-                  {calc.status === "live" ? (
-                    <Link href={calc.href}>Use calculator →</Link>
-                  ) : (
-                    <span>Coming soon</span>
-                  )}
-                  <span
-                    className={`badge ${
-                      calc.status === "live" ? "badge--live" : "badge--soon"
-                    }`}
-                  >
-                    {calc.status === "live" ? "Live" : "Soon"}
-                  </span>
-                </div>
-              </article>
+          <div className="section__head">
+            <div>
+              <h2 className="section__title">Calculators</h2>
+              <p className="section__lead">Pick a tool. Open it. Get a result.</p>
+            </div>
+            <Link href="/calculators" className="section__more">
+              All calculators
+            </Link>
+          </div>
+
+          <div className="home-calc-grid">
+            {tools.map((calc) => (
+              <Link key={calc.slug} href={calc.href} className="home-calc">
+                <span className="home-calc__cat">{calc.category}</span>
+                <strong>{calc.name}</strong>
+                <span className="home-calc__teaser">
+                  {teasers[calc.slug] ?? calc.description}
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container content-stack">
-          <div className="prose-panel">
-            <h2>Built to rank — and to calculate correctly</h2>
-            <p>
-              CalculatorMint pairs each tool with keyword-focused content:
-              definitions, formulas, FAQs, and how-to guides. Live now:{" "}
-              <Link href="/calculators/abv-calculator">ABV</Link>,{" "}
-              <Link href="/calculators/pay-raise-calculator">pay raise</Link>, and{" "}
-              <Link href="/calculators/dog-bite-compensation-calculator">
-                dog bite compensation
-              </Link>
-              .
-            </p>
-            <p>
-              More everyday calculators are on the way — each with its own ranking
-              page and blog support.
-            </p>
+      <section className="section section--guides" id="guides">
+        <div className="container">
+          <div className="section__head">
+            <div>
+              <h2 className="section__title">Guides</h2>
+              <p className="section__lead">
+                Short articles behind each calculator.
+              </p>
+            </div>
+            <Link href="/blog" className="section__more">
+              All guides
+            </Link>
           </div>
+          <BlogList posts={posts} compact />
         </div>
       </section>
-    </>
+    </div>
   );
 }

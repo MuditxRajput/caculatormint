@@ -75,6 +75,13 @@ export default function RootLayout({
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
+    email: siteConfig.email,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: siteConfig.email,
+      contactType: "customer support",
+      url: absoluteUrl("/contact"),
+    },
   };
 
   const websiteJsonLd = {
@@ -82,11 +89,6 @@ export default function RootLayout({
     "@type": "WebSite",
     name: siteConfig.name,
     url: siteConfig.url,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteConfig.url}/calculators?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (

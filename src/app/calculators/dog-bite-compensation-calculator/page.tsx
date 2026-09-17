@@ -109,6 +109,23 @@ export default function DogBiteCompensationPage() {
           },
         })),
       },
+      {
+        "@type": "Article",
+        headline: "How Dog Bite Settlements Are Estimated in the USA",
+        description,
+        author: {
+          "@type": "Organization",
+          name: siteConfig.name,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+        mainEntityOfPage: absoluteUrl(
+          "/calculators/dog-bite-compensation-calculator",
+        ),
+      },
     ],
   };
 
@@ -142,101 +159,120 @@ export default function DogBiteCompensationPage() {
         <DogBiteCalculator />
       </section>
 
-      <div className="content-stack" style={{ marginBottom: "3rem" }}>
-        <article className="prose-panel">
-          <h2>How this USA dog bite calculator works</h2>
-          <ol>
-            <li>
-              Add your <strong>economic damages</strong> — medical bills, expected
-              future care, lost wages, and other out-of-pocket costs.
-            </li>
-            <li>
-              Apply a <strong>pain-and-suffering multiplier</strong> based on
-              severity (about 1.5× for minor bites up to 6× for catastrophic
-              injury), with boosts for facial injuries, scarring, and child victims.
-            </li>
-            <li>
-              Adjust for your <strong>state liability rule</strong>, how clear
-              fault is, comparative negligence, and any insurance policy cap.
-            </li>
-          </ol>
-          <p>
-            The result is a low-to-high range because no single formula binds an
-            insurer or jury.
-          </p>
-        </article>
+      <article className="blog-article">
+        <p className="meta-line">Legal · Dog Bite Calculator · United States</p>
+        <p>
+          A dog bite compensation calculator is a way to ballpark a U.S.
+          settlement — not a court verdict. Insurers and attorneys often start
+          with economic damages (medical bills, future care, lost wages, and
+          other costs), then apply a pain-and-suffering multiplier based on
+          injury severity. This free dog bite settlement calculator also folds in
+          state liability rules (strict liability vs the one-bite rule),
+          comparative fault, and homeowners or renters insurance caps, because
+          those facts change the number more than a spreadsheet multiplier
+          alone.
+        </p>
+        <p>
+          Enter your figures in the tool above, then read how the estimate is
+          built, what typical reported ranges look like, and why this is
+          educational only.
+        </p>
 
-        <article className="prose-panel">
-          <h2>Settlement estimate formula</h2>
-          <code className="formula-block">
-            Economic damages = Medical + Future care + Lost wages + Other costs
-          </code>
-          <code className="formula-block">
-            Pain & suffering ≈ Economic damages × multiplier (1.5×–6×)
-          </code>
-          <code className="formula-block">
-            Estimate = (Economic + Pain & suffering) × liability factor × (1 − fault %)
-          </code>
-          <p>
-            Example: $12,000 economic damages at a 3× multiplier → about $36,000
-            pain and suffering → roughly <strong>$48,000</strong> before liability
-            or insurance adjustments.
-          </p>
-        </article>
+        <h2>How this USA dog bite settlement calculator works</h2>
+        <ol>
+          <li>
+            Add <strong>economic damages</strong> — medical bills, expected
+            future care, lost wages, and other out-of-pocket costs.
+          </li>
+          <li>
+            Apply a <strong>pain-and-suffering multiplier</strong> (about 1.5×
+            for minor bites up to 6× for catastrophic injury), with extra weight
+            for facial injuries, scarring, and child victims.
+          </li>
+          <li>
+            Adjust for <strong>state liability</strong>, how clear fault is,
+            comparative negligence, and any insurance policy cap.
+          </li>
+        </ol>
+        <p>
+          The result is a low-to-high range because no single formula binds an
+          insurer or a jury.
+        </p>
 
-        <article className="prose-panel">
-          <h2>Strict liability vs one-bite rule</h2>
-          <p>
-            <strong>Strict liability</strong> states (such as California,
-            Florida, Illinois, and many others) often make the owner responsible
-            for a bite even without a prior incident — subject to defenses like
-            trespass or provocation.
-          </p>
-          <p>
-            <strong>One-bite / negligence</strong> states (such as New York,
-            Texas, and Virginia) typically require proof the owner knew or should
-            have known the dog was dangerous, or was otherwise negligent. That is
-            why this calculator asks about prior bites and disputed liability.
-          </p>
-        </article>
+        <h2>Dog bite settlement estimate formula</h2>
+        <code className="formula-block">
+          Economic damages = Medical + Future care + Lost wages + Other costs
+        </code>
+        <code className="formula-block">
+          Pain &amp; suffering ≈ Economic damages × multiplier (1.5×–6×)
+        </code>
+        <code className="formula-block">
+          Estimate = (Economic + Pain &amp; suffering) × liability factor × (1 −
+          fault %)
+        </code>
+        <p>
+          Example: $12,000 economic damages at a 3× multiplier → about $36,000
+          pain and suffering → roughly <strong>$48,000</strong> before liability
+          or insurance adjustments. If the victim shares 20% fault in a
+          comparative-negligence state, the estimate drops by that share. If
+          the owner’s homeowners liability limit is $100,000, a higher paper
+          number still may not collect above the policy.
+        </p>
 
-        <article className="prose-panel">
-          <h2>Typical reported ranges (not guarantees)</h2>
-          <ul>
-            <li>Minor — single treatment: often about $3,000–$15,000</li>
-            <li>Moderate — stitches / follow-ups: about $15,000–$50,000</li>
-            <li>Severe — hospital / nerve injury: about $50,000–$150,000</li>
-            <li>Disfigurement / child victim: often $100,000–$300,000+</li>
-          </ul>
-          <p>
-            Actual recovery is frequently limited by available insurance. Treat
-            every online estimate as a starting point only.
-          </p>
-        </article>
+        <h2>Strict liability vs the one-bite rule</h2>
+        <p>
+          Strict liability states (such as California, Florida, and Illinois)
+          often make the owner responsible for a bite even without a prior
+          incident, subject to defenses like trespass or provocation. One-bite
+          or negligence states (such as New York, Texas, and Virginia)
+          typically require proof the owner knew or should have known the dog
+          was dangerous, or was otherwise negligent. That is why the calculator
+          asks about prior bites and disputed liability: claim value is not
+          only medical bills.
+        </p>
+        <p>
+          Most U.S. dog bite claims are paid by the owner’s homeowners or
+          renters liability insurance, commonly capped around $100,000–$300,000
+          unless other coverage or assets exist.
+        </p>
 
-        <article className="prose-panel faq">
-          <h2>Dog bite compensation FAQ</h2>
+        <h2>Typical reported ranges (not guarantees)</h2>
+        <ul>
+          <li>Minor — single treatment: often about $3,000–$15,000</li>
+          <li>Moderate — stitches / follow-ups: about $15,000–$50,000</li>
+          <li>Severe — hospital / nerve injury: about $50,000–$150,000</li>
+          <li>Disfigurement / child victim: often $100,000–$300,000+</li>
+        </ul>
+        <p>
+          Industry averages for paid claims often sit around $50,000–$70,000,
+          but your facts can sit far outside that band. Treat every online
+          estimate as a starting point. Speak with a licensed attorney in your
+          state for advice about a real claim, and read the{" "}
+          <Link href="/disclaimer">disclaimer</Link>.
+        </p>
+
+        <h2>Dog bite compensation FAQ</h2>
+        <div className="faq">
           {faqs.map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>
               <p>{faq.a}</p>
             </details>
           ))}
-          <p style={{ marginTop: "1rem" }}>
-            Read more:{" "}
-            <Link href="/blog/how-dog-bite-settlements-work-in-the-usa">
-              How dog bite settlements work in the USA
-            </Link>
-            .
-          </p>
-        </article>
-
-        <p className="abv-hint" style={{ marginBottom: "2rem" }}>
+        </div>
+        <p>
+          For liability rules and insurance in more depth, read{" "}
+          <Link href="/blog/how-dog-bite-settlements-work-in-the-usa">
+            How dog bite settlements work in the USA
+          </Link>
+          .
+        </p>
+        <p className="abv-hint">
           Disclaimer: CalculatorMint provides educational estimates only. It is
           not a law firm and does not provide legal advice. Statutes of
           limitation and liability rules vary by state and change over time.
         </p>
-      </div>
+      </article>
     </div>
   );
 }

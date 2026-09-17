@@ -78,17 +78,6 @@ export const calculators: CalculatorMeta[] = [
     status: "live",
     href: "/calculators/pft-calculator",
   },
-  {
-    slug: "bmi-calculator",
-    name: "BMI Calculator",
-    shortName: "BMI",
-    description:
-      "Body mass index calculator with clear health-range guidance. Coming soon.",
-    keywords: ["bmi calculator", "body mass index"],
-    category: "Health",
-    status: "coming-soon",
-    href: "/calculators",
-  },
 ];
 
 export function getCalculator(slug: string) {

@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy — How CalculatorMint Handles Your Data",
   description:
-    "Read CalculatorMint’s Privacy Policy in plain English: what information we collect, how calculator inputs are handled, cookies, analytics, retention, and how to contact us about your data.",
+    "Read CalculatorMint’s Privacy Policy: calculator inputs, cookies, Google AdSense advertising, analytics, retention, and how to contact us about your data.",
   alternates: { canonical: "/privacy-policy" },
   robots: { index: true, follow: true },
 };
@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
           <span>Privacy Policy</span>
         </nav>
         <h1>Privacy Policy</h1>
-        <p>Last updated: July 30, 2026</p>
+        <p>Last updated: September 17, 2026</p>
       </header>
 
       <article className="blog-article">
@@ -92,31 +92,77 @@ export default function PrivacyPolicyPage() {
         <p>
           Cookies are small text files stored on your device. We may use cookies or
           similar technologies for essential site operation, remembering
-          preferences, measuring traffic, or understanding how content performs.
-          Some cookies are set by third parties that power analytics or hosting
-          features.
+          preferences, measuring traffic, showing advertising, or understanding
+          how content performs. Some cookies are set by third parties that power
+          analytics, hosting, or ads.
         </p>
         <p>
           You can usually block or delete cookies in your browser settings. If you
-          block all cookies, parts of the site may still work, but measurement and
-          some convenience features may be limited. Browser controls differ by
-          vendor, so check your browser’s help documentation for exact steps.
+          block all cookies, parts of the site may still work, but measurement,
+          advertising, and some convenience features may be limited. See the full{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link> for categories,
+          retention, and controls.
+        </p>
+
+        <h2>Advertising (Google AdSense)</h2>
+        <p>
+          We use Google AdSense to display advertisements and to keep CalculatorMint
+          free to use. Third-party vendors, including Google, use cookies to serve
+          ads based on a user’s prior visits to this website or other websites.
+        </p>
+        <p>
+          Google’s use of advertising cookies enables it and its partners to serve
+          ads to you based on your visit to this site and/or other sites on the
+          internet.
+        </p>
+        <p>
+          You may opt out of personalized advertising by visiting{" "}
+          <a
+            href="https://www.google.com/settings/ads"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Google Ads Settings
+          </a>
+          . You can also opt out of a third-party vendor’s use of cookies for
+          personalized advertising at{" "}
+          <a
+            href="https://www.aboutads.info/choices/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            aboutads.info
+          </a>
+          . Learn how Google uses data when you use our partners’ sites or apps:{" "}
+          <a
+            href="https://policies.google.com/technologies/partner-sites"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Google partner sites policy
+          </a>
+          .
+        </p>
+        <p>
+          Non-personalized ads may still be shown based on contextual factors such
+          as the page you are viewing or your general location.
         </p>
 
         <h2>How we use information</h2>
         <p>
           We use information to operate and improve CalculatorMint, respond to
           messages, fix bugs, monitor abuse or security issues, understand which
-          tools and articles are helpful, and communicate about updates when you
-          contact us first. We do not sell your personal information as a product.
+          tools and articles are helpful, display advertising, and communicate
+          about updates when you contact us first. We do not sell your personal
+          information as a product.
         </p>
 
         <h2>When we share information</h2>
         <p>
           We may share information with service providers who help us run the site
-          — for example hosting, content delivery, analytics, or email
-          infrastructure. Those providers process data on our behalf and should
-          only use it to perform their services.
+          — for example hosting, content delivery, analytics, email
+          infrastructure, or advertising (including Google). Those providers
+          process data to perform their services.
         </p>
         <p>
           We may also disclose information if required by law, to respond to valid

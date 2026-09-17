@@ -110,6 +110,22 @@ export default function PftCalculatorPage() {
           },
         })),
       },
+      {
+        "@type": "Article",
+        headline:
+          "How to Interpret PFTs with GLI-2012: FEV1, FVC, Z-Scores, and LLN",
+        description,
+        author: {
+          "@type": "Organization",
+          name: siteConfig.name,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+        mainEntityOfPage: absoluteUrl("/calculators/pft-calculator"),
+      },
     ],
   };
 
@@ -140,86 +156,111 @@ export default function PftCalculatorPage() {
         <PftCalculator />
       </section>
 
-      <div className="content-stack" style={{ marginBottom: "3rem" }}>
-        <article className="prose-panel">
-          <h2>How this USA PFT calculator works</h2>
-          <ol>
-            <li>
-              Enter age (3–95), sex, height (inches or cm), and the GLI-2012
-              ethnicity group used in U.S. labs.
-            </li>
-            <li>
-              Enter measured <strong>FEV1</strong> and <strong>FVC</strong> in
-              liters (optional FEV1/FVC % if you want to match a report).
-            </li>
-            <li>
-              Review predicted mean, % predicted, LLN, Z-score, pattern label,
-              and ATS/ERS obstruction severity when the ratio is below LLN.
-            </li>
-          </ol>
-        </article>
+      <article className="blog-article">
+        <p className="meta-line">Health · PFT Calculator · United States</p>
+        <p>
+          A PFT calculator (pulmonary function test calculator) turns measured
+          spirometry — FEV1 and FVC in liters — into predicted means, percent
+          predicted, Z-scores, and the lower limit of normal (LLN). This free
+          USA spirometry calculator uses GLI-2012 reference equations, the set
+          many U.S. labs now prefer over older NHANES III–only norms, for ages
+          3–95 with ethnicity groups used in American practice. It also labels a
+          pattern and, when FEV1/FVC is below the LLN, grades obstruction
+          severity with ATS/ERS 2005 FEV1 cutoffs.
+        </p>
+        <p>
+          Enter demographics and measured volumes in the tool above, then use
+          this article for the LMS math, what a Z-score of −1.645 means, and why
+          a low FVC still needs TLC before anyone calls restriction.
+        </p>
 
-        <article className="prose-panel">
-          <h2>GLI-2012 equations (overview)</h2>
-          <p>
-            GLI-2012 models each index with an LMS framework (lambda, mu, sigma)
-            so predicted values and Z-scores stay continuous across childhood and
-            adulthood:
-          </p>
-          <code className="formula-block">
-            Z = ((measured / M)^L − 1) / (L × S)
-          </code>
-          <code className="formula-block">
-            % predicted = (measured / M) × 100
-          </code>
-          <code className="formula-block">
-            LLN ≈ 5th percentile (Z ≈ −1.645)
-          </code>
-          <p>
-            Height is converted to centimeters internally. U.S. users can enter
-            height in inches (default).
-          </p>
-        </article>
+        <h2>How to use this USA PFT calculator</h2>
+        <ol>
+          <li>
+            Enter age (3–95), sex, height (inches or cm), and the GLI-2012
+            ethnicity group used in U.S. labs.
+          </li>
+          <li>
+            Enter measured <strong>FEV1</strong> and <strong>FVC</strong> in
+            liters (optional FEV1/FVC % if you want to match a printed report).
+          </li>
+          <li>
+            Review predicted mean, % predicted, LLN, Z-score, pattern label,
+            and ATS/ERS obstruction severity when the ratio is below LLN.
+          </li>
+        </ol>
+        <p>
+          Height is converted to centimeters internally. U.S. users can leave
+          height in inches (the default). Wrong height or the wrong ethnicity
+          code moves predicted values enough to change a borderline label.
+        </p>
 
-        <article className="prose-panel">
-          <h2>Obstruction severity (ATS/ERS 2005)</h2>
-          <p>
-            When FEV1/FVC is below the LLN, severity is graded by FEV1 %
-            predicted:
-          </p>
-          <ul>
-            <li>Mild — FEV1 ≥ 70% predicted</li>
-            <li>Moderate — 60–69%</li>
-            <li>Moderately severe — 50–59%</li>
-            <li>Severe — 35–49%</li>
-            <li>Very severe — &lt; 35%</li>
-          </ul>
-        </article>
+        <h2>GLI-2012 equations: predicted values, Z-scores, and LLN</h2>
+        <p>
+          GLI-2012 models each index with an LMS framework (lambda, mu, sigma)
+          so predicted values and Z-scores stay continuous from childhood into
+          adulthood:
+        </p>
+        <code className="formula-block">
+          Z = ((measured / M)^L − 1) / (L × S)
+        </code>
+        <code className="formula-block">
+          % predicted = (measured / M) × 100
+        </code>
+        <code className="formula-block">
+          LLN ≈ 5th percentile (Z ≈ −1.645)
+        </code>
+        <p>
+          A Z-score below about −1.645 is conventionally below the normal range
+          for that index. Using a fixed FEV1/FVC cutoff of 0.70 for every adult
+          can over-call obstruction in older patients and under-call it in
+          younger ones; LLN from GLI-2012 is the approach this calculator
+          follows.
+        </p>
 
-        <article className="prose-panel faq">
-          <h2>PFT calculator FAQ</h2>
+        <h2>Obstruction severity (ATS/ERS 2005)</h2>
+        <p>
+          When FEV1/FVC is below the LLN, severity is graded by FEV1 percent
+          predicted:
+        </p>
+        <ul>
+          <li>Mild — FEV1 ≥ 70% predicted</li>
+          <li>Moderate — 60–69%</li>
+          <li>Moderately severe — 50–59%</li>
+          <li>Severe — 35–49%</li>
+          <li>Very severe — &lt; 35%</li>
+        </ul>
+        <p>
+          A low FVC with a normal FEV1/FVC can look “restrictive” on spirometry,
+          but total lung capacity (TLC) is required to confirm a restrictive
+          defect. This tool is educational interpretation math, not a medical
+          device and not a diagnosis.
+        </p>
+
+        <h2>PFT calculator FAQ</h2>
+        <div className="faq">
           {faqs.map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>
               <p>{faq.a}</p>
             </details>
           ))}
-          <p style={{ marginTop: "1rem" }}>
-            Read more:{" "}
-            <Link href="/blog/how-to-interpret-pft-gli-2012-usa">
-              How to interpret PFTs with GLI-2012 in the USA
-            </Link>
-            .
-          </p>
-        </article>
-
-        <p className="abv-hint" style={{ marginBottom: "2rem" }}>
+        </div>
+        <p>
+          For clinic edge cases (ethnicity coding, fixed 0.70 cutoffs, and
+          nonspecific patterns), read{" "}
+          <Link href="/blog/how-to-interpret-pft-gli-2012-usa">
+            How to interpret PFTs with GLI-2012 in the USA
+          </Link>
+          .
+        </p>
+        <p className="abv-hint">
           Medical disclaimer: CalculatorMint provides educational spirometry
           math only. It is not a medical device, does not provide diagnosis or
           treatment advice, and must not replace clinician judgment or
           accredited pulmonary function testing systems.
         </p>
-      </div>
+      </article>
     </div>
   );
 }

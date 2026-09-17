@@ -106,9 +106,9 @@ export default function AboutPage() {
           result.
         </p>
         <p>
-          More calculators are planned — including health and finance tools such as
-          BMI — following the same pattern: correct calculation first, then
-          keyword-rich education around it.
+          We keep the site focused on these four tools so each page stays complete:
+          a working calculator, documented formulas, and a guide — not a directory
+          of unfinished widgets.
         </p>
 
         <h2>Built for search from day one</h2>
@@ -155,9 +155,8 @@ export default function AboutPage() {
           saw, and what you expected.
         </p>
         <p>
-          Thanks for using CalculatorMint. We are just getting started — and every
-          calculator we ship will be held to the same bar: accurate, understandable,
-          and worth ranking for.
+          Thanks for using CalculatorMint. We hold every calculator to the same
+          bar: accurate, understandable, and honest about what it cannot do.
         </p>
       </article>
     </div>

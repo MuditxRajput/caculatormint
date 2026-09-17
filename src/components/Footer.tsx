@@ -40,6 +40,7 @@ export function Footer() {
           <p className="site-footer__heading">Legal</p>
           <div className="site-footer__links site-footer__links--col">
             <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/cookies-policy">Cookies Policy</Link>
             <Link href="/terms">Terms of Use</Link>
             <Link href="/disclaimer">Disclaimer</Link>
           </div>

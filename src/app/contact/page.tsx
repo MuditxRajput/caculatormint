@@ -43,6 +43,19 @@ export default function ContactPage() {
           not need a formal template — a short, specific message is enough.
         </p>
 
+        <h2>Official contact details</h2>
+        <p>
+          Website:{" "}
+          <a href={siteConfig.url}>{siteConfig.url}</a>
+          <br />
+          Email:{" "}
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </p>
+        <p>
+          Use this same email for calculator feedback, privacy or data requests,
+          and advertising questions. We aim to reply within a few business days.
+        </p>
+
         <h2>What to include in an accuracy report</h2>
         <p>
           When you think a result looks wrong, details save everyone time. Please
