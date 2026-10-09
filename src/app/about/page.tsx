@@ -1,18 +1,19 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
-  title: "About CalculatorMint — Our Story, Mission & Calculators",
+  title: "About CalculatorMint — Our Mission, Standards & Calculators",
   description:
-    "Read the full story behind CalculatorMint: why we built a free calculator marketplace, how we verify formulas, which USA tools are live today, and where the product is headed next.",
+    "Learn about CalculatorMint: why we built an accurate calculator resource, how our team verifies mathematical formulas, our editorial principles, and our roadmap.",
   alternates: { canonical: "/about" },
   keywords: [
     "about CalculatorMint",
     "online calculator marketplace",
     "free calculators",
     "accurate calculator tools",
-    "CalculatorMint story",
+    "editorial standards calculators",
   ],
 };
 
@@ -27,138 +28,162 @@ export default function AboutPage() {
         </nav>
         <h1>About CalculatorMint</h1>
         <p>
-          A free calculator marketplace built for accurate math, plain-English
-          explanations, and pages that can actually rank on Google.
+          A free, transparent calculator resource built for mathematical accuracy,
+          accessible plain-English explanations, and dependable search answers.
         </p>
       </header>
 
+      <div className="ad-container ad-container--page-top">
+        <AdSlot format="leaderboard" label="Advertisement" />
+      </div>
+
       <article className="blog-article">
         <p>
-          CalculatorMint started from a simple frustration: when you search for a
-          calculator online, you often land on a cluttered page that hides the
-          formula, pushes pop-ups, or gives an answer you cannot verify. We wanted
-          the opposite experience — clean tools, transparent math, and helpful
-          writing that teaches people how the result was produced.
+          CalculatorMint was founded with a straightforward conviction: when people
+          search for a mathematical calculation online, they deserve instant,
+          reliable answers without pop-up traps, hidden formulas, or deceptive paywalls.
+          Too many utility websites obscure their equations, offer no reference
+          sources, or present outdated calculations.
         </p>
         <p>
-          That is the idea behind {siteConfig.name}. We are building a marketplace
-          of everyday calculators where every tool is paired with a dedicated
-          landing page and a supporting guide. The goal is not only to calculate
-          correctly, but also to help people find the right tool when they search
-          for it.
+          At {siteConfig.name}, we provide the exact opposite: crystal-clear calculation
+          engines paired with comprehensive educational guides that explain the &ldquo;how&rdquo;
+          and &ldquo;why&rdquo; behind every result.
         </p>
 
-        <h2>Why a calculator marketplace?</h2>
+        <h2>Our Mission</h2>
         <p>
-          People do not wake up wanting “another website.” They wake up needing an
-          answer: What is my beer’s ABV? What does a 5% raise mean on a bi-weekly
-          paycheck? What might a dog bite claim be worth before insurance limits?
-          Each of those questions deserves its own focused tool, written around
-          the keywords and context of that topic.
-        </p>
-        <p>
-          Instead of one giant homepage of widgets, we publish calculators as
-          first-class products. Each one includes inputs people expect, results
-          they can understand, and article-style content that covers formulas,
-          edge cases, and FAQs. That structure is better for users and better for
-          search engines.
+          Our mission is to empower professionals, students, consumers, employees,
+          and everyday decision-makers with accessible, mathematically verified
+          tools. Whether calculating percentage increases and discount margins,
+          evaluating the take-home reality of a salary increase across U.S. payroll
+          frequencies, splitting restaurant checks with accurate tip rates, or calculating
+          beer alcohol by volume for a homebrew batch, our tools offer verified formulas you can trust.
         </p>
 
-        <h2>How we think about accuracy</h2>
+        <h2>How We Verify Accuracy & Mathematical Standards</h2>
         <p>
-          Accuracy is the product. Wherever a widely accepted formula exists, we
-          implement it carefully and show the method on the page. For brewing, that
-          means the standard ABV equation and the alternate Hall formula, plus
-          attenuation and ASBC-style calorie estimates. For U.S. pay raises, that
-          means real payroll periods — hourly, weekly, bi-weekly (26),
-          semi-monthly (24), monthly, and annual — with full-time defaults of 40
-          hours and 52 weeks.
+          Accuracy is the bedrock of our platform. We never use arbitrary &ldquo;black-box&rdquo;
+          approaches. Each tool is built using established mathematical standards:
         </p>
+        <ul>
+          <li>
+            <strong>Everyday & Business Mathematics:</strong> We implement standard algebraic
+            proportions for percentage changes, markups, discounts, and reverse percentages,
+            tested against strict edge cases like zero bases and fractional percentages.
+          </li>
+          <li>
+            <strong>Finance & Payroll:</strong> We convert between standard U.S. payroll
+            schedules — including hourly (40 hrs/wk, 52 wks/yr), bi-weekly (26 pay periods),
+            semi-monthly (24 pay periods), and monthly — while incorporating inflation adjustments
+            and estimated tax brackets.
+          </li>
+          <li>
+            <strong>Hospitality & Dining Economics:</strong> We model tip calculations and bill
+            splitting across custom group sizes, handling pre-tax and post-tax gratuity
+            conventions and nearest-dollar rounding options.
+          </li>
+          <li>
+            <strong>Brewing Science:</strong> We implement both the standard homebrew
+            equation and Dr. Michael Hall&rsquo;s high-gravity alternate formula, alongside
+            official American Society of Brewing Chemists (ASBC) calorie estimations
+            and apparent attenuation models.
+          </li>
+        </ul>
+
+        <div className="ad-container ad-container--in-content">
+          <AdSlot format="in-article" label="Advertisement" />
+        </div>
+
+        <h2>What Is Live Today</h2>
         <p>
-          For dog bite compensation estimates, we use the common insurance and
-          attorney multiplier method: economic damages, a severity-based
-          pain-and-suffering range, state liability orientation (strict liability
-          vs one-bite), comparative fault, and optional insurance caps. We are
-          clear that this is an educational estimate, not legal advice.
+          Our primary live calculators include:
         </p>
+        <ul>
+          <li>
+            <Link href="/calculators/percentage-calculator">
+              Percentage Calculator
+            </Link>{" "}
+            — Multi-mode calculator for percentage of a number, percentage change, and tax/discount calculations.
+          </li>
+          <li>
+            <Link href="/calculators/discount-calculator">
+              Discount & Sale Price Calculator
+            </Link>{" "}
+            — Markdowns, clearance stackable coupons (&ldquo;extra % off&rdquo;), and post-discount sales tax.
+          </li>
+          <li>
+            <Link href="/calculators/pay-raise-calculator">
+              USA Pay Raise Calculator
+            </Link>{" "}
+            — Detailed comparison across bi-weekly, semi-monthly, and annual paychecks with inflation impact.
+          </li>
+          <li>
+            <Link href="/calculators/compound-interest-calculator">
+              Compound Interest Calculator
+            </Link>{" "}
+            — Exponential savings growth with monthly additions, compounding schedules, and timeline milestones.
+          </li>
+          <li>
+            <Link href="/calculators/tip-calculator">
+              Tip & Bill Split Calculator
+            </Link>{" "}
+            — Real-time gratuity computation with party splitting and smart rounding options.
+          </li>
+          <li>
+            <Link href="/calculators/fuel-cost-calculator">
+              Fuel Cost & Road Trip Gas Calculator
+            </Link>{" "}
+            — Travel budgeting across US MPG and Metric L/100km with passenger cost-splitting.
+          </li>
+          <li>
+            <Link href="/calculators/margin-calculator">
+              Profit Margin & Markup Calculator
+            </Link>{" "}
+            — Wholesale and retail pricing math with bidirectional margin-to-markup conversions.
+          </li>
+          <li>
+            <Link href="/calculators/abv-calculator">Beer ABV Calculator</Link> —
+            Supports Specific Gravity (SG) and Plato (&deg;P), apparent attenuation, and calories.
+          </li>
+        </ul>
         <p>
-          When numbers can vary by jurisdiction, instrument, or personal facts, we
-          say so. Trust comes from honesty as much as from math.
+          Each calculator is paired with an in-depth article in our{" "}
+          <Link href="/blog">Editorial Blog</Link> detailing formulas, edge cases,
+          and common measurement errors.
         </p>
 
-        <h2>What is live today</h2>
+        <h2>Editorial Integrity & Transparency</h2>
         <p>
-          Our first live tools are the{" "}
-          <Link href="/calculators/abv-calculator">ABV Calculator</Link>, the{" "}
-          <Link href="/calculators/pay-raise-calculator">
-            USA Pay Raise Calculator
-          </Link>
-          , the{" "}
-          <Link href="/calculators/dog-bite-compensation-calculator">
-            USA Dog Bite Compensation Calculator
-          </Link>
-          , and the{" "}
-          <Link href="/calculators/pft-calculator">
-            USA PFT Calculator (GLI-2012)
-          </Link>
-          . Each has a matching guide in the{" "}
-          <Link href="/blog">blog</Link> so readers can learn the “why” behind the
-          result.
-        </p>
-        <p>
-          We keep the site focused on these four tools so each page stays complete:
-          a working calculator, documented formulas, and a guide — not a directory
-          of unfinished widgets.
+          All content on {siteConfig.name} is written, reviewed, and maintained by our
+          in-house editorial team. We strive for objectivity, clarity, and adherence
+          to authoritative reference material. We routinely audit our equations and
+          content to maintain compliance with relevant industry updates.
         </p>
 
-        <h2>Built for search from day one</h2>
+        <h2>How We Stay Free: Google AdSense Disclosure</h2>
         <p>
-          Ranking on Google is part of the product plan, not an afterthought. We
-          use Next.js for fast static pages, clear titles and meta descriptions,
-          canonical URLs, an XML sitemap, robots rules, and structured data where
-          it helps (for example FAQ and application schema on tool pages). Content
-          is written in natural language around real search intent, not stuffed
-          with awkward keyword lists.
-        </p>
-        <p>
-          Still, SEO only works when the page is useful. If a visitor cannot solve
-          their problem in under a minute, rankings will not save the experience.
-          That is why the calculator sits near the top of each tool page, with
-          deeper reading underneath.
+          To maintain all tools, server infrastructure, and editorial guides as free
+          resources accessible to everyone without subscription fees, we display
+          advertising through Google AdSense. All advertisements are clearly marked,
+          and our editorial content and calculations remain completely independent
+          from advertising sponsors. For further details on privacy and advertising cookies,
+          please consult our <Link href="/privacy-policy">Privacy Policy</Link> and{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link>.
         </p>
 
-        <h2>Who we are for</h2>
+        <h2>Feedback & Inquiries</h2>
         <p>
-          Homebrewers checking gravity readings. Employees modeling a raise before
-          a review. People trying to understand the ballpark of a dog bite claim
-          before they talk to an insurer or attorney. Students and curious readers
-          who want the formula, not only the output. If you need a fast answer and
-          a clear explanation, you are our audience.
-        </p>
-
-        <h2>What we are not</h2>
-        <p>
-          We are not a law firm, tax firm, clinic, or brewery lab. Our tools do not
-          create a professional relationship and should not replace licensed advice
-          or calibrated instruments. Read the{" "}
-          <Link href="/disclaimer">disclaimer</Link> before relying on any estimate
-          for a consequential decision.
-        </p>
-
-        <h2>Get in touch</h2>
-        <p>
-          Found an edge case, a rounding difference, or a calculator the world
-          still needs? We want to hear it. Reach out through the{" "}
-          <Link href="/contact">contact page</Link> or email{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. Helpful
-          bug reports usually include the tool name, your inputs, the result you
-          saw, and what you expected.
-        </p>
-        <p>
-          Thanks for using CalculatorMint. We hold every calculator to the same
-          bar: accurate, understandable, and honest about what it cannot do.
+          We actively encourage user feedback. If you discover a rounding discrepancy,
+          have a formula recommendation, or want to suggest a new tool, please reach
+          out to us via our <Link href="/contact">Contact Page</Link> or email our team
+          directly at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
       </article>
+
+      <div className="ad-container ad-container--page-bottom">
+        <AdSlot format="horizontal" label="Advertisement" />
+      </div>
     </div>
   );
 }

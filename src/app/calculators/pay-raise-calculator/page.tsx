@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { PayRaiseCalculator } from "@/components/calculators/PayRaiseCalculator";
+import { AdSlot } from "@/components/AdSlot";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 const title = "Pay Raise Calculator (USA) — Salary & Hourly Increase";
@@ -151,6 +152,10 @@ export default function PayRaiseCalculatorPage() {
         </p>
       </header>
 
+      <div className="ad-container ad-container--page-top">
+        <AdSlot format="leaderboard" label="Advertisement" />
+      </div>
+
       <section className="abv-layout" aria-label="Pay raise calculator tool">
         <PayRaiseCalculator />
       </section>
@@ -259,6 +264,10 @@ export default function PayRaiseCalculatorPage() {
           .
         </p>
       </article>
+
+      <div className="ad-container ad-container--page-bottom">
+        <AdSlot format="horizontal" label="Advertisement" />
+      </div>
     </div>
   );
 }

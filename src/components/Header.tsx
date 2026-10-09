@@ -16,13 +16,18 @@ export function Header() {
         <Link href="/" className="brand-link" aria-label={`${siteConfig.name} home`}>
           <Logo size="md" />
         </Link>
-        <nav className="site-nav" aria-label="Primary">
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="site-header__right">
+          <nav className="site-nav" aria-label="Primary">
+            {nav.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <Link href="/calculators" className="header-cta-btn">
+            Explore Tools
+          </Link>
+        </div>
       </div>
     </header>
   );

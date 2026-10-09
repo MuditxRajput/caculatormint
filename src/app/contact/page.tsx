@@ -1,17 +1,19 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
-  title: "Contact CalculatorMint — Feedback, Corrections & Requests",
+  title: "Contact CalculatorMint — Support, Feedback & Corrections",
   description:
-    "Contact CalculatorMint for calculator feedback, formula corrections, new tool requests, or content questions. Learn what to include so we can help quickly.",
+    "Contact CalculatorMint for calculator feedback, formula corrections, new tool requests, DMCA inquiries, or advertising questions. Learn how to reach our team.",
   alternates: { canonical: "/contact" },
   keywords: [
     "contact CalculatorMint",
     "calculator feedback",
     "report calculator error",
     "request a calculator",
+    "CalculatorMint email",
   ],
 };
 
@@ -26,113 +28,94 @@ export default function ContactPage() {
         </nav>
         <h1>Contact CalculatorMint</h1>
         <p>
-          Feedback, corrections, partnerships, and new calculator ideas — here’s
-          how to reach us and what helps most.
+          Have questions, formula corrections, partnerships, or new calculator
+          suggestions? We are here to help.
         </p>
       </header>
 
+      <div className="ad-container ad-container--page-top">
+        <AdSlot format="leaderboard" label="Advertisement" />
+      </div>
+
       <article className="blog-article">
         <p>
-          If something on CalculatorMint feels unclear, incorrect, or incomplete,
-          we want to know. This site only gets better when real people test the
-          tools with real numbers and tell us where the experience breaks down.
-        </p>
-        <p>
-          The fastest way to reach us is email:{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. You do
-          not need a formal template — a short, specific message is enough.
+          If something on CalculatorMint feels unclear, mathematically off, or
+          could be improved, we welcome your direct feedback. We continuously refine
+          our tools based on real user input.
         </p>
 
-        <h2>Official contact details</h2>
+        <div className="contact-box">
+          <h2>Direct Contact Information</h2>
+          <p>
+            <strong>Primary Support & Editorial:</strong>{" "}
+            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <br />
+            <strong>Website:</strong>{" "}
+            <a href={siteConfig.url}>{siteConfig.url}</a>
+            <br />
+            <strong>DMCA Compliance Inquiries:</strong>{" "}
+            <a href={`mailto:${siteConfig.email}?subject=DMCA%20Inquiry`}>
+              {siteConfig.email}
+            </a>
+            <br />
+            <strong>Business & Advertising:</strong>{" "}
+            <a href={`mailto:${siteConfig.email}?subject=Advertising%20Inquiry`}>
+              {siteConfig.email}
+            </a>
+          </p>
+        </div>
+
+        <h2>How to Submit an Accuracy or Bug Report</h2>
         <p>
-          Website:{" "}
-          <a href={siteConfig.url}>{siteConfig.url}</a>
-          <br />
-          Email:{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          When reporting an issue with a specific calculation, including key
+          details helps our engineering and editorial team quickly reproduce and resolve it:
         </p>
+        <ul>
+          <li>
+            The calculator name (e.g., Percentage Calculator, USA Pay Raise, Tip Calculator, or Beer ABV).
+          </li>
+          <li>The exact numerical inputs and settings you entered.</li>
+          <li>The output displayed by CalculatorMint.</li>
+          <li>
+            The expected result and the reference publication or standard you
+            are comparing against.
+          </li>
+        </ul>
+
+        <div className="ad-container ad-container--in-content">
+          <AdSlot format="in-article" label="Advertisement" />
+        </div>
+
+        <h2>Requesting a New Calculator</h2>
         <p>
-          Use this same email for calculator feedback, privacy or data requests,
-          and advertising questions. We aim to reply within a few business days.
+          We are constantly developing new calculators to expand our library. If
+          you need a specific tool built, let us know:
+        </p>
+        <ol>
+          <li>What domain or industry the calculator serves.</li>
+          <li>The required input parameters and output values.</li>
+          <li>Any standard or published formula that defines the math.</li>
+        </ol>
+
+        <h2>Professional Boundary Notice</h2>
+        <p>
+          CalculatorMint provides educational and informational computational
+          tools. We cannot provide personalized financial, legal, tax, or medical
+          counseling. For consequential personal or clinical decisions, please
+          consult certified professionals. Please read our{" "}
+          <Link href="/disclaimer">Disclaimer</Link> for additional details.
         </p>
 
-        <h2>What to include in an accuracy report</h2>
+        <h2>Response Times</h2>
         <p>
-          When you think a result looks wrong, details save everyone time. Please
-          include the calculator name (for example Pay Raise or ABV), the exact
-          inputs you entered, the output you received, and the output you expected.
-          If you compared against another reputable tool, mention which one and
-          whether the settings matched (standard vs alternate ABV, bi-weekly vs
-          semi-monthly pay, and so on).
-        </p>
-        <p>
-          Screenshots help, but plain text works fine. The goal is to reproduce
-          your case exactly so we can confirm whether we found a bug, a rounding
-          difference, or a misunderstanding of the formula.
-        </p>
-
-        <h2>New calculator requests</h2>
-        <p>
-          We love hearing which tools people wish existed. If you request a
-          calculator, tell us who it is for, what inputs matter, and which formula
-          or official source you trust. Requests that include a clear use case —
-          “USA overtime pay for non-exempt employees” or “pregnancy due date from
-          LMP” — move to the front of the list faster than vague ideas.
-        </p>
-        <p>
-          We prioritize calculators that can be explained transparently and that
-          people actively search for. That keeps the marketplace useful and
-          SEO-aligned at the same time.
-        </p>
-
-        <h2>Content and SEO feedback</h2>
-        <p>
-          Our guides are written to answer real questions around each tool. If a
-          blog post is outdated, missing a jurisdiction note, or harder to read
-          than it should be, say so. Pointing to a specific paragraph is more
-          helpful than “the article is wrong,” but either way we will look.
-        </p>
-
-        <h2>Partnerships and linking</h2>
-        <p>
-          If you run a related site, newsletter, or tool directory and want to
-          discuss a link, mention, or collaboration, email us with your URL and a
-          one-paragraph pitch. We are selective: we care about relevance and
-          reader trust more than raw traffic volume.
-        </p>
-
-        <h2>What we cannot do over email</h2>
-        <p>
-          We cannot give personalized legal advice on a dog bite claim, tax advice
-          on a raise, medical advice on body metrics, or professional brewing lab
-          services. Those questions belong with licensed professionals. Our{" "}
-          <Link href="/disclaimer">disclaimer</Link> explains the boundary in more
-          detail.
-        </p>
-        <p>
-          We also cannot reverse-engineer private insurance offers, guarantee a
-          settlement number, or promise a Google ranking timeline for your own
-          site. We can, however, explain how our calculator works and whether a
-          reported discrepancy looks real.
-        </p>
-
-        <h2>Response time</h2>
-        <p>
-          We aim to reply within a few business days. During busy periods it may
-          take longer. If your message is about a possible safety or legal
-          deadline (for example a statute of limitations), do not wait on us —
-          contact a qualified professional in your area immediately.
-        </p>
-
-        <h2>Other useful pages</h2>
-        <p>
-          Before you write, you may already find the answer in the{" "}
-          <Link href="/faq">FAQ</Link>, the{" "}
-          <Link href="/calculators">calculators directory</Link>, or the{" "}
-          <Link href="/about">about page</Link>. If not, we are one email away:{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
+          Our team strives to review and respond to all email inquiries within 24 to
+          48 business hours.
         </p>
       </article>
+
+      <div className="ad-container ad-container--page-bottom">
+        <AdSlot format="horizontal" label="Advertisement" />
+      </div>
     </div>
   );
 }

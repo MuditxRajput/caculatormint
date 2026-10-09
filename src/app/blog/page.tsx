@@ -1,39 +1,81 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BlogList } from "@/components/BlogList";
+import { AdSlot } from "@/components/AdSlot";
 import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Calculator Guides & Blog",
+  title: "Blog & Educational Guides — Math, Finance & Everyday Calculations",
   description:
-    "SEO guides for CalculatorMint tools — ABV, U.S. pay raises, dog bite settlements, GLI-2012 PFTs, and more.",
+    "Explore the CalculatorMint journal: in-depth guides to percentage calculations, retail discounts, compound interest, USA pay raises, travel fuel costs, business margins, and brewing science.",
   alternates: { canonical: "/blog" },
   keywords: [
-    "abv calculator guide",
+    "calculator guides",
+    "percentage calculator guide",
+    "discount calculator guide",
+    "compound interest guide",
+    "fuel cost guide",
+    "margin markup guide",
     "pay raise calculator guide",
-    "dog bite settlement guide",
-    "PFT GLI-2012 guide",
-    "calculatorMint blog",
+    "tip calculator guide",
+    "abv calculator guide",
+    "CalculatorMint blog",
+    "math formulas explained",
   ],
 };
 
+const categories = [
+  "All Articles",
+  "Math & Analytics",
+  "Finance & Career",
+  "Shopping & Retail",
+  "Travel & Auto",
+  "Dining & Everyday",
+  "Brewing Science",
+];
+
 export default function BlogIndexPage() {
   return (
-    <div className="container">
-      <header className="page-hero">
-        <nav className="breadcrumbs" aria-label="Breadcrumb">
+    <div className="container container--blog">
+      <header className="page-hero text-center">
+        <nav className="breadcrumbs breadcrumbs--center" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
           <span>/</span>
           <span>Blog</span>
         </nav>
-        <h1>Blog</h1>
-        <p>
-          Choose a guide. Click any post to read the full article and open the
-          matching calculator.
+        <span className="page-hero__badge">The CalculatorMint Journal</span>
+        <h1>Articles, Guides &amp; Mathematical Research</h1>
+        <p className="page-hero__lead-center">
+          In-depth guides unpacking everyday math, retail discounts, compound growth,
+          payroll mechanics, road trip fuel budgeting, and business pricing.
         </p>
+
+        <div className="blog-category-bar blog-category-bar--center" role="navigation" aria-label="Article categories">
+          {categories.map((cat, idx) => (
+            <span
+              key={cat}
+              className={`blog-category-pill ${idx === 0 ? "is-active" : ""}`}
+            >
+              {cat}
+            </span>
+          ))}
+        </div>
       </header>
 
-      <BlogList posts={posts} />
+      {/* Top AdSlot in DOM */}
+      <div className="ad-container ad-container--page-top">
+        <AdSlot format="leaderboard" label="Advertisement" />
+      </div>
+
+      {/* Unified Single Blog Stream */}
+      <main className="blog-feed-container">
+        <BlogList posts={posts} />
+      </main>
+
+      {/* Bottom AdSlot in DOM */}
+      <div className="ad-container ad-container--page-bottom">
+        <AdSlot format="horizontal" label="Advertisement" />
+      </div>
     </div>
   );
 }

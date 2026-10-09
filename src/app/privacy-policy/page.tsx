@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — How CalculatorMint Handles Your Data",
+  title: "Privacy Policy — CalculatorMint",
   description:
-    "Read CalculatorMint’s Privacy Policy: calculator inputs, cookies, Google AdSense advertising, analytics, retention, and how to contact us about your data.",
+    "Read CalculatorMint’s Privacy Policy: calculator inputs privacy, cookies, Google AdSense personalized advertising disclosure, CCPA/GDPR compliance, and data practices.",
   alternates: { canonical: "/privacy-policy" },
   robots: { index: true, follow: true },
 };
@@ -20,218 +21,168 @@ export default function PrivacyPolicyPage() {
           <span>Privacy Policy</span>
         </nav>
         <h1>Privacy Policy</h1>
-        <p>Last updated: September 17, 2026</p>
+        <p>Last updated: October 9, 2026</p>
       </header>
+
+      <div className="ad-container ad-container--page-top">
+        <AdSlot format="leaderboard" label="Advertisement" />
+      </div>
 
       <article className="blog-article">
         <p className="meta-line">
-          This Privacy Policy explains how {siteConfig.name} (“we”, “us”, or
-          “our”) handles information when you visit {siteConfig.url}, use our
-          calculators, read our guides, or email us.
+          This Privacy Policy explains how {siteConfig.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+          &ldquo;our&rdquo;) handles personal and non-personal data when you visit{" "}
+          <Link href="/">{siteConfig.url}</Link>, use our online calculators, read
+          our editorial guides, or contact us.
         </p>
         <p>
-          We built CalculatorMint to be useful without forcing accounts or
-          unnecessary data collection. Most calculator math runs in your browser.
-          Still, like nearly every modern website, some technical information is
-          processed so the site can load, stay secure, and improve over time. This
-          page describes that clearly.
-        </p>
-
-        <h2>Who this policy applies to</h2>
-        <p>
-          This policy applies to visitors and users of the CalculatorMint website
-          and related pages we operate. It does not cover third-party websites we
-          link to. If you follow a link away from our site, that destination’s
-          privacy policy controls.
+          We designed CalculatorMint to respect your digital privacy. All calculator
+          computations run locally inside your web browser. We do not require account
+          registrations, profile creation, or logins to access any tool or article.
         </p>
 
-        <h2>Information you choose to give us</h2>
+        <h2>1. Local Processing of Calculator Inputs</h2>
         <p>
-          If you contact us by email, we receive whatever you include: your email
-          address, message text, and any attachments or screenshots you send. We
-          use that information to respond, investigate calculator issues, and keep
-          a record of the conversation when needed.
-        </p>
-        <p>
-          We do not require you to create an account to use the calculators. If we
-          ever add optional accounts or saved scenarios, we will update this policy
-          before collecting that kind of data and explain the choice at the point
-          of signup.
+          When you enter numerical parameters into our tools — such as specific
+          gravity readings, hourly wages, annual salaries, percentages, or restaurant
+          bill amounts — those inputs are processed in real-time by client-side
+          JavaScript in your browser. We do not store, log, or transmit your calculation
+          inputs to external databases or servers.
         </p>
 
-        <h2>Calculator inputs</h2>
+        <h2>2. Google AdSense & Third-Party Advertising</h2>
         <p>
-          When you type numbers into a calculator — gravity readings, salary
-          figures, medical bill estimates, and similar fields — those values are
-          generally processed locally in your browser to produce a result. We do
-          not ask you to submit those inputs to a CalculatorMint account form as
-          part of the core experience.
+          To keep our calculators and resources free for all users worldwide, we
+          partner with Google AdSense and its network of certified third-party ad
+          vendors to display advertisements.
         </p>
+        <ul>
+          <li>
+            Third-party vendors, including Google, use cookies (such as DoubleClick
+            cookies) to serve ads based on a user&rsquo;s previous visits to this
+            website or other sites on the Internet.
+          </li>
+          <li>
+            Google&rsquo;s use of advertising cookies enables it and its partners
+            to serve relevant ads to you based on your visit to {siteConfig.name} and
+            other sites on the Internet.
+          </li>
+          <li>
+            <strong>Opt-Out of Personalized Ads:</strong> You may opt out of
+            personalized advertising by visiting the{" "}
+            <a
+              href="https://www.google.com/settings/ads"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Google Ads Settings
+            </a>
+            . Alternatively, you can opt out of a third-party vendor&rsquo;s use of
+            cookies for personalized advertising by visiting{" "}
+            <a
+              href="https://www.aboutads.info/choices/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              aboutads.info
+            </a>
+            .
+          </li>
+          <li>
+            Learn more about how Google processes information when you use partner
+            sites:{" "}
+            <a
+              href="https://policies.google.com/technologies/partner-sites"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              How Google uses information from sites or apps that use our services
+            </a>
+            .
+          </li>
+        </ul>
+
+        <div className="ad-container ad-container--in-content">
+          <AdSlot format="in-article" label="Advertisement" />
+        </div>
+
+        <h2>3. Automatically Collected Technical Information</h2>
         <p>
-          Please avoid pasting highly sensitive personal information into public
-          computers or shared screens. Even when we are not storing your inputs as
-          account data, your device, browser extensions, or workplace monitoring
-          software might.
+          Like standard web servers, when you access our site, standard non-identifying
+          server logs and analytics may record:
+        </p>
+        <ul>
+          <li>Internet Protocol (IP) address and approximate geographic region</li>
+          <li>Browser user agent, browser version, and operating system</li>
+          <li>Referring and exit URL pages</li>
+          <li>Timestamps and page navigation metrics</li>
+        </ul>
+        <p>
+          This telemetry helps us diagnose server performance, maintain site uptime,
+          and safeguard against automated malicious attacks.
         </p>
 
-        <h2>Information collected automatically</h2>
+        <h2>4. Cookies & Web Beacons</h2>
         <p>
-          When you visit the site, our hosting provider and any analytics tools we
-          use may receive standard technical data. That can include IP address,
-          approximate location derived from IP, browser type and version, device
-          type, operating system, referring URL, pages viewed, dates and times of
-          visits, and general interaction data used to understand performance.
-        </p>
-        <p>
-          This kind of data helps us answer practical questions: Are pages loading
-          quickly? Which calculators are used most? Did a deploy break a route?
-          Without some telemetry, it is hard to keep a public tool reliable.
+          Cookies are small text files placed on your device to ensure essential site
+          functionality and facilitate advertising measurement. For a detailed
+          breakdown of our cookie usage and instructions on how to disable or manage
+          cookies in your browser settings, please review our dedicated{" "}
+          <Link href="/cookies-policy">Cookies Policy</Link>.
         </p>
 
-        <h2>Cookies and similar technologies</h2>
+        <h2>5. CCPA & CPRA Privacy Rights (California Residents)</h2>
         <p>
-          Cookies are small text files stored on your device. We may use cookies or
-          similar technologies for essential site operation, remembering
-          preferences, measuring traffic, showing advertising, or understanding
-          how content performs. Some cookies are set by third parties that power
-          analytics, hosting, or ads.
+          Under the California Consumer Privacy Act (CCPA) and California Privacy
+          Rights Act (CPRA), California residents are entitled to:
         </p>
+        <ul>
+          <li>Request disclosure of categories and specific pieces of collected personal data.</li>
+          <li>Request deletion of personal information held by us.</li>
+          <li>
+            Opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of personal
+            information (CalculatorMint does not sell personal information for monetary compensation).
+          </li>
+        </ul>
         <p>
-          You can usually block or delete cookies in your browser settings. If you
-          block all cookies, parts of the site may still work, but measurement,
-          advertising, and some convenience features may be limited. See the full{" "}
-          <Link href="/cookies-policy">Cookies Policy</Link> for categories,
-          retention, and controls.
-        </p>
-
-        <h2>Advertising (Google AdSense)</h2>
-        <p>
-          We use Google AdSense to display advertisements and to keep CalculatorMint
-          free to use. Third-party vendors, including Google, use cookies to serve
-          ads based on a user’s prior visits to this website or other websites.
-        </p>
-        <p>
-          Google’s use of advertising cookies enables it and its partners to serve
-          ads to you based on your visit to this site and/or other sites on the
-          internet.
-        </p>
-        <p>
-          You may opt out of personalized advertising by visiting{" "}
-          <a
-            href="https://www.google.com/settings/ads"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Google Ads Settings
-          </a>
-          . You can also opt out of a third-party vendor’s use of cookies for
-          personalized advertising at{" "}
-          <a
-            href="https://www.aboutads.info/choices/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            aboutads.info
-          </a>
-          . Learn how Google uses data when you use our partners’ sites or apps:{" "}
-          <a
-            href="https://policies.google.com/technologies/partner-sites"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Google partner sites policy
-          </a>
-          .
-        </p>
-        <p>
-          Non-personalized ads may still be shown based on contextual factors such
-          as the page you are viewing or your general location.
+          To exercise your California privacy rights, email us at{" "}
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
 
-        <h2>How we use information</h2>
+        <h2>6. GDPR & UK Data Protection Rights (European Residents)</h2>
         <p>
-          We use information to operate and improve CalculatorMint, respond to
-          messages, fix bugs, monitor abuse or security issues, understand which
-          tools and articles are helpful, display advertising, and communicate
-          about updates when you contact us first. We do not sell your personal
-          information as a product.
+          If you are a resident of the European Economic Area (EEA) or the United
+          Kingdom, you have statutory rights including:
+        </p>
+        <ul>
+          <li>The right of access to any personal data processed by us.</li>
+          <li>The right to rectification or erasure of your personal data.</li>
+          <li>The right to restrict or object to the processing of your data.</li>
+          <li>The right to lodge a complaint with a supervisory authority.</li>
+        </ul>
+
+        <h2>7. Children&rsquo;s Privacy (COPPA Compliance)</h2>
+        <p>
+          {siteConfig.name} is directed to a general audience and does not knowingly
+          collect or solicit personal information from children under the age of 13.
+          If we discover that a child under 13 has provided us with personal
+          information, we will promptly delete it.
         </p>
 
-        <h2>When we share information</h2>
+        <h2>8. Contact Us & Legal Inquiries</h2>
         <p>
-          We may share information with service providers who help us run the site
-          — for example hosting, content delivery, analytics, email
-          infrastructure, or advertising (including Google). Those providers
-          process data to perform their services.
-        </p>
-        <p>
-          We may also disclose information if required by law, to respond to valid
-          legal process, or to protect the rights, safety, and security of users,
-          the public, or CalculatorMint.
-        </p>
-
-        <h2>Data retention</h2>
-        <p>
-          Email correspondence is kept as long as reasonably needed to resolve your
-          request and maintain appropriate business records. Analytics retention
-          depends on the settings of the analytics provider we use. When data is no
-          longer needed for these purposes, we delete or de-identify it where
-          practical.
-        </p>
-
-        <h2>Children’s privacy</h2>
-        <p>
-          CalculatorMint is intended for a general audience. We do not knowingly
-          collect personal information from children under 13. If you believe a
-          child has sent us personal information, contact us and we will take
-          reasonable steps to delete it.
-        </p>
-
-        <h2>International visitors</h2>
-        <p>
-          Our site may be hosted or accessed from different countries. If you visit
-          from outside the United States, understand that information may be
-          processed in the U.S. or other locations where our providers operate.
-          Privacy laws vary by country.
-        </p>
-
-        <h2>Your choices and requests</h2>
-        <p>
-          Depending on where you live, you may have rights to request access to,
-          correction of, or deletion of personal information you provided to us
-          (for example, via email). To make a request, email{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> and
-          describe what you need. We may need to verify that the request comes from
-          the relevant person.
-        </p>
-
-        <h2>Security</h2>
-        <p>
-          We take reasonable administrative and technical measures to protect
-          information. No method of transmission or storage is 100% secure, and we
-          cannot guarantee absolute security. If you believe you discovered a
-          security issue affecting CalculatorMint, please report it to the same
-          contact email.
-        </p>
-
-        <h2>Changes to this policy</h2>
-        <p>
-          We may update this Privacy Policy as the site evolves. When we make
-          material changes, we will revise the “Last updated” date at the top of
-          this page. Continued use of the site after an update means you accept
-          the revised policy.
-        </p>
-
-        <h2>Contact</h2>
-        <p>
-          Privacy questions can be sent to{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. You can
-          also start from our <Link href="/contact">contact page</Link>. For how
-          we limit liability around calculator outputs, see the{" "}
-          <Link href="/disclaimer">disclaimer</Link> and{" "}
-          <Link href="/terms">Terms of Use</Link>.
+          If you have questions regarding this Privacy Policy or our privacy
+          practices, please contact us at:{" "}
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> or visit
+          our <Link href="/contact">Contact Page</Link>. Also see our{" "}
+          <Link href="/dmca">DMCA Policy</Link> and{" "}
+          <Link href="/terms">Terms of Service</Link>.
         </p>
       </article>
+
+      <div className="ad-container ad-container--page-bottom">
+        <AdSlot format="horizontal" label="Advertisement" />
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { AbvCalculator } from "@/components/calculators/AbvCalculator";
+import { AdSlot } from "@/components/AdSlot";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 const title = "ABV Calculator — Alcohol by Volume from OG & FG";
@@ -147,6 +148,10 @@ export default function AbvCalculatorPage() {
         </p>
       </header>
 
+      <div className="ad-container ad-container--page-top">
+        <AdSlot format="leaderboard" label="Advertisement" />
+      </div>
+
       <section className="abv-layout" aria-label="ABV calculator tool">
         <AbvCalculator />
       </section>
@@ -269,6 +274,10 @@ export default function AbvCalculatorPage() {
           .
         </p>
       </article>
+
+      <div className="ad-container ad-container--page-bottom">
+        <AdSlot format="horizontal" label="Advertisement" />
+      </div>
     </div>
   );
 }

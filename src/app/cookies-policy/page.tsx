@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
-  title: "Cookies Policy — How CalculatorMint Uses Cookies",
+  title: "Cookies Policy — CalculatorMint",
   description:
-    "CalculatorMint Cookies Policy: what cookies are, which types we may use, how analytics cookies work, and how to control or delete cookies in your browser.",
+    "CalculatorMint Cookies Policy: how cookies work, essential cookies, Google AdSense advertising cookies, and how to control cookies in your web browser.",
   alternates: { canonical: "/cookies-policy" },
   robots: { index: true, follow: true },
 };
@@ -20,124 +21,108 @@ export default function CookiesPolicyPage() {
           <span>Cookies Policy</span>
         </nav>
         <h1>Cookies Policy</h1>
-        <p>Last updated: September 17, 2026</p>
+        <p>Last updated: October 9, 2026</p>
       </header>
+
+      <div className="ad-container ad-container--page-top">
+        <AdSlot format="leaderboard" label="Advertisement" />
+      </div>
 
       <article className="blog-article">
         <p className="meta-line">
-          This Cookies Policy explains how {siteConfig.name} (“we”, “us”, or
-          “our”) uses cookies and similar technologies on {siteConfig.url}.
+          This Cookies Policy explains how {siteConfig.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+          &ldquo;our&rdquo;) uses cookies and similar browser tracking technologies on{" "}
+          <Link href="/">{siteConfig.url}</Link>.
         </p>
         <p>
-          It should be read together with our{" "}
-          <Link href="/privacy-policy">Privacy Policy</Link>, which describes the
-          personal information we may process. By continuing to use the site, you
-          can manage cookies through your browser settings as described below.
-        </p>
-
-        <h2>What cookies are</h2>
-        <p>
-          Cookies are small text files stored on your device when you visit a
-          website. Similar technologies include local storage, pixels, and
-          scripts that remember a preference or measure a page view. They help a
-          site load, stay secure, remember choices, and understand how people use
-          the pages.
+          This document should be read alongside our{" "}
+          <Link href="/privacy-policy">Privacy Policy</Link>, which provides comprehensive
+          information on how we safeguard user data.
         </p>
 
-        <h2>Cookies we may use</h2>
+        <h2>1. What Are Cookies?</h2>
         <p>
-          CalculatorMint is built so you can use calculators without creating an
-          account. We do not use cookies to log you into a CalculatorMint
-          profile. We may still use cookies or similar technologies in these
-          categories:
+          Cookies are small text files downloaded to your computer or mobile device
+          when you visit a website. They allow the website to recognize your browser,
+          remember preferences, support essential site performance, and enable
+          advertising partners like Google AdSense to serve relevant advertisements.
+        </p>
+
+        <h2>2. Categories of Cookies We Use</h2>
+        <ul>
+          <li>
+            <strong>Strictly Necessary Cookies:</strong> Essential for page routing,
+            security headers, and core navigation. These do not gather marketing data.
+          </li>
+          <li>
+            <strong>Functional & Preference Cookies:</strong> Used to remember your
+            selected calculator units (such as SG vs. Plato) across page refreshes.
+          </li>
+          <li>
+            <strong>Analytics & Performance Cookies:</strong> Gather aggregate,
+            de-identified traffic insights (e.g., page load speeds, high-traffic tools)
+            to help us optimize platform responsiveness.
+          </li>
+          <li>
+            <strong>Targeting & Advertising Cookies (Google AdSense):</strong> Placed
+            by Google and its third-party ad technology partners to deliver and measure
+            ads. These cookies help deliver advertisements tailored to your interests
+            and prevent identical ads from repeatedly showing.
+          </li>
+        </ul>
+
+        <div className="ad-container ad-container--in-content">
+          <AdSlot format="in-article" label="Advertisement" />
+        </div>
+
+        <h2>3. How to Manage and Disable Cookies</h2>
+        <p>
+          You have full control over cookies on your device. Most modern browsers
+          allow you to block third-party cookies or delete existing cookies through
+          browser preferences:
         </p>
         <ul>
           <li>
-            <strong>Essential.</strong> Needed for the site to load, route
-            correctly, and stay reasonably secure. These are not used to market
-            to you.
+            <strong>Google Chrome:</strong> Settings &rarr; Privacy and security &rarr;
+            Third-party cookies
           </li>
           <li>
-            <strong>Preferences.</strong> Remember a choice you make on the
-            site, such as a display or calculator setting, if we add that kind of
-            feature.
+            <strong>Mozilla Firefox:</strong> Settings &rarr; Privacy &amp; Security &rarr;
+            Enhanced Tracking Protection
           </li>
           <li>
-            <strong>Analytics and performance.</strong> Help us see which pages
-            load, which calculators are used, and whether a deploy broke a
-            route. These may be set by us or by a hosting or analytics provider.
+            <strong>Apple Safari:</strong> Settings &rarr; Privacy &rarr; Prevent
+            cross-site tracking
           </li>
           <li>
-            <strong>Advertising.</strong> Google AdSense and its partners may set
-            cookies to serve and measure ads, including ads based on visits to
-            this site and other sites. See our{" "}
-            <Link href="/privacy-policy">Privacy Policy</Link> for opt-out links.
+            <strong>Microsoft Edge:</strong> Settings &rarr; Cookies and site permissions
           </li>
         </ul>
         <p>
-          We do not sell cookie data as a product. Third-party providers that
-          power hosting, content delivery, analytics, or advertising may set
-          their own cookies when you visit.
-        </p>
-
-        <h2>Calculator use</h2>
-        <p>
-          Numbers you type into a calculator are generally processed in your
-          browser to produce a result. Those inputs are not stored as a
-          CalculatorMint account record. Your browser or device may still keep
-          local data according to its own settings.
-        </p>
-
-        <h2>How long cookies last</h2>
-        <p>
-          Session cookies expire when you close the browser. Persistent cookies
-          remain until they expire or you delete them. Retention for analytics
-          depends on the provider’s settings. When we no longer need a cookie
-          for the purpose it was set, we stop using it or it expires.
-        </p>
-
-        <h2>How to control cookies</h2>
-        <p>
-          You can block or delete cookies in your browser. Steps differ by
-          vendor, so use your browser’s help documentation for the current
-          instructions. If you block all cookies, the site should still load,
-          but measurement, advertising, and some convenience features may be
-          limited.
-        </p>
-        <p>
-          To opt out of personalized ads from Google, use{" "}
+          To opt out specifically of Google&rsquo;s personalized advertising cookies,
+          visit the{" "}
           <a
             href="https://www.google.com/settings/ads"
             rel="noopener noreferrer"
             target="_blank"
           >
-            Google Ads Settings
-          </a>
-          . For other advertising companies, visit{" "}
-          <a
-            href="https://www.aboutads.info/choices/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            aboutads.info
+            Google Ads Settings page
           </a>
           .
         </p>
 
-        <h2>Updates</h2>
+        <h2>4. Contact Us</h2>
         <p>
-          We may update this Cookies Policy as the site or our providers change.
-          Material updates will be reflected by the “Last updated” date on this
-          page.
-        </p>
-
-        <h2>Contact</h2>
-        <p>
-          Cookie or privacy questions can be sent to{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> or
-          through our <Link href="/contact">contact page</Link>.
+          If you have questions regarding our use of cookies or tracking technologies,
+          please email our team at:{" "}
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> or visit
+          our <Link href="/contact">Contact Page</Link>.
         </p>
       </article>
+
+      <div className="ad-container ad-container--page-bottom">
+        <AdSlot format="horizontal" label="Advertisement" />
+      </div>
     </div>
   );
 }
