@@ -16,9 +16,15 @@ export function Footer() {
         <div className="site-footer__col">
           <p className="site-footer__heading">Calculators</p>
           <div className="site-footer__links site-footer__links--col">
-            <Link href="/calculators">All 8 Calculators</Link>
+            <Link href="/calculators">All 14 Calculators</Link>
+            <Link href="/calculators/cumulative-gpa-calculator">Cumulative GPA Calculator</Link>
+            <Link href="/calculators/gpa-calculator-for-middle-schoolers">Middle School GPA</Link>
+            <Link href="/calculators/grade-calculator">Grade Average Calculator</Link>
+            <Link href="/calculators/average-calculator">Average Calculator</Link>
+            <Link href="/calculators/weighted-average-calculator">Weighted Average</Link>
             <Link href="/calculators/percentage-calculator">Percentage Calculator</Link>
             <Link href="/calculators/discount-calculator">Discount Calculator</Link>
+            <Link href="/calculators/cubic-yard-calculator">Cubic Yard Calculator</Link>
             <Link href="/calculators/pay-raise-calculator">USA Pay Raise Calculator</Link>
             <Link href="/calculators/compound-interest-calculator">Compound Interest</Link>
             <Link href="/calculators/tip-calculator">Tip &amp; Bill Split</Link>
@@ -32,6 +38,9 @@ export function Footer() {
           <p className="site-footer__heading">Editorial &amp; Guides</p>
           <div className="site-footer__links site-footer__links--col">
             <Link href="/blog">Blog Directory</Link>
+            <Link href="/blog/how-to-calculate-cumulative-gpa">Cumulative GPA Guide</Link>
+            <Link href="/blog/how-to-calculate-average">Average &amp; Statistics Guide</Link>
+            <Link href="/blog/how-to-calculate-cubic-yards">Cubic Yard &amp; Materials Guide</Link>
             <Link href="/blog/how-to-calculate-percentages">Percentage Math Guide</Link>
             <Link href="/blog/how-to-calculate-discounts">Discount &amp; Sale Guide</Link>
             <Link href="/blog/how-to-calculate-compound-interest">Compound Interest Guide</Link>
@@ -61,10 +70,6 @@ export function Footer() {
             © {year} {siteConfig.name}. All rights reserved. Mathematical tools and
             explanatory guides are published for educational and informational
             purposes only — not professional financial, tax, or legal advice.
-          </p>
-          <p className="site-footer__disclosure">
-            Third-party advertisements served by Google AdSense and its certified
-            partners help keep this resource free to all users worldwide.
           </p>
         </div>
       </div>

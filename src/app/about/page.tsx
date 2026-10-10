@@ -146,6 +146,30 @@ export default function AboutPage() {
             <Link href="/calculators/abv-calculator">Beer ABV Calculator</Link> —
             Supports Specific Gravity (SG) and Plato (&deg;P), apparent attenuation, and calories.
           </li>
+          <li>
+            <Link href="/calculators/cubic-yard-calculator">Cubic Yard Calculator</Link> —
+            Volume estimations for concrete, mulch, gravel, and dirt with bag conversions and waste buffers.
+          </li>
+          <li>
+            <Link href="/calculators/average-calculator">Average Calculator</Link> —
+            Simple arithmetic mean, weighted averages, course grades with final exam target solver, and chemistry atomic mass.
+          </li>
+          <li>
+            <Link href="/calculators/grade-calculator">Grade Average Calculator</Link> —
+            Weighted course syllabus grading with built-in final exam target score solver.
+          </li>
+          <li>
+            <Link href="/calculators/weighted-average-calculator">Weighted Average Calculator</Link> —
+            Weighted arithmetic mean for investment portfolios, stock cost-per-share averaging, and multi-factor models.
+          </li>
+          <li>
+            <Link href="/calculators/cumulative-gpa-calculator">Cumulative GPA Calculator</Link> —
+            Cumulative GPA for USA & Canada colleges and high schools with prior transcript credits and Latin honors planning.
+          </li>
+          <li>
+            <Link href="/calculators/gpa-calculator-for-middle-schoolers">GPA Calculator for Middle Schoolers</Link> —
+            Report card GPA and Honor Roll calculator for 6th, 7th, and 8th-grade students in the USA and Canada.
+          </li>
         </ul>
         <p>
           Each calculator is paired with an in-depth article in our{" "}

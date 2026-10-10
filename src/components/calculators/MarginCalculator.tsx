@@ -145,7 +145,7 @@ export function MarginCalculator() {
               />
               <span className="input-affix">%</span>
             </div>
-            <span className="abv-help" style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: "0.35rem" }}>
+            <span className="abv-help" style={{ fontSize: "0.85rem", color: "#09090b", marginTop: "0.35rem" }}>
               Gross profit percentage relative to total selling price.
             </span>
           </div>
@@ -168,7 +168,7 @@ export function MarginCalculator() {
               />
               <span className="input-affix">%</span>
             </div>
-            <span className="abv-help" style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: "0.35rem" }}>
+            <span className="abv-help" style={{ fontSize: "0.85rem", color: "#09090b", marginTop: "0.35rem" }}>
               Percentage added directly to cost to reach retail price.
             </span>
           </div>
@@ -186,13 +186,13 @@ export function MarginCalculator() {
             <div className="tip-split-summary" style={{ marginTop: "0.5rem" }}>
               <div className="tip-split-card" style={{ background: "rgba(255, 255, 255, 0.05)", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: "0.75rem", padding: "0.85rem", textAlign: "center" }}>
                 <span className="abv-result-label">Gross Margin</span>
-                <div className="tip-split-amount" style={{ color: "#fb923c", fontSize: "1.35rem", fontWeight: 850 }}>
+                <div className="tip-split-amount" style={{ color: "#fb923c", fontSize: "1.35rem", fontWeight: 700 }}>
                   {results.margin.toFixed(2)}%
                 </div>
               </div>
               <div className="tip-split-card" style={{ background: "rgba(255, 255, 255, 0.05)", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: "0.75rem", padding: "0.85rem", textAlign: "center" }}>
                 <span className="abv-result-label">Markup</span>
-                <div className="tip-split-amount" style={{ color: "#fb923c", fontSize: "1.35rem", fontWeight: 850 }}>
+                <div className="tip-split-amount" style={{ color: "#fb923c", fontSize: "1.35rem", fontWeight: 700 }}>
                   {results.markup.toFixed(2)}%
                 </div>
               </div>

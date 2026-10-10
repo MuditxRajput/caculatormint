@@ -189,13 +189,13 @@ export function FuelCostCalculator() {
               <div className="tip-split-summary" style={{ marginTop: "0.5rem" }}>
                 <div className="tip-split-card" style={{ background: "rgba(255, 255, 255, 0.05)", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: "0.75rem", padding: "0.85rem", textAlign: "center" }}>
                   <span className="abv-result-label">Cost per Person ({passengers} ways)</span>
-                  <div className="tip-split-amount" style={{ color: "#4ade80", fontSize: "1.35rem", fontWeight: 850 }}>
+                  <div className="tip-split-amount" style={{ color: "#4ade80", fontSize: "1.35rem", fontWeight: 700 }}>
                     ${results.costPerPerson.toFixed(2)}
                   </div>
                 </div>
                 <div className="tip-split-card" style={{ background: "rgba(255, 255, 255, 0.05)", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: "0.75rem", padding: "0.85rem", textAlign: "center" }}>
                   <span className="abv-result-label">Cost per {unitSystem === "us" ? "Mile" : "KM"}</span>
-                  <div className="tip-split-amount" style={{ color: "#fb923c", fontSize: "1.35rem", fontWeight: 850 }}>
+                  <div className="tip-split-amount" style={{ color: "#fb923c", fontSize: "1.35rem", fontWeight: 700 }}>
                     ${results.costPerUnitDistance.toFixed(2)}
                   </div>
                 </div>

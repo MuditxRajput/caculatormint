@@ -116,4 +116,43 @@ export const posts: BlogPost[] = [
     featured: false,
     tags: ["Profit Margin", "Markup", "Pricing", "Retail"],
   },
+  {
+    href: "/blog/how-to-calculate-cubic-yards",
+    title: "How to Calculate Cubic Yards: Concrete, Mulch, Soil & Dirt Formulas for USA Projects",
+    excerpt:
+      "A comprehensive guide to cubic yard math: the divide-by-27 rule, rectangular and circular formulas, 80-lb concrete bag counts, gravel tonnage conversions, and the 10% waste buffer.",
+    meta: "Construction · Cubic Yard Calculator",
+    category: "Home & Construction",
+    date: "October 10, 2026",
+    readTime: "8 min read",
+    author: "CalculatorMint Editorial",
+    featured: true,
+    tags: ["Cubic Yards", "Concrete", "Mulch", "Landscaping", "Construction"],
+  },
+  {
+    href: "/blog/how-to-calculate-average",
+    title: "How to Calculate Average: Simple, Weighted, Grade & Atomic Mass Formulas Explained",
+    excerpt:
+      "A complete guide on calculating arithmetic mean, understanding weighted averages in finance and business, calculating course grades with final exam targets, and solving chemistry average atomic mass.",
+    meta: "Math · Average Calculator",
+    category: "Math & Science",
+    date: "October 10, 2026",
+    readTime: "9 min read",
+    author: "CalculatorMint Editorial",
+    featured: true,
+    tags: ["Average", "Mean", "Weighted Average", "Grade Calculator", "Atomic Mass", "Statistics"],
+  },
+  {
+    href: "/blog/how-to-calculate-cumulative-gpa",
+    title: "How to Calculate Cumulative GPA: College, High School & Middle School Formulas Explained",
+    excerpt:
+      "A complete guide explaining how cumulative GPA is calculated across college, high school, and middle school transcripts in the USA and Canada, with quality point equations and honor roll benchmarks.",
+    meta: "Academics · Cumulative GPA",
+    category: "Education & GPA",
+    date: "October 10, 2026",
+    readTime: "9 min read",
+    author: "CalculatorMint Editorial",
+    featured: true,
+    tags: ["Cumulative GPA", "College GPA", "High School GPA", "Middle School GPA", "Honor Roll", "GPA Calculator"],
+  },
 ];

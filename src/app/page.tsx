@@ -29,6 +29,18 @@ const teasers: Record<string, string> = {
     "Calculate gross margin, percentage markup, and retail selling prices with conversion formulas.",
   "abv-calculator":
     "Beer alcohol by volume from OG & FG. Supports SG, Plato, calories, and attenuation.",
+  "cubic-yard-calculator":
+    "Calculate cubic yards (yd³) for concrete slabs, mulch beds, topsoil, and gravel with waste buffers.",
+  "average-calculator":
+    "Calculate simple arithmetic mean, weighted averages, course grades with final targets, and chemistry atomic mass.",
+  "grade-calculator":
+    "Calculate weighted course grades and solve the exact score needed on your final exam for an A, B, or C.",
+  "weighted-average-calculator":
+    "Calculate weighted arithmetic means for stock dollar-cost averaging, portfolios, and statistical datasets.",
+  "cumulative-gpa-calculator":
+    "Calculate updated cumulative GPA for college or high school with prior credits and graduation planning.",
+  "gpa-calculator-for-middle-schoolers":
+    "Calculate 6th, 7th, and 8th-grade report card GPA and check Honor Roll eligibility for USA and Canada.",
 };
 
 export default function HomePage() {
@@ -48,7 +60,7 @@ export default function HomePage() {
           </h1>
           <p className="hero__support">
             Everyday percentages, retail discounts, USA paycheck raises, compound interest,
-            travel fuel, business margins, dining gratuities, and brewing ABV —
+            cubic yards for concrete &amp; mulch, travel fuel, business margins, and dining gratuities —
             transparent equations paired with in-depth educational guides.
           </p>
           <div className="hero__actions">

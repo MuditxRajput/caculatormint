@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "CalculatorMint",
   tagline: "Accurate calculators & guides for everyday decisions",
   description:
-    "Free online calculators with transparent formulas and comprehensive guides — percentages, discounts, investments, USA pay raises, travel fuel, business margins, dining tips, and beer ABV.",
+    "Free online calculators with transparent formulas and comprehensive guides — percentages, discounts, investments, USA pay raises, cubic yards for concrete and mulch, averages, cumulative GPA & middle school grades, travel fuel, business margins, dining tips, and beer ABV.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.calculatormint.online",
   locale: "en_US",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "calculatormint@gmail.com",

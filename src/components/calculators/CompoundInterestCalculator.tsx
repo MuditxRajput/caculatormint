@@ -122,7 +122,7 @@ export function CompoundInterestCalculator() {
 
         <div className="abv-field">
           <label htmlFor={monthlyDepositId} className="abv-label">
-            Monthly Addition ($) <span style={{ fontWeight: 400, color: "var(--muted)" }}>(Optional)</span>
+            Monthly Addition ($) <span style={{ fontWeight: 400, color: "#09090b" }}>(Optional)</span>
           </label>
           <div className="input-group">
             <span className="input-affix">$</span>
@@ -244,7 +244,7 @@ export function CompoundInterestCalculator() {
                       <td style={{ color: "#4ade80", fontWeight: 700 }}>
                         +${Math.round(m.interest).toLocaleString()}
                       </td>
-                      <td style={{ fontWeight: 800, color: "#fb923c" }}>
+                      <td style={{ fontWeight: 700, color: "#fb923c" }}>
                         ${Math.round(m.balance).toLocaleString()}
                       </td>
                     </tr>

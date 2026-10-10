@@ -67,6 +67,36 @@ export default function NotFound() {
             </Link>
           </li>
           <li>
+            <Link href="/calculators/cubic-yard-calculator">
+              Cubic Yard Calculator (Concrete &amp; Mulch)
+            </Link>
+          </li>
+          <li>
+            <Link href="/calculators/average-calculator">
+              Average Calculator (Simple, Weighted &amp; Grades)
+            </Link>
+          </li>
+          <li>
+            <Link href="/calculators/grade-calculator">
+              Grade Average Calculator (Course &amp; Final Exam)
+            </Link>
+          </li>
+          <li>
+            <Link href="/calculators/weighted-average-calculator">
+              Weighted Average Calculator (Finance &amp; Portfolios)
+            </Link>
+          </li>
+          <li>
+            <Link href="/calculators/cumulative-gpa-calculator">
+              Cumulative GPA Calculator (College &amp; High School)
+            </Link>
+          </li>
+          <li>
+            <Link href="/calculators/gpa-calculator-for-middle-schoolers">
+              GPA Calculator for Middle Schoolers (Grades 6–8)
+            </Link>
+          </li>
+          <li>
             <Link href="/blog">Editorial Guides & Blog</Link>
           </li>
           <li>

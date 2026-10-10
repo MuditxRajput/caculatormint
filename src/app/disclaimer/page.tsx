@@ -131,6 +131,30 @@ export default function DisclaimerPage() {
           commercial labeling.
         </p>
 
+        <h3>Cubic Yard &amp; Material Estimator</h3>
+        <p>
+          The <Link href="/calculators/cubic-yard-calculator">Cubic Yard Calculator</Link>{" "}
+          provides geometric volume estimates for building materials (concrete, mulch,
+          topsoil, gravel, and sand). Physical material requirements in real-world
+          construction and landscaping routinely deviate by 5% to 15% from theoretical
+          mathematical volume due to subgrade undulations, formwork deflection, mechanical
+          compaction, moisture content, and job-site spillage. Calculations do not constitute
+          licensed architectural or structural engineering specifications. Always verify
+          final order quantities and weight limits with your local ready-mix supplier,
+          quarry, or certified general contractor prior to scheduling non-refundable
+          bulk deliveries.
+        </p>
+
+        <h3>Average &amp; Grade Calculator</h3>
+        <p>
+          The <Link href="/calculators/average-calculator">Average Calculator</Link> provides
+          arithmetic mean, weighted averages, and academic course grade projections based on
+          user-provided scores and weighting percentages. Individual schools, universities, and
+          faculty members may utilize custom rounding conventions, extra credit policies, or
+          non-linear curves that alter final course outcomes. Academic calculations are provided
+          for planning purposes only; confirm official standing with your instructor or registrar.
+        </p>
+
         <div className="ad-container ad-container--in-content">
           <AdSlot format="in-article" label="Advertisement" />
         </div>
