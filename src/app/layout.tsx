@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree, Outfit } from "next/font/google";
+import Script from "next/script";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -18,6 +19,7 @@ const body = Figtree({
 });
 
 const ADSENSE_CLIENT = "ca-pub-8884977910314227";
+const GA_MEASUREMENT_ID = "G-XC5P31MV2Y";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -103,6 +105,20 @@ export default function RootLayout({
         />
       </head>
       <body className="site-shell antialiased">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
