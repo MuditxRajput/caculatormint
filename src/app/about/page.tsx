@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "About CalculatorMint — Our Mission, Standards & Calculators",
@@ -32,10 +31,6 @@ export default function AboutPage() {
           accessible plain-English explanations, and dependable search answers.
         </p>
       </header>
-
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
 
       <article className="blog-article">
         <p>
@@ -90,10 +85,6 @@ export default function AboutPage() {
             and apparent attenuation models.
           </li>
         </ul>
-
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
-        </div>
 
         <h2>What Is Live Today</h2>
         <p>
@@ -177,13 +168,26 @@ export default function AboutPage() {
           and common measurement errors.
         </p>
 
-        <h2>Editorial Integrity & Transparency</h2>
+        <h2>Editorial Standards, Verification &amp; Team</h2>
         <p>
-          All content on {siteConfig.name} is written, reviewed, and maintained by our
-          in-house editorial team. We strive for objectivity, clarity, and adherence
-          to authoritative reference material. We routinely audit our equations and
-          content to maintain compliance with relevant industry updates.
+          All calculation engines and educational articles on {siteConfig.name} are
+          developed, verified, and continuously maintained under rigorous editorial guidelines:
         </p>
+        <ul>
+          <li>
+            <strong>Mathematical Verification:</strong> Every formula is verified against peer-reviewed
+            literature, statutory federal guidelines (such as IRS payroll schedules or state labor regulations),
+            or authoritative trade bodies (such as the American Society of Brewing Chemists).
+          </li>
+          <li>
+            <strong>Human Review:</strong> Content is authored and reviewed by software engineers and
+            quantitative analysts dedicated to making complex formulas intuitive and accessible.
+          </li>
+          <li>
+            <strong>Continuous Correction Protocol:</strong> If an edge case or rounding nuance is
+            discovered, our engineers update the codebase within 48 hours to preserve algorithmic precision.
+          </li>
+        </ul>
 
         <h2>How We Stay Free: Google AdSense Disclosure</h2>
         <p>
@@ -204,10 +208,6 @@ export default function AboutPage() {
           directly at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AdSlot } from "@/components/AdSlot";
 
 export default function NotFound() {
   return (
@@ -12,10 +11,6 @@ export default function NotFound() {
           not exist. Please explore our verified calculators and guides below.
         </p>
       </header>
-
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
 
       <article className="blog-article">
         <h2>Popular Calculators & Pages</h2>

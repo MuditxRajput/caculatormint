@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Disclaimer — Educational Calculators & Tools | CalculatorMint",
@@ -29,10 +28,6 @@ export default function DisclaimerPage() {
         <h1>Disclaimer</h1>
         <p>Last updated: October 9, 2026</p>
       </header>
-
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
 
       <article className="blog-article">
         <p className="meta-line">
@@ -155,10 +150,6 @@ export default function DisclaimerPage() {
           for planning purposes only; confirm official standing with your instructor or registrar.
         </p>
 
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
-        </div>
-
         <h2>3. Accuracy & Warranty Disclaimer</h2>
         <p>
           While we make every reasonable effort to ensure mathematical formulas are
@@ -194,10 +185,6 @@ export default function DisclaimerPage() {
           email <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

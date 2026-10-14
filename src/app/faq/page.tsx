@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { liveCalculators } from "@/lib/calculators";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions (FAQ) — CalculatorMint",
@@ -35,7 +34,7 @@ const faqs = [
   },
   {
     q: "Which calculators are currently available?",
-    a: "Our live tools include the Percentage Calculator, Discount & Sale Price Calculator, USA Pay Raise Calculator, Compound Interest Calculator, Tip & Bill Split Calculator, Fuel Cost Calculator, Margin & Markup Calculator, and Beer ABV Calculator.",
+    a: "Our platform features 14 verified calculators: Percentage Calculator, Discount & Sale Price Calculator, USA Pay Raise Calculator, Compound Interest Calculator, Tip & Bill Split Calculator, Fuel Cost Calculator, Profit Margin & Markup Calculator, Beer ABV Calculator, Cubic Yard Calculator (Concrete & Mulch), Average Calculator, Grade Average Calculator, Weighted Average Calculator, Cumulative GPA Calculator, and GPA Calculator for Middle Schoolers.",
   },
   {
     q: "Why does CalculatorMint publish in-depth guides for each tool?",
@@ -89,10 +88,6 @@ export default function FaqPage() {
         </p>
       </header>
 
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
-
       <article className="blog-article">
         <div className="faq">
           {faqs.map((faq) => (
@@ -101,10 +96,6 @@ export default function FaqPage() {
               <p>{faq.a}</p>
             </details>
           ))}
-        </div>
-
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
         </div>
 
         <h2>Explore Our Active Calculators</h2>
@@ -129,10 +120,6 @@ export default function FaqPage() {
           <Link href="/disclaimer">Disclaimer</Link>.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

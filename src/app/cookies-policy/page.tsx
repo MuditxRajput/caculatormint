@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Cookies Policy — CalculatorMint",
@@ -23,10 +22,6 @@ export default function CookiesPolicyPage() {
         <h1>Cookies Policy</h1>
         <p>Last updated: October 9, 2026</p>
       </header>
-
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
 
       <article className="blog-article">
         <p className="meta-line">
@@ -70,10 +65,6 @@ export default function CookiesPolicyPage() {
             and prevent identical ads from repeatedly showing.
           </li>
         </ul>
-
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
-        </div>
 
         <h2>3. How to Manage and Disable Cookies</h2>
         <p>
@@ -119,10 +110,6 @@ export default function CookiesPolicyPage() {
           our <Link href="/contact">Contact Page</Link>.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

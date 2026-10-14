@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Terms of Service — CalculatorMint",
@@ -22,10 +21,6 @@ export default function TermsPage() {
         <h1>Terms of Service</h1>
         <p>Last updated: October 9, 2026</p>
       </header>
-
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
 
       <article className="blog-article">
         <p className="meta-line">
@@ -87,10 +82,6 @@ export default function TermsPage() {
           </li>
         </ul>
 
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
-        </div>
-
         <h2>4. Advertising & Google AdSense</h2>
         <p>
           To maintain free access for all users, {siteConfig.name} displays
@@ -125,10 +116,6 @@ export default function TermsPage() {
           our <Link href="/contact">Contact Page</Link>.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

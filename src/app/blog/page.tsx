@@ -28,10 +28,13 @@ const categories = [
   "All Articles",
   "Math & Analytics",
   "Finance & Career",
-  "Shopping & Retail",
+  "Home & Construction",
+  "Education & GPA",
+  "Shopping & Math",
   "Travel & Auto",
-  "Dining & Everyday",
+  "Dining & Math",
   "Brewing Science",
+  "Business & Math",
 ];
 
 export default function BlogIndexPage() {

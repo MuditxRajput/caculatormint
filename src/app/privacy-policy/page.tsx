@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — CalculatorMint",
@@ -23,10 +22,6 @@ export default function PrivacyPolicyPage() {
         <h1>Privacy Policy</h1>
         <p>Last updated: October 9, 2026</p>
       </header>
-
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
 
       <article className="blog-article">
         <p className="meta-line">
@@ -102,10 +97,6 @@ export default function PrivacyPolicyPage() {
           </li>
         </ul>
 
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
-        </div>
-
         <h2>3. Automatically Collected Technical Information</h2>
         <p>
           Like standard web servers, when you access our site, standard non-identifying
@@ -179,10 +170,6 @@ export default function PrivacyPolicyPage() {
           <Link href="/terms">Terms of Service</Link>.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

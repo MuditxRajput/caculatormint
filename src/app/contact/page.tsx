@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "Contact CalculatorMint — Support, Feedback & Corrections",
@@ -33,10 +32,6 @@ export default function ContactPage() {
         </p>
       </header>
 
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
-
       <article className="blog-article">
         <p>
           If something on CalculatorMint feels unclear, mathematically off, or
@@ -44,24 +39,116 @@ export default function ContactPage() {
           our tools based on real user input.
         </p>
 
-        <div className="contact-box">
-          <h2>Direct Contact Information</h2>
+        {/* Direct Email Channels Grid - No Database Needed */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "1.25rem",
+            margin: "2rem 0",
+          }}
+        >
+          <div
+            style={{
+              background: "rgba(255, 255, 255, 0.03)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              borderRadius: "0.75rem",
+              padding: "1.25rem",
+            }}
+          >
+            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#10b981" }}>
+              General Support &amp; Feedback
+            </h3>
+            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
+              General questions, tool suggestions, or general mathematical inquiries.
+            </p>
+            <a
+              href={`mailto:${siteConfig.email}?subject=General%20Feedback`}
+              className="button button--ghost button--sm"
+              style={{ display: "inline-block" }}
+            >
+              Email Support &rarr;
+            </a>
+          </div>
+
+          <div
+            style={{
+              background: "rgba(255, 255, 255, 0.03)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              borderRadius: "0.75rem",
+              padding: "1.25rem",
+            }}
+          >
+            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#38bdf8" }}>
+              Formula &amp; Bug Reports
+            </h3>
+            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
+              Report a calculation discrepancy, rounding edge case, or unexpected output.
+            </p>
+            <a
+              href={`mailto:${siteConfig.email}?subject=Formula%20Correction`}
+              className="button button--ghost button--sm"
+              style={{ display: "inline-block" }}
+            >
+              Report Discrepancy &rarr;
+            </a>
+          </div>
+
+          <div
+            style={{
+              background: "rgba(255, 255, 255, 0.03)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              borderRadius: "0.75rem",
+              padding: "1.25rem",
+            }}
+          >
+            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#f59e0b" }}>
+              DMCA &amp; Legal Notices
+            </h3>
+            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
+              Official copyright takedown notices or regulatory inquiries.
+            </p>
+            <a
+              href={`mailto:${siteConfig.email}?subject=DMCA%20Inquiry`}
+              className="button button--ghost button--sm"
+              style={{ display: "inline-block" }}
+            >
+              Legal Inquiry &rarr;
+            </a>
+          </div>
+
+          <div
+            style={{
+              background: "rgba(255, 255, 255, 0.03)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              borderRadius: "0.75rem",
+              padding: "1.25rem",
+            }}
+          >
+            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#a855f7" }}>
+              Business &amp; Partnerships
+            </h3>
+            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
+              Inquiries regarding syndication, advertising, or strategic collaborations.
+            </p>
+            <a
+              href={`mailto:${siteConfig.email}?subject=Advertising%20Inquiry`}
+              className="button button--ghost button--sm"
+              style={{ display: "inline-block" }}
+            >
+              Business Inquiries &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div className="contact-box" style={{ marginTop: "1.5rem" }}>
+          <h2>Direct Contact Directory</h2>
           <p>
-            <strong>Primary Support & Editorial:</strong>{" "}
+            <strong>Primary Contact Email:</strong>{" "}
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             <br />
             <strong>Website:</strong>{" "}
             <a href={siteConfig.url}>{siteConfig.url}</a>
-            <br />
-            <strong>DMCA Compliance Inquiries:</strong>{" "}
-            <a href={`mailto:${siteConfig.email}?subject=DMCA%20Inquiry`}>
-              {siteConfig.email}
-            </a>
-            <br />
-            <strong>Business & Advertising:</strong>{" "}
-            <a href={`mailto:${siteConfig.email}?subject=Advertising%20Inquiry`}>
-              {siteConfig.email}
-            </a>
           </p>
         </div>
 
@@ -81,10 +168,6 @@ export default function ContactPage() {
             are comparing against.
           </li>
         </ul>
-
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
-        </div>
 
         <h2>Requesting a New Calculator</h2>
         <p>
@@ -112,10 +195,6 @@ export default function ContactPage() {
           48 business hours.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "DMCA Copyright Policy — CalculatorMint",
@@ -23,10 +22,6 @@ export default function DmcaPage() {
         <h1>DMCA & Copyright Policy</h1>
         <p>Last updated: October 9, 2026</p>
       </header>
-
-      <div className="ad-container ad-container--page-top">
-        <AdSlot format="leaderboard" label="Advertisement" />
-      </div>
 
       <article className="blog-article">
         <p className="meta-line">
@@ -131,10 +126,6 @@ export default function DmcaPage() {
           </li>
         </ul>
 
-        <div className="ad-container ad-container--in-content">
-          <AdSlot format="in-article" label="Advertisement" />
-        </div>
-
         <h2>4. Counter-Notification Procedure</h2>
         <p>
           If you believe that your content was removed or disabled by mistake or
@@ -197,10 +188,6 @@ export default function DmcaPage() {
           <Link href="/privacy-policy">Privacy Policy</Link>.
         </p>
       </article>
-
-      <div className="ad-container ad-container--page-bottom">
-        <AdSlot format="horizontal" label="Advertisement" />
-      </div>
     </div>
   );
 }

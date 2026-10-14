@@ -20,10 +20,11 @@ export function AdSlot({
   label = "Advertisement",
 }: AdSlotProps) {
   const pushedRef = useRef(false);
+  const isValidSlot = Boolean(slotId && slotId !== "1234567890");
 
   useEffect(() => {
-    // Only execute client-side
-    if (typeof window === "undefined" || pushedRef.current) return;
+    // Only push if a valid, real slotId is provided to avoid 400 Bad Request console errors during AdSense review
+    if (typeof window === "undefined" || pushedRef.current || !isValidSlot) return;
     try {
       // @ts-expect-error - adsbygoogle is loaded externally from script tag in layout
       const adsbygoogle = window.adsbygoogle || [];
@@ -32,7 +33,12 @@ export function AdSlot({
     } catch {
       // Ignore if AdSense blocked or already initialized
     }
-  }, []);
+  }, [isValidSlot]);
+
+  // If no real slotId configured yet, rely on Google Auto Ads (loaded via layout.tsx)
+  if (!isValidSlot) {
+    return null;
+  }
 
   const formatClasses: Record<AdFormat, string> = {
     leaderboard: "ad-slot--leaderboard",
@@ -47,12 +53,11 @@ export function AdSlot({
       className={`ad-slot ${formatClasses[format]} ${className}`.trim()}
       aria-label={label}
     >
-      {/* Official Google AdSense Tag — Present in DOM, seamlessly fills once approved/served */}
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client={CLIENT_ID}
-        data-ad-slot={slotId || "1234567890"}
+        data-ad-slot={slotId}
         data-ad-format={format === "rectangle" ? "rectangle" : "auto"}
         data-full-width-responsive="true"
       />

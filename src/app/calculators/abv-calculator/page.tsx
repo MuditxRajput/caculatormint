@@ -257,6 +257,24 @@ export default function AbvCalculatorPage() {
           sample), not a rounding difference of a few hundredths of a percent.
         </p>
 
+        <div
+          className="responsible-use-notice"
+          style={{
+            margin: "2rem 0",
+            padding: "1rem 1.25rem",
+            background: "rgba(255, 255, 255, 0.03)",
+            borderLeft: "3px solid #10b981",
+            borderRadius: "0 0.5rem 0.5rem 0",
+            fontSize: "0.88rem",
+            color: "#94a3b8",
+            lineHeight: "1.5",
+          }}
+        >
+          <strong style={{ color: "#e2e8f0" }}>Responsible Brewing &amp; Scientific Notice:</strong>{" "}
+          This tool is provided solely for educational, homebrew fermentation tracking, and hydrometer density calculations.
+          CalculatorMint does not sell alcoholic products or promote excessive consumption. Please drink responsibly and obey all legal drinking age laws.
+        </div>
+
         <h2>ABV calculator FAQ</h2>
         <div className="faq">
           {faqs.map((faq) => (
