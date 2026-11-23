@@ -4,12 +4,23 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { siteConfig } from "@/lib/site";
+<<<<<<< HEAD
 import { ProOnboardingModal } from "@/components/ProOnboardingModal";
+=======
+
+const nav = [
+  { href: "/calculators", label: "Calculators" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
 
 export function Header() {
   const [isProModalOpen, setIsProModalOpen] = useState(false);
 
   return (
+<<<<<<< HEAD
     <>
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div className="container flex items-center justify-between py-3.5">
@@ -51,5 +62,26 @@ export function Header() {
         onClose={() => setIsProModalOpen(false)}
       />
     </>
+=======
+    <header className="site-header">
+      <div className="site-header__inner">
+        <Link href="/" className="brand-link" aria-label={`${siteConfig.name} home`}>
+          <Logo size="md" />
+        </Link>
+        <div className="site-header__right">
+          <nav className="site-nav" aria-label="Primary">
+            {nav.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <Link href="/calculators" className="header-cta-btn">
+            Explore Tools
+          </Link>
+        </div>
+      </div>
+    </header>
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
   );
 }

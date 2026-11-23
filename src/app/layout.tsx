@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
+<<<<<<< HEAD
+=======
+import { Figtree, Outfit } from "next/font/google";
+import Script from "next/script";
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const ADSENSE_CLIENT = "ca-pub-8884977910314227";
+const GA_MEASUREMENT_ID = "G-XC5P31MV2Y";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -67,6 +73,13 @@ export default function RootLayout({
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
+    email: siteConfig.email,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: siteConfig.email,
+      contactType: "customer support",
+      url: absoluteUrl("/contact"),
+    },
   };
 
   const websiteJsonLd = {
@@ -74,11 +87,14 @@ export default function RootLayout({
     "@type": "WebSite",
     name: siteConfig.name,
     url: siteConfig.url,
+<<<<<<< HEAD
     potentialAction: {
       "@type": "SearchAction",
       target: `${siteConfig.url}/estimate-templates?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
+=======
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
   };
 
   return (
@@ -98,7 +114,25 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
+<<<<<<< HEAD
       <body className="site-shell antialiased" suppressHydrationWarning>
+=======
+      <body className="site-shell antialiased">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

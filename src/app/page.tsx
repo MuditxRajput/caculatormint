@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
+<<<<<<< HEAD
 import Link from "next/link";
+=======
+import { BlogList } from "@/components/BlogList";
+import { AdSlot } from "@/components/AdSlot";
+import { calculators } from "@/lib/calculators";
+import { posts } from "@/lib/posts";
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
 import { siteConfig } from "@/lib/site";
 import { TRADES } from "@/data/trades";
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: "Free US Contractor Estimate Templates & Bid Calculators",
   description:
     "Build professional, client-ready quotes in 60 seconds with real US trade pricing defaults. Instant PDF download—no signup required.",
+=======
+  title: "Free Accurate Online Calculators — Percentage, Pay Raise & Everyday Math",
+  description: siteConfig.description,
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
   alternates: { canonical: "/" },
   openGraph: {
     title: "Free US Contractor Estimate Templates & Bid Calculators | CalculatorMint",
@@ -16,7 +28,39 @@ export const metadata: Metadata = {
   },
 };
 
+const teasers: Record<string, string> = {
+  "percentage-calculator":
+    "Calculate X% of Y, percent increase/decrease, ratios, and sales tax or retail discounts.",
+  "discount-calculator":
+    "Calculate sale prices, stackable clearance coupons ('extra % off'), and sales tax.",
+  "pay-raise-calculator":
+    "Salary or hourly raise across all U.S. pay frequencies with inflation and take-home impact.",
+  "compound-interest-calculator":
+    "Model exponential savings growth with monthly deposits and compounding milestones.",
+  "tip-calculator":
+    "Calculate dining tips (15%, 18%, 20%, 25%), split restaurant checks, and round up totals.",
+  "fuel-cost-calculator":
+    "Estimate road trip fuel expenses, gallons/liters needed, and per-passenger gas shares.",
+  "margin-calculator":
+    "Calculate gross margin, percentage markup, and retail selling prices with conversion formulas.",
+  "abv-calculator":
+    "Beer alcohol by volume from OG & FG. Supports SG, Plato, calories, and attenuation.",
+  "cubic-yard-calculator":
+    "Calculate cubic yards (yd³) for concrete slabs, mulch beds, topsoil, and gravel with waste buffers.",
+  "average-calculator":
+    "Calculate simple arithmetic mean, weighted averages, course grades with final targets, and chemistry atomic mass.",
+  "grade-calculator":
+    "Calculate weighted course grades and solve the exact score needed on your final exam for an A, B, or C.",
+  "weighted-average-calculator":
+    "Calculate weighted arithmetic means for stock dollar-cost averaging, portfolios, and statistical datasets.",
+  "cumulative-gpa-calculator":
+    "Calculate updated cumulative GPA for college or high school with prior credits and graduation planning.",
+  "gpa-calculator-for-middle-schoolers":
+    "Calculate 6th, 7th, and 8th-grade report card GPA and check Honor Roll eligibility for USA and Canada.",
+};
+
 export default function HomePage() {
+<<<<<<< HEAD
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -137,11 +181,56 @@ export default function HomePage() {
             <div className="flex items-center justify-center gap-1.5">
               <span className="text-emerald-600 font-black">✓</span>
               <span>100% Free / No Login</span>
+=======
+  const tools = calculators.filter((c) => c.status === "live");
+
+  return (
+    <div className="home">
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="container hero__inner">
+          <div className="hero__badge">
+            <span className="hero__badge-dot" />
+            <span>Accurate &amp; Free Mathematical Tools</span>
+          </div>
+          <h1>
+            Clear Math. <span className="hero__highlight">Honest Formulas.</span> Zero Clutter.
+          </h1>
+          <p className="hero__support">
+            Everyday percentages, retail discounts, USA paycheck raises, compound interest,
+            cubic yards for concrete &amp; mulch, travel fuel, business margins, and dining gratuities —
+            transparent equations paired with in-depth educational guides.
+          </p>
+          <div className="hero__actions">
+            <Link href="/calculators" className="button button--primary">
+              Explore Live Calculators &rarr;
+            </Link>
+            <Link href="/blog" className="button button--ghost">
+              Read Research &amp; Guides
+            </Link>
+          </div>
+
+          <div className="hero__stats">
+            <div className="hero__stat">
+              <strong>100% Free</strong>
+              <span>No accounts or paywalls</span>
+            </div>
+            <div className="hero__stat-divider" />
+            <div className="hero__stat">
+              <strong>Client-Side</strong>
+              <span>Private browser calculations</span>
+            </div>
+            <div className="hero__stat-divider" />
+            <div className="hero__stat">
+              <strong>Open Formulas</strong>
+              <span>Clear mathematical equations</span>
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
             </div>
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* 3-STEP QUICK-START ONBOARDING BAR */}
       <section className="bg-white py-10 border-b border-slate-200">
         <div className="container max-w-5xl">
@@ -254,12 +343,50 @@ export default function HomePage() {
                     Vector PDF
                   </span>
                 </div>
+=======
+      {/* Top Ad Slot below Hero */}
+      <div className="container">
+        <div className="ad-container ad-container--hero-bottom">
+          <AdSlot format="leaderboard" label="Advertisement" />
+        </div>
+      </div>
+
+      {/* Live Calculators Section */}
+      <section className="section" id="calculators">
+        <div className="container">
+          <div className="section__head">
+            <div>
+              <p className="section__eyebrow">Interactive Utilities</p>
+              <h2 className="section__title">Verified Online Calculators</h2>
+              <p className="section__lead">
+                Select a tool below to calculate instant results with full equation visibility.
+              </p>
+            </div>
+            <Link href="/calculators" className="section__more">
+              View all tools &rarr;
+            </Link>
+          </div>
+
+          <div className="home-calc-grid">
+            {tools.map((calc) => (
+              <Link key={calc.slug} href={calc.href} className="home-calc">
+                <div className="home-calc__head">
+                  <span className="home-calc__cat">{calc.category}</span>
+                  <span className="badge badge--live">Verified</span>
+                </div>
+                <strong>{calc.name}</strong>
+                <span className="home-calc__teaser">
+                  {teasers[calc.slug] ?? calc.description}
+                </span>
+                <span className="home-calc__cta">Open Calculator &rarr;</span>
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* SECONDARY SECTION: CONTRACTOR MATH TOOLS */}
       <section id="contractor-math" className="py-16 sm:py-20 border-b border-slate-200">
         <div className="container">
@@ -443,8 +570,40 @@ export default function HomePage() {
               </p>
             </details>
           </div>
+=======
+      {/* Mid-Page Ad Slot between Calculators and Guides */}
+      <div className="container">
+        <div className="ad-container ad-container--mid">
+          <AdSlot format="horizontal" label="Advertisement" />
+        </div>
+      </div>
+
+      {/* Editorial Guides & Blog Section */}
+      <section className="section section--guides" id="guides">
+        <div className="container">
+          <div className="section__head">
+            <div>
+              <p className="section__eyebrow">The CalculatorMint Blog</p>
+              <h2 className="section__title">Research &amp; Mathematical Guides</h2>
+              <p className="section__lead">
+                Explore in-depth articles unpacking the math, payroll mechanics, and everyday formulas behind our calculators.
+              </p>
+            </div>
+            <Link href="/blog" className="section__more">
+              Browse all blog articles &rarr;
+            </Link>
+          </div>
+          <BlogList posts={posts} compact />
+>>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
         </div>
       </section>
-    </>
+
+      {/* Pre-Footer Ad Slot */}
+      <div className="container">
+        <div className="ad-container ad-container--bottom">
+          <AdSlot format="horizontal" label="Advertisement" />
+        </div>
+      </div>
+    </div>
   );
 }
