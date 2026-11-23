@@ -1,56 +1,50 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { liveCalculators } from "@/lib/calculators";
 import { siteConfig } from "@/lib/site";
+import { TRADES } from "@/data/trades";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions (FAQ) — CalculatorMint",
+  title: "Contractor FAQ — Estimates, Bidding & Pricing Guide",
   description:
-    "Find answers to frequently asked questions about CalculatorMint: calculator formulas, data privacy, Google AdSense ads, DMCA policies, and accuracy standards.",
+    "Frequently asked questions about CalculatorMint: free contractor estimate templates, 2026 US trade benchmarks, vector PDF exports, profit margins, and bidding math.",
   alternates: { canonical: "/faq" },
   keywords: [
+    "contractor estimate FAQ",
+    "trade estimate template questions",
+    "contractor profit margin vs markup",
+    "free PDF estimate generator",
     "CalculatorMint FAQ",
-    "calculator questions",
-    "are online calculators accurate",
-    "pay raise calculator FAQ",
-    "percentage calculator FAQ",
-    "tip calculator FAQ",
-    "beer ABV calculator FAQ",
   ],
 };
 
 const faqs = [
   {
-    q: "Is CalculatorMint completely free to use?",
-    a: "Yes. All calculators and educational guides on CalculatorMint are 100% free with no registration or paywalls required. We support our server costs and editorial work through non-intrusive advertisements served by Google AdSense.",
+    q: "Are these contractor estimate templates 100% free to use?",
+    a: "Yes. All 10 trade templates, bid formulas, and instant vector PDF exports are 100% free with no account creation or credit card required. You can build, customize, and export as many client estimates as you need.",
   },
   {
-    q: "How does CalculatorMint verify the accuracy of its calculators?",
-    a: "We implement established, mathematically documented formulas — including standard algebraic percentage equations, official U.S. payroll conversion schedules, hospitality tip conventions, and ASBC brewing standards. Each calculator page explicitly documents its underlying equation so users can inspect the logic.",
+    q: "How are the 2026 US trade pricing benchmarks calculated?",
+    a: "Our pre-filled rates reflect real-world 2026 US market averages across residential and light commercial trades. Each template includes national low, average, and high benchmarks for labor and common materials so you can quote competitively without underbidding.",
   },
   {
-    q: "Do you store the numbers and personal data entered into calculators?",
-    a: "No. All calculations are executed locally in your browser using client-side JavaScript. We do not store, log, or sell the numbers you type into input fields.",
+    q: "Can I download and email the generated PDF estimates directly to clients?",
+    a: "Yes. Clicking 'Download Free PDF' generates an invoice-grade, crisp vector PDF formatted to US Letter dimensions. It includes your contractor company details, itemized line items, subtotal, tax, net payment terms, and customer acceptance signature blocks.",
   },
   {
-    q: "Which calculators are currently available?",
-    a: "Our platform features 14 verified calculators: Percentage Calculator, Discount & Sale Price Calculator, USA Pay Raise Calculator, Compound Interest Calculator, Tip & Bill Split Calculator, Fuel Cost Calculator, Profit Margin & Markup Calculator, Beer ABV Calculator, Cubic Yard Calculator (Concrete & Mulch), Average Calculator, Grade Average Calculator, Weighted Average Calculator, Cumulative GPA Calculator, and GPA Calculator for Middle Schoolers.",
+    q: "How does contractor profit margin differ from markup?",
+    a: "Markup is added directly on top of job costs, whereas margin represents the percentage of the final contract price that remains as gross profit. For example, a 30% markup on a $1,000 job yields a 23.08% profit margin ($1,300 price). To achieve a true 30% margin, the job must be billed at $1,428.57. Use our Profit Margin Calculator to hit your true gross profit targets.",
   },
   {
-    q: "Why does CalculatorMint publish in-depth guides for each tool?",
-    a: "A calculator gives you the raw output, but real decisions require context. Our comprehensive guides explain the equations, step-by-step examples, common pitfalls, and edge cases to help you make informed choices.",
+    q: "Do you store my client names or estimate financial data?",
+    a: "No. Your estimate line items, customer addresses, and rates are calculated locally in your browser session for maximum privacy. We do not store or sell your client quoting data.",
   },
   {
-    q: "How does Google AdSense work on CalculatorMint?",
-    a: "We partner with Google AdSense to display contextual and relevant advertisements. Google may use cookies to serve ads based on your visits to our site and other websites. You can customize or opt out of personalized advertising at any time through Google Ads Settings.",
+    q: "Which trade estimate templates are currently supported?",
+    a: "We currently support 10 full trade suites: Cleaning & Janitorial, Painting, Roofing, Pressure Washing, Epoxy Flooring, Landscaping & Lawn Care, Handyman & Repairs, Drywall, Electrical, and Plumbing.",
   },
   {
-    q: "What is your copyright and DMCA takedown policy?",
-    a: "CalculatorMint respects all intellectual property laws and maintains a comprehensive DMCA Copyright Policy. If you believe your copyrighted work has been improperly used, you can file a takedown request via our DMCA page.",
-  },
-  {
-    q: "Can I request a new calculator or report a bug?",
-    a: "Yes! We welcome suggestions and reports. Please send your formula details or bug reproduction steps to calculatormint@gmail.com or visit our Contact page.",
+    q: "Can I request a new trade template or customized line items?",
+    a: "Yes. Send us an email at support@calculatormint.com with your trade specialty, common line items, and standard units (sq ft, hourly, linear ft), and our engineering team will build it into the platform.",
   },
 ];
 
@@ -69,57 +63,67 @@ export default function FaqPage() {
   };
 
   return (
-    <div className="container">
+    <div className="container py-10 sm:py-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header className="page-hero">
-        <nav className="breadcrumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
+      <header className="max-w-3xl mb-12">
+        <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 font-mono">
+          <Link href="/" className="hover:text-emerald-700 transition">
+            Home
+          </Link>
           <span>/</span>
-          <span>FAQ</span>
+          <span className="text-slate-900 font-semibold">FAQ</span>
         </nav>
-        <h1>Frequently Asked Questions</h1>
-        <p>
-          Clear answers about how CalculatorMint operates, formula verification,
-          advertising disclosures, and data privacy.
+        <span className="inline-block px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider font-mono border border-emerald-200/80 mb-3">
+          Knowledge Base
+        </span>
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
+          Contractor FAQs & Bidding Guide
+        </h1>
+        <p className="mt-3 text-slate-600 text-xs sm:text-sm leading-relaxed">
+          Clear answers about how CalculatorMint works, verified US pricing benchmarks, PDF generation, and profit margin formulas.
         </p>
       </header>
 
-      <article className="blog-article">
-        <div className="faq">
-          {faqs.map((faq) => (
-            <details key={faq.q} open>
-              <summary>{faq.q}</summary>
-              <p>{faq.a}</p>
-            </details>
-          ))}
+      <div className="max-w-3xl space-y-4">
+        {faqs.map((faq, idx) => (
+          <details
+            key={idx}
+            className="group border border-slate-200 rounded-xl p-5 bg-white open:shadow-xs transition cursor-pointer"
+            open={idx === 0}
+          >
+            <summary className="font-bold text-sm text-slate-950 flex items-center justify-between list-none">
+              <span>{faq.q}</span>
+              <span className="text-emerald-700 font-bold group-open:rotate-180 transition ml-2">
+                ↓
+              </span>
+            </summary>
+            <p className="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
+              {faq.a}
+            </p>
+          </details>
+        ))}
+      </div>
+
+      <div className="mt-14 p-6 bg-slate-50 rounded-xl border border-slate-200 max-w-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h3 className="text-sm font-bold text-slate-950">Ready to build your estimate?</h3>
+          <p className="text-xs text-slate-600 mt-0.5">
+            Choose your trade template and download a clean PDF quote in 60 seconds.
+          </p>
         </div>
-
-        <h2>Explore Our Active Calculators</h2>
-        <ul>
-          {liveCalculators.map((calc) => (
-            <li key={calc.slug}>
-              <Link href={calc.href}>
-                <strong>{calc.name}</strong>
-              </Link>{" "}
-              — {calc.description}
-            </li>
-          ))}
-        </ul>
-
-        <h2>Additional Resources & Legal Policies</h2>
-        <p>
-          For more details on our standards and policies, explore our{" "}
-          <Link href="/about">About Page</Link>,{" "}
-          <Link href="/dmca">DMCA Policy</Link>,{" "}
-          <Link href="/privacy-policy">Privacy Policy</Link>,{" "}
-          <Link href="/cookies-policy">Cookies Policy</Link>, and{" "}
-          <Link href="/disclaimer">Disclaimer</Link>.
-        </p>
-      </article>
+        <Link
+          href="/estimate-templates"
+          style={{ color: "#ffffff", backgroundColor: "#059669" }}
+          className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 !text-white text-xs font-bold rounded-lg transition shadow-sm whitespace-nowrap inline-flex items-center gap-1.5"
+        >
+          <span style={{ color: "#ffffff" }} className="!text-white font-bold">Browse Trade Hub</span>
+          <span style={{ color: "#ffffff" }} className="!text-white font-bold">→</span>
+        </Link>
+      </div>
     </div>
   );
 }

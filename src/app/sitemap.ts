@@ -4,7 +4,6 @@ import { TRADES } from "@/data/trades";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-<<<<<<< HEAD
 
   // Core high-intent pages
   const coreRoutes: {
@@ -16,45 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/estimate-templates", priority: 0.95, changeFrequency: "daily" },
     { path: "/cubic-yard-calculator", priority: 0.9, changeFrequency: "weekly" },
     { path: "/profit-margin-calculator", priority: 0.9, changeFrequency: "weekly" },
-=======
-  const paths: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
-    { path: "/", priority: 1, changeFrequency: "weekly" },
-    { path: "/calculators", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/percentage-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/discount-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/pay-raise-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/compound-interest-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/tip-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/fuel-cost-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/margin-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/abv-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/cubic-yard-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/average-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/grade-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/weighted-average-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/cumulative-gpa-calculator", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/calculators/gpa-calculator-for-middle-schoolers", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/blog", priority: 0.8, changeFrequency: "weekly" },
-    { path: "/blog/how-to-calculate-percentages", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-discounts", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-a-pay-raise", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-compound-interest", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-tips", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-fuel-cost", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-margin-and-markup", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-beer-abv", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-cubic-yards", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-average", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/blog/how-to-calculate-cumulative-gpa", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/about", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/dmca", priority: 0.6, changeFrequency: "yearly" },
-    { path: "/privacy-policy", priority: 0.5, changeFrequency: "yearly" },
-    { path: "/cookies-policy", priority: 0.5, changeFrequency: "yearly" },
-    { path: "/terms", priority: 0.5, changeFrequency: "yearly" },
-    { path: "/disclaimer", priority: 0.5, changeFrequency: "yearly" },
->>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
   ];
 
   // Dynamic 10 trade estimate templates

@@ -3,197 +3,76 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact CalculatorMint — Support, Feedback & Corrections",
+  title: "Contact CalculatorMint — Contractor Support & Tool Requests",
   description:
-    "Contact CalculatorMint for calculator feedback, formula corrections, new tool requests, DMCA inquiries, or advertising questions. Learn how to reach our team.",
+    "Contact CalculatorMint for support, trade pricing benchmark inquiries, new trade template requests, or partnership opportunities.",
   alternates: { canonical: "/contact" },
   keywords: [
     "contact CalculatorMint",
-    "calculator feedback",
-    "report calculator error",
-    "request a calculator",
-    "CalculatorMint email",
+    "contractor estimate support",
+    "request trade template",
+    "feedback",
   ],
 };
 
 export default function ContactPage() {
   return (
-    <div className="container">
-      <header className="page-hero">
-        <nav className="breadcrumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
+    <div className="container py-10 sm:py-16">
+      <header className="max-w-3xl mb-12">
+        <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 font-mono">
+          <Link href="/" className="hover:text-emerald-700 transition">
+            Home
+          </Link>
           <span>/</span>
-          <span>Contact</span>
+          <span className="text-slate-900 font-semibold">Contact</span>
         </nav>
-        <h1>Contact CalculatorMint</h1>
-        <p>
-          Have questions, formula corrections, partnerships, or new calculator
-          suggestions? We are here to help.
+        <span className="inline-block px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider font-mono border border-emerald-200/80 mb-3">
+          Get in Touch
+        </span>
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
+          Contact CalculatorMint
+        </h1>
+        <p className="mt-3 text-slate-600 text-xs sm:text-sm leading-relaxed">
+          Questions, trade pricing feedback, custom template requests, or technical support—we are here to help.
         </p>
       </header>
 
-      <article className="blog-article">
-        <p>
-          If something on CalculatorMint feels unclear, mathematically off, or
-          could be improved, we welcome your direct feedback. We continuously refine
-          our tools based on real user input.
-        </p>
-
-        {/* Direct Email Channels Grid - No Database Needed */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "1.25rem",
-            margin: "2rem 0",
-          }}
-        >
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.03)",
-              border: "1px solid rgba(255, 255, 255, 0.08)",
-              borderRadius: "0.75rem",
-              padding: "1.25rem",
-            }}
-          >
-            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#10b981" }}>
-              General Support &amp; Feedback
-            </h3>
-            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
-              General questions, tool suggestions, or general mathematical inquiries.
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}?subject=General%20Feedback`}
-              className="button button--ghost button--sm"
-              style={{ display: "inline-block" }}
-            >
-              Email Support &rarr;
-            </a>
-          </div>
-
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.03)",
-              border: "1px solid rgba(255, 255, 255, 0.08)",
-              borderRadius: "0.75rem",
-              padding: "1.25rem",
-            }}
-          >
-            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#38bdf8" }}>
-              Formula &amp; Bug Reports
-            </h3>
-            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
-              Report a calculation discrepancy, rounding edge case, or unexpected output.
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}?subject=Formula%20Correction`}
-              className="button button--ghost button--sm"
-              style={{ display: "inline-block" }}
-            >
-              Report Discrepancy &rarr;
-            </a>
-          </div>
-
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.03)",
-              border: "1px solid rgba(255, 255, 255, 0.08)",
-              borderRadius: "0.75rem",
-              padding: "1.25rem",
-            }}
-          >
-            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#f59e0b" }}>
-              DMCA &amp; Legal Notices
-            </h3>
-            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
-              Official copyright takedown notices or regulatory inquiries.
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}?subject=DMCA%20Inquiry`}
-              className="button button--ghost button--sm"
-              style={{ display: "inline-block" }}
-            >
-              Legal Inquiry &rarr;
-            </a>
-          </div>
-
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.03)",
-              border: "1px solid rgba(255, 255, 255, 0.08)",
-              borderRadius: "0.75rem",
-              padding: "1.25rem",
-            }}
-          >
-            <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", color: "#a855f7" }}>
-              Business &amp; Partnerships
-            </h3>
-            <p style={{ fontSize: "0.88rem", color: "#94a3b8", margin: "0 0 0.75rem 0" }}>
-              Inquiries regarding syndication, advertising, or strategic collaborations.
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}?subject=Advertising%20Inquiry`}
-              className="button button--ghost button--sm"
-              style={{ display: "inline-block" }}
-            >
-              Business Inquiries &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div className="contact-box" style={{ marginTop: "1.5rem" }}>
-          <h2>Direct Contact Directory</h2>
+      <article className="max-w-3xl space-y-8 text-sm text-slate-700 leading-relaxed">
+        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+          <h2 className="text-xl font-bold text-slate-950">
+            How to Reach Us
+          </h2>
           <p>
-            <strong>Primary Contact Email:</strong>{" "}
+            The fastest way to get in touch with our team is via email:
+          </p>
+          <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 inline-block font-mono text-sm font-bold text-emerald-700">
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <br />
-            <strong>Website:</strong>{" "}
-            <a href={siteConfig.url}>{siteConfig.url}</a>
+          </div>
+          <p className="text-xs text-slate-500">
+            We typically respond within 1 business day (Monday through Friday, 9:00 AM – 6:00 PM EST).
           </p>
         </div>
 
-        <h2>How to Submit an Accuracy or Bug Report</h2>
-        <p>
-          When reporting an issue with a specific calculation, including key
-          details helps our engineering and editorial team quickly reproduce and resolve it:
-        </p>
-        <ul>
-          <li>
-            The calculator name (e.g., Percentage Calculator, USA Pay Raise, Tip Calculator, or Beer ABV).
-          </li>
-          <li>The exact numerical inputs and settings you entered.</li>
-          <li>The output displayed by CalculatorMint.</li>
-          <li>
-            The expected result and the reference publication or standard you
-            are comparing against.
-          </li>
-        </ul>
+        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+          <h2 className="text-xl font-bold text-slate-950">
+            Requesting a New Trade Template
+          </h2>
+          <p>
+            If you work in a specialized trade not currently represented in our 10 primary templates (for example: Solar Installation, Fencing, Masonry, or Asphalt Paving), let us know!
+          </p>
+          <p className="text-xs text-slate-600">
+            Please include your trade specialty, standard unit measurements (sq ft, linear ft, hourly, tons), and typical itemized scope lines. We regularly add new trade presets based on contractor requests.
+          </p>
+        </div>
 
-        <h2>Requesting a New Calculator</h2>
-        <p>
-          We are constantly developing new calculators to expand our library. If
-          you need a specific tool built, let us know:
-        </p>
-        <ol>
-          <li>What domain or industry the calculator serves.</li>
-          <li>The required input parameters and output values.</li>
-          <li>Any standard or published formula that defines the math.</li>
-        </ol>
-
-        <h2>Professional Boundary Notice</h2>
-        <p>
-          CalculatorMint provides educational and informational computational
-          tools. We cannot provide personalized financial, legal, tax, or medical
-          counseling. For consequential personal or clinical decisions, please
-          consult certified professionals. Please read our{" "}
-          <Link href="/disclaimer">Disclaimer</Link> for additional details.
-        </p>
-
-        <h2>Response Times</h2>
-        <p>
-          Our team strives to review and respond to all email inquiries within 24 to
-          48 business hours.
-        </p>
+        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+          <h2 className="text-xl font-bold text-slate-950">
+            Reporting Pricing Discrepancies
+          </h2>
+          <p>
+            If labor or material rates in your state significantly diverge from our national benchmarks due to local supply chain conditions or regional wage standards, please share your market data with us so we can continue refining regional averages.
+          </p>
+        </div>
       </article>
     </div>
   );

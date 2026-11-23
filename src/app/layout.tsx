@@ -1,9 +1,9 @@
+
+
+
 import type { Metadata } from "next";
-<<<<<<< HEAD
-=======
-import { Figtree, Outfit } from "next/font/google";
 import Script from "next/script";
->>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
+import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -87,14 +87,11 @@ export default function RootLayout({
     "@type": "WebSite",
     name: siteConfig.name,
     url: siteConfig.url,
-<<<<<<< HEAD
     potentialAction: {
       "@type": "SearchAction",
       target: `${siteConfig.url}/estimate-templates?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
-=======
->>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
   };
 
   return (
@@ -114,10 +111,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-<<<<<<< HEAD
       <body className="site-shell antialiased" suppressHydrationWarning>
-=======
-      <body className="site-shell antialiased">
         {/* Google tag (gtag.js) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -132,7 +126,6 @@ export default function RootLayout({
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
->>>>>>> 71e2d7d68521822cb7e4baac34d4217604003798
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
@@ -144,6 +137,7 @@ export default function RootLayout({
         <Header />
         <main className="site-main">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

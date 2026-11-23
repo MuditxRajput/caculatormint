@@ -3,210 +3,127 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About CalculatorMint — Our Mission, Standards & Calculators",
+  title: "About CalculatorMint — Bidding Tools for US Trade Contractors",
   description:
-    "Learn about CalculatorMint: why we built an accurate calculator resource, how our team verifies mathematical formulas, our editorial principles, and our roadmap.",
+    "Learn about CalculatorMint: free contractor estimate templates, verified 2026 US trade pricing benchmarks, and vector PDF quote generation for independent contractors.",
   alternates: { canonical: "/about" },
   keywords: [
     "about CalculatorMint",
-    "online calculator marketplace",
-    "free calculators",
-    "accurate calculator tools",
-    "editorial standards calculators",
+    "contractor estimate generator",
+    "US trade pricing benchmarks",
+    "free contractor bid calculator",
   ],
 };
 
 export default function AboutPage() {
   return (
-    <div className="container">
-      <header className="page-hero">
-        <nav className="breadcrumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
+    <div className="container py-10 sm:py-16">
+      <header className="max-w-3xl mb-12">
+        <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 font-mono">
+          <Link href="/" className="hover:text-emerald-700 transition">
+            Home
+          </Link>
           <span>/</span>
-          <span>About</span>
+          <span className="text-slate-900 font-semibold">About</span>
         </nav>
-        <h1>About CalculatorMint</h1>
-        <p>
-          A free, transparent calculator resource built for mathematical accuracy,
-          accessible plain-English explanations, and dependable search answers.
+        <span className="inline-block px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider font-mono border border-emerald-200/80 mb-3">
+          Our Mission
+        </span>
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
+          About CalculatorMint
+        </h1>
+        <p className="mt-3 text-slate-600 text-xs sm:text-sm leading-relaxed">
+          The free, professional estimating and bidding toolkit built for independent US trade contractors.
         </p>
       </header>
 
-      <article className="blog-article">
-        <p>
-          CalculatorMint was founded with a straightforward conviction: when people
-          search for a mathematical calculation online, they deserve instant,
-          reliable answers without pop-up traps, hidden formulas, or deceptive paywalls.
-          Too many utility websites obscure their equations, offer no reference
-          sources, or present outdated calculations.
-        </p>
-        <p>
-          At {siteConfig.name}, we provide the exact opposite: crystal-clear calculation
-          engines paired with comprehensive educational guides that explain the &ldquo;how&rdquo;
-          and &ldquo;why&rdquo; behind every result.
-        </p>
+      <article className="max-w-3xl space-y-8 text-sm text-slate-700 leading-relaxed">
+        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+          <h2 className="text-xl font-bold text-slate-950">
+            Why We Built CalculatorMint
+          </h2>
+          <p>
+            Independent trade contractors—painters, roofers, landscapers, cleaners, and electricians—are the backbone of the American economy. Yet when it comes to bidding jobs, contractors are often stuck between two frustrating extremes:
+          </p>
+          <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-slate-600">
+            <li>
+              <strong>Overpriced, Bloated Software:</strong> Complex monthly subscriptions charging hundreds of dollars for CRM features that solo operators rarely need.
+            </li>
+            <li>
+              <strong>Unprofessional Text Messages:</strong> Single-number text bids that fail to outline scope, lack payment milestones, and leave contractors unprotected against client payment disputes.
+            </li>
+          </ul>
+          <p>
+            CalculatorMint was created to provide a modern, third alternative: fast, invoice-grade estimate generators pre-loaded with verified US pricing benchmarks, ironclad contract terms, and 100% free vector PDF downloads.
+          </p>
+        </div>
 
-        <h2>Our Mission</h2>
-        <p>
-          Our mission is to empower professionals, students, consumers, employees,
-          and everyday decision-makers with accessible, mathematically verified
-          tools. Whether calculating percentage increases and discount margins,
-          evaluating the take-home reality of a salary increase across U.S. payroll
-          frequencies, splitting restaurant checks with accurate tip rates, or calculating
-          beer alcohol by volume for a homebrew batch, our tools offer verified formulas you can trust.
-        </p>
+        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+          <h2 className="text-xl font-bold text-slate-950">
+            2026 US Trade Pricing Benchmarks
+          </h2>
+          <p>
+            Underbidding labor or underestimating material inflation is the #1 reason trade contractors struggle with profitability. Every template on CalculatorMint comes pre-filled with verified 2026 US market averages across labor and materials.
+          </p>
+          <p>
+            Contractors can adjust quantities, labor hours, square footage, or rates in real time, with automatic line item math and gross profit calculations.
+          </p>
+        </div>
 
-        <h2>How We Verify Accuracy & Mathematical Standards</h2>
-        <p>
-          Accuracy is the bedrock of our platform. We never use arbitrary &ldquo;black-box&rdquo;
-          approaches. Each tool is built using established mathematical standards:
-        </p>
-        <ul>
-          <li>
-            <strong>Everyday & Business Mathematics:</strong> We implement standard algebraic
-            proportions for percentage changes, markups, discounts, and reverse percentages,
-            tested against strict edge cases like zero bases and fractional percentages.
-          </li>
-          <li>
-            <strong>Finance & Payroll:</strong> We convert between standard U.S. payroll
-            schedules — including hourly (40 hrs/wk, 52 wks/yr), bi-weekly (26 pay periods),
-            semi-monthly (24 pay periods), and monthly — while incorporating inflation adjustments
-            and estimated tax brackets.
-          </li>
-          <li>
-            <strong>Hospitality & Dining Economics:</strong> We model tip calculations and bill
-            splitting across custom group sizes, handling pre-tax and post-tax gratuity
-            conventions and nearest-dollar rounding options.
-          </li>
-          <li>
-            <strong>Brewing Science:</strong> We implement both the standard homebrew
-            equation and Dr. Michael Hall&rsquo;s high-gravity alternate formula, alongside
-            official American Society of Brewing Chemists (ASBC) calorie estimations
-            and apparent attenuation models.
-          </li>
-        </ul>
+        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+          <h2 className="text-xl font-bold text-slate-950">
+            Core Estimating Tools
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <Link
+              href="/estimate-templates"
+              className="p-4 rounded-lg bg-slate-50 border border-slate-200 hover:border-emerald-500 transition group block"
+            >
+              <h3 className="font-bold text-slate-950 group-hover:text-emerald-700 transition">
+                10 Trade Estimate Hub →
+              </h3>
+              <p className="text-xs text-slate-500 mt-1">
+                Cleaning, Roofing, Painting, Landscaping, Pressure Washing, Epoxy Flooring, Handyman, and more.
+              </p>
+            </Link>
 
-        <h2>What Is Live Today</h2>
-        <p>
-          Our primary live calculators include:
-        </p>
-        <ul>
-          <li>
-            <Link href="/calculators/percentage-calculator">
-              Percentage Calculator
-            </Link>{" "}
-            — Multi-mode calculator for percentage of a number, percentage change, and tax/discount calculations.
-          </li>
-          <li>
-            <Link href="/calculators/discount-calculator">
-              Discount & Sale Price Calculator
-            </Link>{" "}
-            — Markdowns, clearance stackable coupons (&ldquo;extra % off&rdquo;), and post-discount sales tax.
-          </li>
-          <li>
-            <Link href="/calculators/pay-raise-calculator">
-              USA Pay Raise Calculator
-            </Link>{" "}
-            — Detailed comparison across bi-weekly, semi-monthly, and annual paychecks with inflation impact.
-          </li>
-          <li>
-            <Link href="/calculators/compound-interest-calculator">
-              Compound Interest Calculator
-            </Link>{" "}
-            — Exponential savings growth with monthly additions, compounding schedules, and timeline milestones.
-          </li>
-          <li>
-            <Link href="/calculators/tip-calculator">
-              Tip & Bill Split Calculator
-            </Link>{" "}
-            — Real-time gratuity computation with party splitting and smart rounding options.
-          </li>
-          <li>
-            <Link href="/calculators/fuel-cost-calculator">
-              Fuel Cost & Road Trip Gas Calculator
-            </Link>{" "}
-            — Travel budgeting across US MPG and Metric L/100km with passenger cost-splitting.
-          </li>
-          <li>
-            <Link href="/calculators/margin-calculator">
-              Profit Margin & Markup Calculator
-            </Link>{" "}
-            — Wholesale and retail pricing math with bidirectional margin-to-markup conversions.
-          </li>
-          <li>
-            <Link href="/calculators/abv-calculator">Beer ABV Calculator</Link> —
-            Supports Specific Gravity (SG) and Plato (&deg;P), apparent attenuation, and calories.
-          </li>
-          <li>
-            <Link href="/calculators/cubic-yard-calculator">Cubic Yard Calculator</Link> —
-            Volume estimations for concrete, mulch, gravel, and dirt with bag conversions and waste buffers.
-          </li>
-          <li>
-            <Link href="/calculators/average-calculator">Average Calculator</Link> —
-            Simple arithmetic mean, weighted averages, course grades with final exam target solver, and chemistry atomic mass.
-          </li>
-          <li>
-            <Link href="/calculators/grade-calculator">Grade Average Calculator</Link> —
-            Weighted course syllabus grading with built-in final exam target score solver.
-          </li>
-          <li>
-            <Link href="/calculators/weighted-average-calculator">Weighted Average Calculator</Link> —
-            Weighted arithmetic mean for investment portfolios, stock cost-per-share averaging, and multi-factor models.
-          </li>
-          <li>
-            <Link href="/calculators/cumulative-gpa-calculator">Cumulative GPA Calculator</Link> —
-            Cumulative GPA for USA & Canada colleges and high schools with prior transcript credits and Latin honors planning.
-          </li>
-          <li>
-            <Link href="/calculators/gpa-calculator-for-middle-schoolers">GPA Calculator for Middle Schoolers</Link> —
-            Report card GPA and Honor Roll calculator for 6th, 7th, and 8th-grade students in the USA and Canada.
-          </li>
-        </ul>
-        <p>
-          Each calculator is paired with an in-depth article in our{" "}
-          <Link href="/blog">Editorial Blog</Link> detailing formulas, edge cases,
-          and common measurement errors.
-        </p>
+            <Link
+              href="/profit-margin-calculator"
+              className="p-4 rounded-lg bg-slate-50 border border-slate-200 hover:border-emerald-500 transition group block"
+            >
+              <h3 className="font-bold text-slate-950 group-hover:text-emerald-700 transition">
+                Profit Margin & Markup →
+              </h3>
+              <p className="text-xs text-slate-500 mt-1">
+                Convert job costs into profitable quotes and master the difference between markup and margin.
+              </p>
+            </Link>
 
-        <h2>Editorial Standards, Verification &amp; Team</h2>
-        <p>
-          All calculation engines and educational articles on {siteConfig.name} are
-          developed, verified, and continuously maintained under rigorous editorial guidelines:
-        </p>
-        <ul>
-          <li>
-            <strong>Mathematical Verification:</strong> Every formula is verified against peer-reviewed
-            literature, statutory federal guidelines (such as IRS payroll schedules or state labor regulations),
-            or authoritative trade bodies (such as the American Society of Brewing Chemists).
-          </li>
-          <li>
-            <strong>Human Review:</strong> Content is authored and reviewed by software engineers and
-            quantitative analysts dedicated to making complex formulas intuitive and accessible.
-          </li>
-          <li>
-            <strong>Continuous Correction Protocol:</strong> If an edge case or rounding nuance is
-            discovered, our engineers update the codebase within 48 hours to preserve algorithmic precision.
-          </li>
-        </ul>
+            <Link
+              href="/cubic-yard-calculator"
+              className="p-4 rounded-lg bg-slate-50 border border-slate-200 hover:border-emerald-500 transition group block"
+            >
+              <h3 className="font-bold text-slate-950 group-hover:text-emerald-700 transition">
+                Cubic Yard Calculator →
+              </h3>
+              <p className="text-xs text-slate-500 mt-1">
+                Volume and weight calculations for mulch, topsoil, crushed stone, gravel, and concrete pours.
+              </p>
+            </Link>
 
-        <h2>How We Stay Free: Google AdSense Disclosure</h2>
-        <p>
-          To maintain all tools, server infrastructure, and editorial guides as free
-          resources accessible to everyone without subscription fees, we display
-          advertising through Google AdSense. All advertisements are clearly marked,
-          and our editorial content and calculations remain completely independent
-          from advertising sponsors. For further details on privacy and advertising cookies,
-          please consult our <Link href="/privacy-policy">Privacy Policy</Link> and{" "}
-          <Link href="/cookies-policy">Cookies Policy</Link>.
-        </p>
-
-        <h2>Feedback & Inquiries</h2>
-        <p>
-          We actively encourage user feedback. If you discover a rounding discrepancy,
-          have a formula recommendation, or want to suggest a new tool, please reach
-          out to us via our <Link href="/contact">Contact Page</Link> or email our team
-          directly at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
-        </p>
+            <Link
+              href="/faq"
+              className="p-4 rounded-lg bg-slate-50 border border-slate-200 hover:border-emerald-500 transition group block"
+            >
+              <h3 className="font-bold text-slate-950 group-hover:text-emerald-700 transition">
+                Contractor FAQs →
+              </h3>
+              <p className="text-xs text-slate-500 mt-1">
+                Answers to common bidding questions, payment schedule terms, and vector PDF export tips.
+              </p>
+            </Link>
+          </div>
+        </div>
       </article>
     </div>
   );
