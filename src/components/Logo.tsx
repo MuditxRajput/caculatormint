@@ -7,22 +7,20 @@ type LogoProps = {
 };
 
 const sizes = {
-  sm: 28,
-  md: 34,
-  lg: 40,
+  sm: 26,
+  md: 32,
+  lg: 38,
 };
 
-/** Shared CalculatorMint brand mark — calculator screen + keys */
+/** Minimalist Precision Brand Mark with Mint Accent */
 export function BrandMark({
-  size = 34,
-  gradientId = "cm-mark-bg",
+  size = 32,
 }: {
   size?: number;
-  gradientId?: string;
 }) {
   return (
     <svg
-      className="brand__mark-svg"
+      className="inline-block shrink-0"
       width={size}
       height={size}
       viewBox="0 0 48 48"
@@ -30,27 +28,14 @@ export function BrandMark({
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <defs>
-        <linearGradient
-          id={gradientId}
-          x1="6"
-          y1="4"
-          x2="42"
-          y2="44"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#2DD4BF" />
-          <stop offset="1" stopColor="#0F766E" />
-        </linearGradient>
-      </defs>
-      <rect width="48" height="48" rx="12" fill={`url(#${gradientId})`} />
-      <rect x="11" y="10" width="26" height="9" rx="2.5" fill="white" fillOpacity="0.95" />
-      <rect x="11" y="23" width="7" height="6" rx="1.6" fill="white" fillOpacity="0.92" />
-      <rect x="20.5" y="23" width="7" height="6" rx="1.6" fill="white" fillOpacity="0.92" />
-      <rect x="30" y="23" width="7" height="6" rx="1.6" fill="white" fillOpacity="0.92" />
-      <rect x="11" y="32" width="7" height="6" rx="1.6" fill="white" fillOpacity="0.92" />
-      <rect x="20.5" y="32" width="7" height="6" rx="1.6" fill="white" fillOpacity="0.92" />
-      <rect x="30" y="32" width="7" height="6" rx="1.6" fill="#99F6E4" />
+      <rect width="48" height="48" rx="11" fill="#0F172A" />
+      {/* Mint top display screen */}
+      <rect x="12" y="11" width="24" height="8" rx="2.5" fill="#10B981" />
+      {/* White Keypads */}
+      <rect x="12" y="22" width="10.5" height="15" rx="2.5" fill="#FFFFFF" />
+      <rect x="25.5" y="22" width="10.5" height="6.5" rx="2" fill="#FFFFFF" />
+      {/* Mint accent execution key */}
+      <rect x="25.5" y="30.5" width="10.5" height="6.5" rx="2" fill="#34D399" />
     </svg>
   );
 }
@@ -63,12 +48,12 @@ export function Logo({
   const px = sizes[size];
 
   return (
-    <span className={`brand ${className}`.trim()}>
-      <BrandMark size={px} gradientId={`cm-mark-bg-${size}`} />
+    <span className={`inline-flex items-center gap-2.5 select-none ${className}`.trim()}>
+      <BrandMark size={px} />
       {showWordmark ? (
-        <span className="brand__wordmark" aria-label={siteConfig.name}>
-          <span className="brand__wordmark-main">Calculator</span>
-          <span className="brand__wordmark-accent">Mint</span>
+        <span className="font-extrabold tracking-tight text-slate-900 flex items-center text-sm sm:text-base font-display">
+          <span>Calculator</span>
+          <span className="text-emerald-600 font-black ml-0.5">Mint</span>
         </span>
       ) : null}
     </span>

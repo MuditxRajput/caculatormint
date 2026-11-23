@@ -7,6 +7,7 @@ const description =
   "Homebrew ABV pitfalls: temperature-skewed hydrometers, refractometer FG errors, priming sugar mistakes, and when standard vs Hall readings diverge — without rehashing the calculator formulas.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [

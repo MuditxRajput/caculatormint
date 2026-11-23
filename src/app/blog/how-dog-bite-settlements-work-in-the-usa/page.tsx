@@ -7,6 +7,7 @@ const description =
   "Follow a U.S. dog bite claim from ER visit to insurer offer: documentation traps, comparative fault surprises, and why policy limits — not online averages — often decide the check.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [

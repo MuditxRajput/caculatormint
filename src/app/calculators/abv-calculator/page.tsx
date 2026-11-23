@@ -8,6 +8,7 @@ const description =
   "Free ABV calculator for beer. Enter original gravity and final gravity (SG or Plato) to get alcohol by volume, apparent attenuation, and calories per 12 oz using standard and alternate formulas.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [

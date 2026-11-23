@@ -1,37 +1,29 @@
 import type { Metadata } from "next";
-import { Figtree, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
-
-const display = Outfit({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-});
-
-const body = Figtree({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
 
 const ADSENSE_CLIENT = "ca-pub-8884977910314227";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Free Accurate Online Calculators`,
+    default: `${siteConfig.name} — Free US Contractor Estimate Templates & Bid Calculators`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "online calculator",
-    "free calculator",
-    "abv calculator",
-    "beer abv calculator",
-    "calculator marketplace",
+    "contractor estimate template",
+    "bid calculator",
+    "trade estimate generator",
+    "free contractor invoice template",
+    "cleaning estimate template",
+    "painting bid calculator",
+    "roofing estimate template",
+    "lawn care bid template",
+    "handyman estimate template",
+    "pressure washing quote calculator",
     "CalculatorMint",
   ],
   authors: [{ name: siteConfig.name }],
@@ -41,12 +33,12 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Free Accurate Online Calculators`,
+    title: `${siteConfig.name} — Free US Contractor Estimate Templates & Bid Calculators`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Free Accurate Online Calculators`,
+    title: `${siteConfig.name} — Free US Contractor Estimate Templates & Bid Calculators`,
     description: siteConfig.description,
   },
   alternates: {
@@ -84,14 +76,20 @@ export default function RootLayout({
     url: siteConfig.url,
     potentialAction: {
       "@type": "SearchAction",
-      target: `${siteConfig.url}/calculators?q={search_term_string}`,
+      target: `${siteConfig.url}/estimate-templates?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   };
 
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
         {/* Raw head tags so AdSense crawlers can verify without executing JS */}
         <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
         <script
@@ -100,7 +98,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="site-shell antialiased">
+      <body className="site-shell antialiased" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

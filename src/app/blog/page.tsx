@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Calculator Guides & Blog",
   description:
     "SEO guides for CalculatorMint tools — ABV, U.S. pay raises, dog bite settlements, GLI-2012 PFTs, and more.",
@@ -64,16 +65,19 @@ export default function BlogIndexPage() {
 
       <div className="blog-list" style={{ marginBottom: "3rem" }}>
         {posts.map((post) => (
-          <article key={post.href} className="blog-card">
+          <Link
+            key={post.href}
+            href={post.href}
+            className="blog-card"
+            style={{ textDecoration: "none", cursor: "pointer", display: "flex", flexDirection: "column" }}
+          >
             <p className="blog-card__meta">{post.meta}</p>
-            <h2>
-              <Link href={post.href}>{post.title}</Link>
-            </h2>
-            <p>{post.excerpt}</p>
-            <Link href={post.href} style={{ fontWeight: 700, color: "var(--mint-800)" }}>
+            <h2 style={{ color: "var(--ink)", margin: "0.25rem 0" }}>{post.title}</h2>
+            <p style={{ color: "var(--muted)" }}>{post.excerpt}</p>
+            <span style={{ fontWeight: 750, color: "var(--mint-600)", marginTop: "auto" }}>
               Read guide →
-            </Link>
-          </article>
+            </span>
+          </Link>
         ))}
       </div>
     </div>

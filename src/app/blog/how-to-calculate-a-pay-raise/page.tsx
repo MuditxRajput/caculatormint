@@ -7,6 +7,7 @@ const description =
   "A U.S. pay-raise walkthrough through a real offer letter, paycheck-schedule traps, inflation surprises, and negotiation mistakes — then check numbers in the calculator.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [

@@ -8,6 +8,7 @@ const description =
   "Free USA dog bite settlement calculator. Estimate compensation from medical bills, lost wages, injury severity, state liability rules (strict vs one-bite), fault, and insurance limits.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [

@@ -8,6 +8,7 @@ const description =
   "Free USA pulmonary function (PFT) calculator. Calculate FEV1, FVC, and FEV1/FVC predicted values, Z-scores, LLN, and ATS/ERS obstruction severity using GLI-2012 equations. For clinicians, researchers, and students.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [

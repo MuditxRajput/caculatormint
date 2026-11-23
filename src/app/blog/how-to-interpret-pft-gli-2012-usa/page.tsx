@@ -7,6 +7,7 @@ const description =
   "U.S. spirometry edge cases: wrong ethnicity coding, height errors, fixed 0.70 cutoffs vs LLN, nonspecific patterns, and when a “restrictive” FVC still needs TLC — beyond the calculator formulas.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [

@@ -8,6 +8,7 @@ const description =
   "Free USA pay raise calculator. Enter hourly, weekly, bi-weekly, semi-monthly, monthly, or annual pay to see your new salary, raise %, real raise vs inflation, and estimated take-home.";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title,
   description,
   keywords: [
