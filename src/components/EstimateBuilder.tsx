@@ -53,7 +53,7 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
   const previewRef = useRef<HTMLDivElement>(null);
 
   // Pro State & Profile
-  const { isPro, profile, mounted } = useProStatus();
+  const { isPro, profile, isLoggedIn, mounted } = useProStatus();
   const [isProModalOpen, setIsProModalOpen] = useState(false);
   const [proModalReason, setProModalReason] = useState<string>("logo");
   const [companyLogo, setCompanyLogo] = useState<string | null>(null);
@@ -95,6 +95,7 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
         if (p.companyName) setContractorName(p.companyName);
         if (p.email) setContractorEmail(p.email);
         if (p.phone) setContractorPhone(p.phone);
+        if (p.license) setContractorLicense(p.license);
       }
     } catch {}
   }, []);
@@ -104,6 +105,7 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
     if (profile?.companyName) setContractorName(profile.companyName);
     if (profile?.email) setContractorEmail(profile.email);
     if (profile?.phone) setContractorPhone(profile.phone);
+    if (profile?.license) setContractorLicense(profile.license);
   }, [profile]);
 
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -612,7 +614,13 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                 </span>
                 Contractor & Client Info
               </h3>
-              <span className="text-xs text-zinc-400 font-mono">Step 1 of 3</span>
+              {mounted && isLoggedIn ? (
+                <span className="text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+                  <span>✓ Auto-Filled from Profile</span>
+                </span>
+              ) : (
+                <span className="text-xs text-zinc-400 font-mono">Step 1 of 3</span>
+              )}
             </div>
 
             <div className="space-y-4 text-xs">

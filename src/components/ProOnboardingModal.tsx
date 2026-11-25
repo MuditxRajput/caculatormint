@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TRADES } from "@/data/trades";
-import { setProStatus } from "@/lib/pro";
+import { setProStatus, getContractorProfile, getProStatus } from "@/lib/pro";
 
 interface ProOnboardingModalProps {
   isOpen: boolean;
@@ -35,6 +35,22 @@ export function ProOnboardingModal({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [memberNumber, setMemberNumber] = useState<number>(248);
+  const [alreadyPro, setAlreadyPro] = useState(false);
+
+  // Auto-fill from active contractor profile when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      const p = getContractorProfile();
+      const pro = getProStatus();
+      setAlreadyPro(pro);
+      if (p) {
+        if (p.companyName) setCompanyName(p.companyName);
+        if (p.email) setEmail(p.email);
+        if (p.phone) setPhone(p.phone);
+        if (p.trade && (!defaultTrade || defaultTrade === "general")) setTrade(p.trade);
+      }
+    }
+  }, [isOpen, defaultTrade]);
 
   if (!isOpen) return null;
 
@@ -49,19 +65,31 @@ export function ProOnboardingModal({
     setErrorMessage("");
 
     try {
-      // 1. Local storage caching for instant client personalization & Pro activation
-      const profile = {
-        companyName: companyName.trim(),
-        email: email.trim().toLowerCase(),
-        phone: phone.trim(),
-        trade,
-        selectedFeature,
-        registeredAt: new Date().toISOString(),
-      };
-      setProStatus(true, profile);
+      // 1. Process Subscription Upgrade in Database (Prevents duplicate payment if already Pro)
+      const upgradeRes = await fetch("/api/subscription/upgrade", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          plan: "pro_monthly",
+        }),
+      });
 
-      // 2. Real API Persistence (writes to Supabase PostgreSQL + local backup)
-      const res = await fetch("/api/waitlist", {
+      const upgradeData = await upgradeRes.json();
+      if (!upgradeRes.ok) {
+        if (upgradeData.alreadyPaid) {
+          setErrorMessage(
+            upgradeData.error ||
+              "This email already has an active Pro subscription! You are already paid and do not need to pay again."
+          );
+          setIsSubmitting(false);
+          return;
+        }
+        throw new Error(upgradeData.error || "Failed to activate Pro subscription. Please try again.");
+      }
+
+      // 2. Lead waitlist recording
+      await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -71,12 +99,21 @@ export function ProOnboardingModal({
           trade,
           feature: selectedFeature,
         }),
-      });
+      }).catch(() => {});
 
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || "Failed to reserve your Pro spot. Please try again.");
-      }
+      // 3. Update Pro status in client state & localStorage
+      const existing = getContractorProfile();
+      const profile = {
+        ...existing,
+        companyName: companyName.trim() || existing?.companyName,
+        email: email.trim().toLowerCase(),
+        phone: phone.trim() || existing?.phone,
+        trade,
+        selectedFeature,
+        registeredAt: new Date().toISOString(),
+        isPro: true,
+      };
+      setProStatus(true, profile);
 
       // Generate a realistic priority member queue number
       const randomQueueNumber = Math.floor(180 + Math.random() * 95);
@@ -150,6 +187,18 @@ export function ProOnboardingModal({
               <p className="mt-1.5 text-xs text-zinc-600 leading-relaxed">
                 Unlock high-res logo branding, client e-signatures, and instant invoice sync. No credit card required.
               </p>
+
+              {alreadyPro && (
+                <div className="mt-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-950 flex items-start gap-3">
+                  <span className="text-emerald-600 font-bold text-lg leading-none">★</span>
+                  <div className="text-xs">
+                    <p className="font-bold text-emerald-900">You are already an active Pro member!</p>
+                    <p className="text-emerald-700 mt-0.5">
+                      Your account already has full Pro access (custom logo, watermark-free PDF exports, and digital signatures). You do not need to pay or upgrade again.
+                    </p>
+                  </div>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 {/* Company Name */}

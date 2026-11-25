@@ -23,5 +23,23 @@
     "trade": "lawn-care",
     "savedToDb": true,
     "timestamp": "2026-11-25T16:41:22.646Z"
+  },
+  {
+    "email": "muditrajputpersonal@gmail.com",
+    "companyName": "Gurugram",
+    "phone": "09511510494",
+    "feature": "esign",
+    "trade": "general",
+    "savedToDb": true,
+    "timestamp": "2026-11-25T18:05:30.647Z"
+  },
+  {
+    "email": "muditrajputpersonal@gmail.com",
+    "companyName": "PostSyncs",
+    "phone": "9511510494",
+    "feature": "esign",
+    "trade": "general",
+    "savedToDb": true,
+    "timestamp": "2026-11-25T18:47:50.492Z"
   }
 ]
