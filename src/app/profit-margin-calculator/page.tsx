@@ -4,9 +4,18 @@ import { siteConfig } from "@/lib/site";
 import { ProfitMarginClient } from "./ProfitMarginClient";
 
 export const metadata: Metadata = {
-  title: "Contractor Profit Margin & Markup Calculator (Cost to Bid Price)",
+  title: "Contractor Profit Margin & Markup Calculator (Free Cost-to-Bid Tool)",
   description:
-    "Calculate accurate contractor selling prices, gross margin percentage, and material/labor markups to guarantee profitable job bids.",
+    "Calculate accurate contractor selling prices, gross profit margin %, and job cost markups. Convert markup to margin instantly to stop underbidding construction & service jobs.",
+  keywords: [
+    "contractor profit margin calculator",
+    "markup vs margin calculator",
+    "job cost markup calculator",
+    "construction bid price calculator",
+    "gross margin formula for contractors",
+    "how to calculate markup on labor and materials",
+    "service business pricing calculator",
+  ],
   alternates: {
     canonical: `${siteConfig.url}/profit-margin-calculator`,
   },
@@ -83,13 +92,13 @@ export default function ProfitMarginCalculatorPage() {
               <div className="bg-white p-4 rounded-lg border border-zinc-200">
                 <p className="font-bold text-zinc-950 mb-1">What Markup Does:</p>
                 <p className="text-zinc-600">
-                  Markup calculates how much you add to your <strong>cost</strong>. If a job costs \$1,000 and you mark it up 30%, you bid \$1,300.
+                  Markup calculates how much you add to your <strong>cost</strong>. If a job costs $1,000 and you mark it up 30%, you bid $1,300.
                 </p>
               </div>
               <div className="bg-white p-4 rounded-lg border border-zinc-200">
                 <p className="font-bold text-zinc-950 mb-1">What Margin Actually Is:</p>
                 <p className="text-zinc-600">
-                  Margin calculates your profit as a percentage of the <strong>selling price</strong>: \$300 ÷ \$1,300 = <strong>23.07%</strong> margin—not 30%! You left \$128 on the table.
+                  Margin calculates your profit as a percentage of the <strong>selling price</strong>: $300 ÷ $1,300 = <strong>23.07%</strong> margin—not 30%! You left $128 on the table.
                 </p>
               </div>
             </div>
@@ -107,7 +116,7 @@ export default function ProfitMarginCalculatorPage() {
                   Selling Price = Job Cost ÷ (1 - Margin Decimal)
                 </p>
                 <p className="text-zinc-600">
-                  To get a true 35% margin on \$2,000 cost: \$2,000 ÷ (1 - 0.35) = \$2,000 ÷ 0.65 = <strong>\$3,076.92</strong>.
+                  To get a true 35% margin on $2,000 cost: $2,000 ÷ (1 - 0.35) = $2,000 ÷ 0.65 = <strong>$3,076.92</strong>.
                 </p>
               </div>
 
@@ -117,7 +126,7 @@ export default function ProfitMarginCalculatorPage() {
                   Markup % = (Gross Profit $ ÷ Job Cost $) × 100
                 </p>
                 <p className="text-zinc-600">
-                  To achieve that \$1,076.92 profit on \$2,000 cost, your required markup is <strong>53.85%</strong>.
+                  To achieve that $1,076.92 profit on $2,000 cost, your required markup is <strong>53.85%</strong>.
                 </p>
               </div>
             </div>
@@ -186,6 +195,15 @@ export default function ProfitMarginCalculatorPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            <div className="mt-5 pt-4 border-t border-slate-200">
+              <Link
+                href="/blog/contractor-profit-margin-vs-markup"
+                className="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1.5 underline underline-offset-4 transition"
+              >
+                <span>📖 Read the Complete Bidding Guide: Contractor Profit Margin vs Markup (With 2026 Matrix) →</span>
+              </Link>
             </div>
           </div>
 

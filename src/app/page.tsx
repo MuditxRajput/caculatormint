@@ -4,14 +4,24 @@ import { siteConfig } from "@/lib/site";
 import { TRADES } from "@/data/trades";
 
 export const metadata: Metadata = {
-  title: "Free US Contractor Estimate Templates & Bid Calculators",
+  title: "Free Contractor Estimate Templates, Bid Calculators & PDF Quote Generator",
   description:
-    "Build professional, client-ready quotes in 60 seconds with real US trade pricing defaults. Instant PDF download—no signup required.",
+    "Create professional, client-ready contractor quotes, bids, and proposals in 60 seconds with 2026 US trade pricing defaults. Free PDF quote generator for painting, roofing, cleaning, landscaping, handyman & more—no signup required.",
+  keywords: [
+    "free contractor estimate template",
+    "contractor bid calculator",
+    "pdf quote generator",
+    "construction estimate template",
+    "trade quote maker",
+    "job cost estimator",
+    "service business bid sheet",
+    "instant pdf estimate",
+  ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Free US Contractor Estimate Templates & Bid Calculators | CalculatorMint",
+    title: "Free Contractor Estimate Templates, Bid Calculators & PDF Quote Generator | CalculatorMint",
     description:
-      "Build professional, client-ready quotes in 60 seconds with real US trade pricing defaults. Instant PDF download—no signup required.",
+      "Create professional, client-ready contractor quotes and bid sheets in 60 seconds with 2026 US trade pricing defaults. Instant PDF download—no signup required.",
     url: siteConfig.url,
   },
 };
@@ -345,6 +355,103 @@ export default function HomePage() {
                   <span style={{ color: "#ffffff" }} className="!text-white">→</span>
                 </span>
                 <span className="text-xs text-slate-400 font-mono">Free Tool</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED CONTRACTOR GUIDES SECTION (SEO & AUTHORITY) */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
+        <div className="container">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+            <div>
+              <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider font-mono">
+                Knowledge & Bidding Formulas
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-950 mt-1">
+                Contractor Bidding & Estimating Guides
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                Deep-dive pricing formulas, square footage calculations, and margin protection strategies.
+              </p>
+            </div>
+
+            <Link
+              href="/blog"
+              className="text-xs font-bold text-slate-900 hover:text-emerald-700 whitespace-nowrap flex items-center gap-1 underline underline-offset-4 transition"
+            >
+              View All Guides <span>→</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link
+              href="/blog/contractor-profit-margin-vs-markup"
+              className="p-6 bg-slate-50/70 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group flex flex-col justify-between block cursor-pointer"
+            >
+              <div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200/80 uppercase font-mono">
+                  Pricing & Profit
+                </span>
+                <h3 className="text-base font-bold text-slate-950 group-hover:text-emerald-700 transition mt-3 leading-snug">
+                  Contractor Profit Margin vs. Markup: The Exact Formula
+                </h3>
+                <p className="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                  Confusing markup with margin destroys contractor cash flow. Learn the conversion formula and target gross margins.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs">
+                <span className="text-emerald-700 font-bold group-hover:underline flex items-center gap-1">
+                  Read Formula <span>→</span>
+                </span>
+                <span className="text-[11px] text-slate-400 font-mono">6 min read</span>
+              </div>
+            </Link>
+
+            <Link
+              href="/blog/how-to-estimate-painting-jobs"
+              className="p-6 bg-slate-50/70 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group flex flex-col justify-between block cursor-pointer"
+            >
+              <div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200/80 uppercase font-mono">
+                  Trade Estimating
+                </span>
+                <h3 className="text-base font-bold text-slate-950 group-hover:text-emerald-700 transition mt-3 leading-snug">
+                  How to Estimate Painting Jobs: 2026 Cost Guide
+                </h3>
+                <p className="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                  Perimeter wall area formulas, surface prep rates, paint gallon coverage, and labor production speeds.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs">
+                <span className="text-emerald-700 font-bold group-hover:underline flex items-center gap-1">
+                  Read Guide <span>→</span>
+                </span>
+                <span className="text-[11px] text-slate-400 font-mono">8 min read</span>
+              </div>
+            </Link>
+
+            <Link
+              href="/blog/how-to-estimate-roofing-jobs"
+              className="p-6 bg-slate-50/70 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group flex flex-col justify-between block cursor-pointer"
+            >
+              <div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200/80 uppercase font-mono">
+                  Trade Estimating
+                </span>
+                <h3 className="text-base font-bold text-slate-950 group-hover:text-emerald-700 transition mt-3 leading-snug">
+                  How to Estimate Roofing Jobs: Squares & Pitch Multipliers
+                </h3>
+                <p className="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                  Convert footprint to pitched squares, calculate steep-pitch surcharges, and account for valley waste.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs">
+                <span className="text-emerald-700 font-bold group-hover:underline flex items-center gap-1">
+                  Read Guide <span>→</span>
+                </span>
+                <span className="text-[11px] text-slate-400 font-mono">9 min read</span>
               </div>
             </Link>
           </div>

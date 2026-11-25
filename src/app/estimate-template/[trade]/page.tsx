@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: trade.seoTitle,
     description: trade.seoDescription,
+    keywords: trade.keywords,
     alternates: {
       canonical: canonicalUrl,
     },

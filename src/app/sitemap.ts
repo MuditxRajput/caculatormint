@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 import { TRADES } from "@/data/trades";
+import { ALL_BLOG_SLUGS } from "@/data/blogs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }[] = [
     { path: "/", priority: 1.0, changeFrequency: "daily" },
     { path: "/estimate-templates", priority: 0.95, changeFrequency: "daily" },
+    { path: "/blog", priority: 0.9, changeFrequency: "daily" },
     { path: "/cubic-yard-calculator", priority: 0.9, changeFrequency: "weekly" },
     { path: "/profit-margin-calculator", priority: 0.9, changeFrequency: "weekly" },
   ];
@@ -21,6 +23,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const tradeRoutes = TRADES.map((trade) => ({
     path: `/estimate-template/${trade.slug}`,
     priority: 0.9,
+    changeFrequency: "weekly" as const,
+  }));
+
+  // Dynamic Bidding & Estimating Guides
+  const blogRoutes = ALL_BLOG_SLUGS.map((slug) => ({
+    path: `/blog/${slug}`,
+    priority: 0.85,
     changeFrequency: "weekly" as const,
   }));
 
@@ -38,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/disclaimer", priority: 0.3, changeFrequency: "yearly" },
   ];
 
-  const allPaths = [...coreRoutes, ...tradeRoutes, ...standardPages];
+  const allPaths = [...coreRoutes, ...tradeRoutes, ...blogRoutes, ...standardPages];
 
   return allPaths.map(({ path, priority, changeFrequency }) => ({
     url: `${siteConfig.url}${path}`,

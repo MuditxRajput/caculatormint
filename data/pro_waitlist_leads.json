@@ -5,5 +5,23 @@
     "trade": "roofing",
     "savedToDb": false,
     "timestamp": "2026-11-23T11:58:05.227Z"
+  },
+  {
+    "email": "muditrajputpersonal@gmail.com",
+    "companyName": "Mudit Rajput",
+    "phone": "09511510494",
+    "feature": "esign",
+    "trade": "general",
+    "savedToDb": true,
+    "timestamp": "2026-11-25T16:39:27.850Z"
+  },
+  {
+    "email": "muditrajputpersonal@gmail.com",
+    "companyName": "Gurugram",
+    "phone": "09511510494",
+    "feature": "logo",
+    "trade": "lawn-care",
+    "savedToDb": true,
+    "timestamp": "2026-11-25T16:41:22.646Z"
   }
 ]

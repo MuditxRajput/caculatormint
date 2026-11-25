@@ -32,6 +32,7 @@ export interface TradeConfig {
   h1: string;
   seoTitle: string;
   seoDescription: string;
+  keywords: string[];
   category: string;
   shortDescription: string;
   defaultLineItems: LineItem[];
@@ -48,9 +49,18 @@ export const TRADES: TradeConfig[] = [
     slug: "cleaning",
     tradeName: "House & Commercial Cleaning",
     h1: "Free Cleaning Estimate Template & Bid Generator",
-    seoTitle: "Free Cleaning Estimate Template & Bid Calculator (2026 US Rates)",
+    seoTitle: "Free Cleaning Estimate Template, Quote Maker & Bid Calculator (2026 PDF)",
     seoDescription:
-      "Generate instant, client-ready cleaning estimates with 2026 US residential and commercial pricing defaults ($/sq ft and per-room rates). Free PDF download.",
+      "Generate instant house cleaning quotes, deep clean bids, and maid service estimates with 2026 US $/sq ft and per-room rates. Free printable PDF estimate template.",
+    keywords: [
+      "cleaning estimate template",
+      "house cleaning quote template pdf",
+      "cleaning bid calculator",
+      "maid service estimate form",
+      "deep cleaning price calculator",
+      "move out cleaning quote template",
+      "residential cleaning bid sheet",
+    ],
     category: "Cleaning & Janitorial",
     shortDescription:
       "Residential deep cleans, move-out cleans, and recurring maid services with square footage and per-room rates.",
@@ -194,9 +204,18 @@ export const TRADES: TradeConfig[] = [
     slug: "janitorial-bid-calculator",
     tradeName: "Commercial Janitorial Services",
     h1: "Free Janitorial Bid Calculator & Proposal Generator",
-    seoTitle: "Commercial Janitorial Bid Calculator & Estimate Template (2026)",
+    seoTitle: "Commercial Janitorial Bid Calculator & Cleaning Proposal Template (2026 PDF)",
     seoDescription:
-      "Calculate monthly commercial janitorial contract bids based on square footage, weekly frequency, and US cleaning labor rates. Download ready-to-sign PDF.",
+      "Calculate monthly commercial janitorial contract bids, office cleaning quotes, and facility maintenance proposals by square footage and weekly frequency. Free PDF download.",
+    keywords: [
+      "janitorial bid calculator",
+      "commercial cleaning proposal template",
+      "office cleaning quote calculator",
+      "janitorial estimate template pdf",
+      "how to bid commercial cleaning",
+      "janitorial pricing per square foot",
+      "cleaning contract bid sheet",
+    ],
     category: "Cleaning & Janitorial",
     shortDescription:
       "Contract bidding for corporate offices, medical facilities, retail spaces, and industrial facilities with frequency-based pricing.",
@@ -340,9 +359,18 @@ export const TRADES: TradeConfig[] = [
     slug: "pressure-washing",
     tradeName: "Pressure Washing & Exterior Soft Wash",
     h1: "Free Pressure Washing Estimate Template & Bid Calculator",
-    seoTitle: "Pressure Washing Estimate Template & Square Foot Calculator (2026)",
+    seoTitle: "Pressure Washing Estimate Template, Soft Wash Quote & Sq Ft Calculator (2026)",
     seoDescription:
-      "Accurately estimate residential and commercial pressure washing, driveway cleaning, and soft wash siding jobs using 2026 US price benchmarks. Free PDF download.",
+      "Calculate residential and commercial pressure washing, driveway cleaning, and soft wash house siding quotes using 2026 US per-sq-ft rates. Instant PDF estimate.",
+    keywords: [
+      "pressure washing estimate template",
+      "power washing quote calculator",
+      "soft wash bid template",
+      "driveway cleaning price estimator",
+      "pressure washing invoice pdf",
+      "exterior cleaning quote generator",
+      "pressure washing cost per square foot",
+    ],
     category: "Exterior Maintenance",
     shortDescription:
       "Driveways, concrete flatwork, vinyl/stucco house soft washes, commercial sidewalks, and wood deck restorations.",
@@ -486,9 +514,18 @@ export const TRADES: TradeConfig[] = [
     slug: "lawn-care",
     tradeName: "Lawn Care & Maintenance",
     h1: "Free Lawn Care Estimate Template & Bid Calculator",
-    seoTitle: "Lawn Care Estimate Template & Mowing Bid Calculator (2026)",
+    seoTitle: "Lawn Care Estimate Template, Mowing Quote & Maintenance Bid Calculator (2026)",
     seoDescription:
-      "Price residential mowing, string trimming, edging, and seasonal lawn treatment packages with 2026 US market rates. Download your free contractor PDF estimate.",
+      "Price residential lawn mowing, edging, fertilization, and seasonal yard maintenance packages with 2026 US market rates. Download your free lawn care PDF quote.",
+    keywords: [
+      "lawn care estimate template",
+      "lawn mowing bid calculator",
+      "lawn maintenance quote pdf",
+      "grass cutting price estimator",
+      "lawn service proposal template",
+      "yard care bid sheet",
+      "seasonal lawn care quote",
+    ],
     category: "Lawn & Landscaping",
     shortDescription:
       "Weekly/bi-weekly mowing, line trimming, hard edge blade trenching, mulch bed cleanup, and seasonal turf fertilizer programs.",
@@ -632,9 +669,18 @@ export const TRADES: TradeConfig[] = [
     slug: "painting",
     tradeName: "Interior & Exterior Painting",
     h1: "Free Painting Estimate Template & Bid Calculator",
-    seoTitle: "Painting Estimate Template & Labor/Material Cost Calculator (2026)",
+    seoTitle: "Painting Estimate Template, House Paint Quote & Labor Cost Calculator (2026)",
     seoDescription:
-      "Generate detailed residential painting bids with wall square footage, ceiling, trim, primer, and premium paint calculations. Free instant PDF download.",
+      "Create detailed interior and exterior painting quotes with wall square footage, ceiling, trim, primer, and paint gallon calculations. Free printable painting PDF estimate.",
+    keywords: [
+      "painting estimate template",
+      "painting quote template pdf",
+      "house painting bid calculator",
+      "interior painting cost estimator",
+      "exterior painting proposal template",
+      "painter estimate sheet",
+      "painting price per square foot calculator",
+    ],
     category: "Finishing & Remodeling",
     shortDescription:
       "Interior wall/ceiling repaints, trim/door enamel, drywall patching prep, and complete exterior siding and fascia spray/backroll.",
@@ -778,9 +824,18 @@ export const TRADES: TradeConfig[] = [
     slug: "handyman",
     tradeName: "Handyman & Home Repair",
     h1: "Free Handyman Estimate Template & Bid Calculator",
-    seoTitle: "Handyman Estimate Template & Hourly/Job Pricing Calculator (2026)",
+    seoTitle: "Handyman Estimate Template, Repair Quote & Hourly Pricing Calculator (2026 PDF)",
     seoDescription:
-      "Create clear, professional handyman quotes with hourly labor rates, materials markup, and flat-rate repair items. Instant PDF quote generator.",
+      "Create clear, professional handyman quotes with hourly labor rates, materials markup, and flat-rate home repair items. Instant printable PDF quote generator.",
+    keywords: [
+      "handyman estimate template",
+      "handyman quote template pdf",
+      "handyman invoice and estimate",
+      "home repair bid calculator",
+      "handyman hourly rate estimator",
+      "handyman work order template",
+      "flat rate handyman pricing",
+    ],
     category: "General Trades",
     shortDescription:
       "Small residential repairs, fixture installations, drywall patches, door adjustments, and multi-trade punch lists.",
@@ -924,9 +979,18 @@ export const TRADES: TradeConfig[] = [
     slug: "landscaping",
     tradeName: "Landscaping & Hardscaping",
     h1: "Free Landscaping Proposal Template & Estimate Generator",
-    seoTitle: "Landscaping Proposal Template & Material/Labor Calculator (2026)",
+    seoTitle: "Landscaping Proposal Template, Hardscape Quote & Material Calculator (2026 PDF)",
     seoDescription:
-      "Build detailed landscaping and hardscape quotes with mulch cubic yards, sod square footage, paver patios, and plant nursery costs. Free PDF template.",
+      "Build detailed landscaping and hardscape quotes with mulch cubic yards, sod square footage, paver patios, and plant nursery costs. Free printable landscaping PDF estimate.",
+    keywords: [
+      "landscaping proposal template",
+      "landscaping estimate template pdf",
+      "hardscape quote calculator",
+      "mulch installation bid sheet",
+      "sod installation cost estimator",
+      "paver patio estimate template",
+      "landscape contractor quote form",
+    ],
     category: "Lawn & Landscaping",
     shortDescription:
       "Mulch installation, sod turf installation, paver patios, retaining walls, planting beds, and grading drainage.",
@@ -1070,9 +1134,18 @@ export const TRADES: TradeConfig[] = [
     slug: "epoxy-flooring",
     tradeName: "Epoxy & Polyaspartic Flooring",
     h1: "Free Epoxy Floor Cost Calculator & Bid Template",
-    seoTitle: "Epoxy Floor Estimate Template & Garage Cost Calculator (2026)",
+    seoTitle: "Epoxy Floor Estimate Template, Garage Coating Quote & Cost Calculator (2026 PDF)",
     seoDescription:
-      "Quote garage epoxy, commercial flake systems, and metallic floor coatings with 2026 US per-sq-ft rates and surface prep costs. Download clean PDF.",
+      "Quote garage epoxy, polyaspartic flake systems, and metallic concrete floor coatings with 2026 US per-sq-ft rates and diamond grind prep costs. Instant PDF download.",
+    keywords: [
+      "epoxy floor estimate template",
+      "garage epoxy cost calculator",
+      "polyaspartic floor quote template",
+      "epoxy coating bid sheet",
+      "concrete floor coating estimator",
+      "epoxy pricing per square foot",
+      "garage floor quote pdf",
+    ],
     category: "Flooring & Concrete",
     shortDescription:
       "Diamond grind prep, moisture mitigation epoxy primers, decorative vinyl flake broadcast, and UV-stable polyaspartic topcoats.",
@@ -1216,9 +1289,18 @@ export const TRADES: TradeConfig[] = [
     slug: "junk-removal",
     tradeName: "Junk Removal & Hauling",
     h1: "Free Junk Removal Estimate Template & Pricing Generator",
-    seoTitle: "Junk Removal Estimate Template & Truck Load Calculator (2026)",
+    seoTitle: "Junk Removal Estimate Template, Hauling Quote & Truck Load Calculator (2026 PDF)",
     seoDescription:
-      "Quote residential and commercial junk removal jobs based on truck volume fractions (1/4, 1/2, full load) and transfer station dump fees. Free PDF.",
+      "Quote residential and commercial junk removal jobs by truck volume fractions (1/4, 1/2, full load) and transfer station dump fees. Free printable hauling PDF quote.",
+    keywords: [
+      "junk removal estimate template",
+      "junk hauling quote calculator",
+      "truck load pricing estimator",
+      "estate cleanout bid template",
+      "debris removal quote pdf",
+      "junk removal invoice template",
+      "how to price junk removal",
+    ],
     category: "Hauling & Cleanup",
     shortDescription:
       "Estate cleanouts, furniture hauling, appliance disposal, renovation construction debris, and garage clear-outs.",
@@ -1362,9 +1444,18 @@ export const TRADES: TradeConfig[] = [
     slug: "roofing",
     tradeName: "Residential Roofing",
     h1: "Free Roofing Estimate Template & Bid Calculator",
-    seoTitle: "Roofing Estimate Template & Cost Per Square Calculator (2026)",
+    seoTitle: "Roofing Estimate Template, Roof Replacement Quote & Square Calculator (2026 PDF)",
     seoDescription:
-      "Estimate residential shingle replacement, tear-off, synthetic underlayment, and drip edge with 2026 US roofing square pricing. Instant contractor PDF.",
+      "Estimate residential shingle roof replacement, tear-off disposal, synthetic underlayment, and drip edge with 2026 US roofing square pricing. Instant contractor PDF quote.",
+    keywords: [
+      "roofing estimate template",
+      "roof replacement quote template pdf",
+      "roofing bid calculator per square",
+      "shingle roof cost estimator",
+      "roofing proposal template",
+      "how to estimate a roofing job",
+      "contractor roof quote sheet",
+    ],
     category: "Exterior Construction",
     shortDescription:
       "Architectural shingles, 3-tab replacement, tear-off disposal, ice & water shield, flashings, and ridge vent ventilation.",

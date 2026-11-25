@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { TRADES } from "@/data/trades";
+import { setProStatus } from "@/lib/pro";
 
 interface ProOnboardingModalProps {
   isOpen: boolean;
@@ -48,18 +49,16 @@ export function ProOnboardingModal({
     setErrorMessage("");
 
     try {
-      // 1. Local storage caching for instant client personalization
-      if (typeof window !== "undefined") {
-        const profile = {
-          companyName: companyName.trim(),
-          email: email.trim().toLowerCase(),
-          phone: phone.trim(),
-          trade,
-          selectedFeature,
-          registeredAt: new Date().toISOString(),
-        };
-        localStorage.setItem("cm_contractor_profile", JSON.stringify(profile));
-      }
+      // 1. Local storage caching for instant client personalization & Pro activation
+      const profile = {
+        companyName: companyName.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone.trim(),
+        trade,
+        selectedFeature,
+        registeredAt: new Date().toISOString(),
+      };
+      setProStatus(true, profile);
 
       // 2. Real API Persistence (writes to Supabase PostgreSQL + local backup)
       const res = await fetch("/api/waitlist", {

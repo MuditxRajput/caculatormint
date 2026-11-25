@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-800">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 pb-12 border-b border-slate-800/80">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block" aria-label={`${siteConfig.name} home`}>
@@ -55,7 +55,7 @@ export function Footer() {
               Trade Templates
             </p>
             <ul className="space-y-2.5 text-xs text-slate-400">
-              {TRADES.slice(0, 6).map((trade) => (
+              {TRADES.slice(0, 5).map((trade) => (
                 <li key={trade.slug}>
                   <Link
                     href={`/estimate-template/${trade.slug}`}
@@ -76,10 +76,59 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Contractor Math Tools */}
+          {/* Column 2: Bidding Guides */}
           <div>
             <p className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Contractor Math Tools
+              Bidding Guides
+            </p>
+            <ul className="space-y-2.5 text-xs text-slate-400">
+              <li>
+                <Link
+                  href="/blog/contractor-profit-margin-vs-markup"
+                  className="hover:text-emerald-400 transition"
+                >
+                  Margin vs. Markup
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog/how-to-estimate-painting-jobs"
+                  className="hover:text-emerald-400 transition"
+                >
+                  Painting Job Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog/how-to-estimate-roofing-jobs"
+                  className="hover:text-emerald-400 transition"
+                >
+                  Roofing Squares Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog/how-to-bid-commercial-cleaning-contracts"
+                  className="hover:text-emerald-400 transition"
+                >
+                  Janitorial Bidding
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-emerald-400 font-semibold hover:text-emerald-300 hover:underline inline-flex items-center gap-1"
+                >
+                  All Guides →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Contractor Math Tools */}
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+              Math Tools
             </p>
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li>
@@ -100,24 +149,16 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/estimate-template/epoxy-flooring"
+                  href="/blog/how-to-calculate-cubic-yards-materials"
                   className="hover:text-emerald-400 transition"
                 >
-                  Square Footage Calculator
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/estimate-template/roofing"
-                  className="hover:text-emerald-400 transition"
-                >
-                  Roofing Square Calculator
+                  Cubic Yard Formulas
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Legal & Resources */}
+          {/* Column 4: Legal & Resources */}
           <div>
             <p className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               Company & Legal

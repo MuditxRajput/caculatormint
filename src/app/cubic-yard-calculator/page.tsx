@@ -4,9 +4,18 @@ import { siteConfig } from "@/lib/site";
 import { CubicYardClient } from "./CubicYardClient";
 
 export const metadata: Metadata = {
-  title: "Cubic Yard Calculator for Contractors (Mulch, Soil, Gravel & Concrete)",
+  title: "Cubic Yard Calculator — Mulch, Gravel, Topsoil, Dirt & Concrete Estimator",
   description:
-    "Calculate exact cubic yards for landscaping, concrete slabs, mulch beds, topsoil, and gravel with material weight presets and cost estimators.",
+    "Calculate exact cubic yards, tons, and material costs for landscaping mulch beds, gravel driveways, topsoil, dirt fill, and concrete slabs. Free contractor yardage calculator.",
+  keywords: [
+    "cubic yard calculator",
+    "mulch yardage calculator",
+    "gravel cubic yard to tons calculator",
+    "concrete slab cubic yard estimator",
+    "topsoil volume calculator",
+    "landscaping material calculator",
+    "length width depth cubic yards",
+  ],
   alternates: {
     canonical: `${siteConfig.url}/cubic-yard-calculator`,
   },
@@ -148,6 +157,15 @@ export default function CubicYardCalculatorPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            <div className="mt-5 pt-4 border-t border-slate-200">
+              <Link
+                href="/blog/how-to-calculate-cubic-yards-materials"
+                className="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1.5 underline underline-offset-4 transition"
+              >
+                <span>📐 In-Depth Bidding Guide: How to Calculate Cubic Yards & Material Quantities (Mulch, Soil, Gravel) →</span>
+              </Link>
             </div>
           </div>
 

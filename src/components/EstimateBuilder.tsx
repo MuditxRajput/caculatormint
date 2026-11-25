@@ -3,6 +3,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import type { TradeConfig, LineItem } from "@/data/trades";
 import { ProOnboardingModal } from "@/components/ProOnboardingModal";
+import { SignatureModal } from "@/components/SignatureModal";
+import { ClientEsignModal } from "@/components/ClientEsignModal";
+import { useProStatus } from "@/lib/pro";
 
 interface EstimateBuilderProps {
   trade: TradeConfig;
@@ -49,22 +52,85 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
 
-  // Pro Modal state
+  // Pro State & Profile
+  const { isPro, profile, mounted } = useProStatus();
   const [isProModalOpen, setIsProModalOpen] = useState(false);
   const [proModalReason, setProModalReason] = useState<string>("logo");
+  const [companyLogo, setCompanyLogo] = useState<string | null>(null);
 
-  // Restore contractor profile from onboarding if exists
+  // Digital e-Signatures state
+  const [contractorSignature, setContractorSignature] = useState<string | null>(null);
+  const [contractorSignatureDate, setContractorSignatureDate] = useState<string | null>(null);
+  const [clientSignature, setClientSignature] = useState<string | null>(null);
+  const [clientSignatureDate, setClientSignatureDate] = useState<string | null>(null);
+  const [isSignatureModalOpen, setIsSignatureModalOpen] = useState(false);
+  const [signatureTarget, setSignatureTarget] = useState<"contractor" | "client">("contractor");
+  const [isClientEsignModalOpen, setIsClientEsignModalOpen] = useState(false);
+
+  const handleSaveSignature = (dataUrl: string) => {
+    const formattedDate = new Date().toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+
+    if (signatureTarget === "contractor") {
+      setContractorSignature(dataUrl);
+      setContractorSignatureDate(formattedDate);
+    } else {
+      setClientSignature(dataUrl);
+      setClientSignatureDate(formattedDate);
+    }
+  };
+
+  // Restore contractor profile & logo from localStorage if exists
   useEffect(() => {
     try {
+      const savedLogo = localStorage.getItem("cm_company_logo");
+      if (savedLogo) setCompanyLogo(savedLogo);
+
       const saved = localStorage.getItem("cm_contractor_profile");
       if (saved) {
-        const profile = JSON.parse(saved);
-        if (profile.companyName) setContractorName(profile.companyName);
-        if (profile.email) setContractorEmail(profile.email);
-        if (profile.phone) setContractorPhone(profile.phone);
+        const p = JSON.parse(saved);
+        if (p.companyName) setContractorName(p.companyName);
+        if (p.email) setContractorEmail(p.email);
+        if (p.phone) setContractorPhone(p.phone);
       }
     } catch {}
   }, []);
+
+  // Update contractor info whenever profile updates
+  useEffect(() => {
+    if (profile?.companyName) setContractorName(profile.companyName);
+    if (profile?.email) setContractorEmail(profile.email);
+    if (profile?.phone) setContractorPhone(profile.phone);
+  }, [profile]);
+
+  const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        alert("Please select an image smaller than 2MB.");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const result = event.target?.result as string;
+        setCompanyLogo(result);
+        try {
+          localStorage.setItem("cm_company_logo", result);
+        } catch {}
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemoveLogo = () => {
+    setCompanyLogo(null);
+    try {
+      localStorage.removeItem("cm_company_logo");
+    } catch {}
+  };
 
   // Quick Action Handlers for Onboarding
   const handleClearSampleData = () => {
@@ -180,19 +246,30 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
       const contentWidth = rightMargin - leftMargin;
 
       // 1. Header: Contractor Info (Left)
+      let contractorY = 52;
+      if (companyLogo && isPro) {
+        try {
+          const format = companyLogo.startsWith("data:image/png") ? "PNG" : "JPEG";
+          doc.addImage(companyLogo, format, leftMargin, 30, 85, 26, undefined, "FAST");
+          contractorY = 70;
+        } catch (imgErr) {
+          console.warn("Could not draw logo in PDF:", imgErr);
+        }
+      }
+
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(18);
+      doc.setFontSize(companyLogo && isPro ? 15 : 18);
       doc.setTextColor(9, 9, 11);
-      doc.text(contractorName || "Contractor Name", leftMargin, 52);
+      doc.text(contractorName || "Contractor Name", leftMargin, contractorY);
 
       doc.setFont("helvetica", "normal");
       doc.setFontSize(8.5);
       doc.setTextColor(113, 113, 122);
-      doc.text(contractorLicense || "Licensed & Insured", leftMargin, 66);
+      doc.text(contractorLicense || "Licensed & Insured", leftMargin, contractorY + 12);
 
       const contactLine = [contractorPhone, contractorEmail].filter(Boolean).join("  •  ");
       if (contactLine) {
-        doc.text(contactLine, leftMargin, 79);
+        doc.text(contactLine, leftMargin, contractorY + 23);
       }
 
       // Header: Estimate Meta (Right)
@@ -209,41 +286,42 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
       doc.text(`Valid Until: ${validUntil || thirtyDaysOut}`, rightMargin, 92, { align: "right" });
 
       // Divider line
+      const dividerY = Math.max(104, contractorY + 34);
       doc.setDrawColor(228, 228, 231);
       doc.setLineWidth(1);
-      doc.line(leftMargin, 104, rightMargin, 104);
+      doc.line(leftMargin, dividerY, rightMargin, dividerY);
 
       // 2. Client & Project Details (Two Columns)
       const col2Left = 320;
       doc.setFont("helvetica", "bold");
       doc.setFontSize(7.5);
       doc.setTextColor(161, 161, 170);
-      doc.text("PREPARED FOR", leftMargin, 122);
-      doc.text("PROJECT LOCATION & TRADE", col2Left, 122);
+      doc.text("PREPARED FOR", leftMargin, dividerY + 18);
+      doc.text("PROJECT LOCATION & TRADE", col2Left, dividerY + 18);
 
       doc.setFont("helvetica", "bold");
       doc.setFontSize(10.5);
       doc.setTextColor(9, 9, 11);
-      doc.text(clientName || "Client Name", leftMargin, 136);
+      doc.text(clientName || "Client Name", leftMargin, dividerY + 32);
 
       doc.setFont("helvetica", "normal");
       doc.setFontSize(8.5);
       doc.setTextColor(82, 82, 91);
       if (clientEmail) {
-        doc.text(clientEmail, leftMargin, 149);
+        doc.text(clientEmail, leftMargin, dividerY + 45);
       }
 
       // Project Location text wrapped if long
       const locationLines = doc.splitTextToSize(clientAddress || "Service Address", 230);
-      doc.text(locationLines, col2Left, 136);
+      doc.text(locationLines, col2Left, dividerY + 32);
       const locHeight = locationLines.length * 11;
       doc.setFont("helvetica", "bold");
       doc.setFontSize(8);
       doc.setTextColor(24, 24, 27);
-      doc.text(`Trade Category: ${trade.category}`, col2Left, 138 + locHeight);
+      doc.text(`Trade Category: ${trade.category}`, col2Left, dividerY + 34 + locHeight);
 
       // 3. Line Items Table Header
-      const tableTopY = 175;
+      const tableTopY = Math.max(175, dividerY + 70);
       doc.setFillColor(24, 24, 27);
       doc.rect(leftMargin, tableTopY, contentWidth, 20, "F");
 
@@ -369,6 +447,24 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
       const sigY = Math.max(currentY + 10, 680);
       const sigWidth = 220;
 
+      // Draw Contractor Signature if present
+      if (contractorSignature) {
+        try {
+          doc.addImage(contractorSignature, "PNG", leftMargin + 5, sigY - 26, 110, 22, undefined, "FAST");
+        } catch (sigErr) {
+          console.warn("Could not draw contractor signature in PDF:", sigErr);
+        }
+      }
+
+      // Draw Client Signature if present
+      if (clientSignature) {
+        try {
+          doc.addImage(clientSignature, "PNG", rightMargin - sigWidth + 5, sigY - 26, 110, 22, undefined, "FAST");
+        } catch (sigErr) {
+          console.warn("Could not draw client signature in PDF:", sigErr);
+        }
+      }
+
       doc.setDrawColor(161, 161, 170);
       doc.line(leftMargin, sigY, leftMargin + sigWidth, sigY);
       doc.line(rightMargin - sigWidth, sigY, rightMargin, sigY);
@@ -382,19 +478,36 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
       doc.setFont("helvetica", "normal");
       doc.setFontSize(7.5);
       doc.setTextColor(161, 161, 170);
-      doc.text("Date: ____________________", leftMargin, sigY + 24);
-      doc.text("Date: ____________________", rightMargin - sigWidth, sigY + 24);
+      doc.text(
+        contractorSignatureDate ? `Digitally Signed: ${contractorSignatureDate}` : "Date: ____________________",
+        leftMargin,
+        sigY + 24
+      );
+      doc.text(
+        clientSignatureDate ? `Accepted via e-Sign: ${clientSignatureDate}` : "Date: ____________________",
+        rightMargin - sigWidth,
+        sigY + 24
+      );
 
       // 8. Footer Brand Mark
       doc.setFont("helvetica", "normal");
       doc.setFontSize(7.5);
       doc.setTextColor(161, 161, 170);
-      doc.text(
-        "Generated with CalculatorMint • Free US Contractor Estimate Generator",
-        pageWidth / 2,
-        760,
-        { align: "center" }
-      );
+      if (!isPro) {
+        doc.text(
+          "Generated with CalculatorMint • Free US Contractor Estimate Generator",
+          pageWidth / 2,
+          760,
+          { align: "center" }
+        );
+      } else {
+        doc.text(
+          "Authorized Client Estimate • Valid for 30 Days",
+          pageWidth / 2,
+          760,
+          { align: "center" }
+        );
+      }
 
       const filename = `${trade.slug}-estimate-${estimateNumber || "quote"}.pdf`;
       doc.save(filename);
@@ -555,6 +668,47 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                   className="w-full px-3 py-2 text-xs bg-zinc-50 border border-zinc-200 rounded-lg text-zinc-950 focus:outline-none focus:border-zinc-950"
                 />
               </div>
+
+              {/* Pro Custom Logo Upload */}
+              {mounted && isPro && (
+                <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="text-[11px] font-bold text-emerald-950 uppercase tracking-wider flex items-center gap-1.5">
+                      <span>Company Logo</span>
+                      <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-600 text-white font-mono font-bold">PRO</span>
+                    </label>
+                    {companyLogo && (
+                      <button
+                        type="button"
+                        onClick={handleRemoveLogo}
+                        className="text-[11px] text-red-600 hover:underline cursor-pointer"
+                      >
+                        Remove Logo
+                      </button>
+                    )}
+                  </div>
+                  {companyLogo ? (
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={companyLogo}
+                        alt="Company Logo Preview"
+                        className="h-10 w-auto max-w-[140px] object-contain border border-zinc-200 rounded p-1 bg-white"
+                      />
+                      <span className="text-[11px] text-emerald-800 font-medium">✓ Logo active on quote header</span>
+                    </div>
+                  ) : (
+                    <label className="cursor-pointer inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dashed border-emerald-300 hover:border-emerald-600 bg-white text-xs font-semibold text-emerald-800 transition">
+                      <span>+ Upload Company Logo (PNG/JPG)</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleLogoUpload}
+                      />
+                    </label>
+                  )}
+                </div>
+              )}
 
               <div className="pt-3 border-t border-zinc-100 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
@@ -821,13 +975,13 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
         >
           {/* Action Bar Header */}
           <div className="bg-white rounded-xl border border-zinc-200 p-4 shadow-sm space-y-3">
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
               <button
                 type="button"
                 onClick={handleDownloadPdf}
                 disabled={isGeneratingPdf}
                 style={{ color: "#ffffff", backgroundColor: "#059669" }}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 !text-white font-bold text-xs shadow-md shadow-emerald-600/20 transition disabled:opacity-70 cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 !text-white font-bold text-xs shadow-md shadow-emerald-600/20 transition disabled:opacity-70 cursor-pointer"
               >
                 {isGeneratingPdf ? (
                   <>
@@ -839,9 +993,19 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                    <span style={{ color: "#ffffff" }} className="!text-white">Download Free PDF (Instant)</span>
+                    <span style={{ color: "#ffffff" }} className="!text-white">Download PDF (Instant)</span>
                   </>
                 )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsClientEsignModalOpen(true)}
+                className="px-4 py-3 rounded-xl border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 text-xs font-bold inline-flex items-center justify-center gap-1.5 transition cursor-pointer"
+                title="Send estimate to client for review and digital e-signature"
+              >
+                <span className="text-sm">✍️</span>
+                <span>Send e-Sign</span>
               </button>
 
               <button
@@ -857,25 +1021,38 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
               </button>
             </div>
 
-            {/* Pro Gates */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-slate-100">
-              <button
-                type="button"
-                onClick={() => openProModal("logo")}
-                className="px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-900 text-xs font-semibold inline-flex items-center justify-center gap-1.5 transition text-left cursor-pointer"
-              >
-                <span>Remove Watermark & Add Logo</span>
-                <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.5 rounded font-bold font-mono">Pro</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => openProModal("esign")}
-                className="px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-900 text-xs font-semibold inline-flex items-center justify-center gap-1.5 transition text-left cursor-pointer"
-              >
-                <span>Send 1-Click E-Sign & Invoice</span>
-                <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.5 rounded font-bold font-mono">Pro</span>
-              </button>
-            </div>
+            {/* Pro Gates: Only show upsell if NOT Pro! */}
+            {mounted && !isPro ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={() => openProModal("logo")}
+                  className="px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-900 text-xs font-semibold inline-flex items-center justify-center gap-1.5 transition text-left cursor-pointer"
+                >
+                  <span>Remove Watermark & Add Logo</span>
+                  <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.5 rounded font-bold font-mono">Pro</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsClientEsignModalOpen(true)}
+                  className="px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-900 text-xs font-semibold inline-flex items-center justify-center gap-1.5 transition text-left cursor-pointer"
+                >
+                  <span>Send 1-Click e-Sign & Proposal</span>
+                  <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.5 rounded font-bold font-mono">e-Sign</span>
+                </button>
+              </div>
+            ) : mounted && isPro ? (
+              <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                  <span className="font-bold text-emerald-950">Pro Account Active</span>
+                  <span className="text-[11px] text-emerald-700 hidden sm:inline">• Logo Enabled & Watermark-Free Export</span>
+                </div>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-emerald-600 text-white rounded">
+                  PRO
+                </span>
+              </div>
+            ) : null}
           </div>
 
           {/* Printable / Canvas Sheet Container */}
@@ -889,6 +1066,13 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
               {/* Document Header */}
               <div className="flex flex-col sm:flex-row justify-between items-start gap-4 pb-6 border-b-2 border-zinc-950">
                 <div>
+                  {companyLogo && isPro && (
+                    <img
+                      src={companyLogo}
+                      alt={contractorName || "Company Logo"}
+                      className="h-12 w-auto max-w-[160px] object-contain mb-3"
+                    />
+                  )}
                   <h2 className="text-xl sm:text-2xl font-black tracking-tight text-zinc-950">
                     {contractorName || "Contractor Name"}
                   </h2>
@@ -1036,25 +1220,121 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                   </p>
                 </div>
 
-                {/* Sign-off box */}
-                <div className="pt-4 grid grid-cols-2 gap-8 text-[11px] text-zinc-500">
-                  <div className="border-t border-zinc-300 pt-1">
-                    <p className="font-semibold text-zinc-800">Contractor Signature</p>
-                    <p className="text-[10px] text-zinc-400 mt-4">Date</p>
+                {/* Sign-off box with interactive e-Signatures */}
+                <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-[11px] text-zinc-500">
+                  <div className="border-t border-zinc-300 pt-2">
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="font-semibold text-zinc-800">Contractor Signature</p>
+                      {contractorSignature && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setContractorSignature(null);
+                            setContractorSignatureDate(null);
+                          }}
+                          className="text-[10px] text-red-500 hover:underline cursor-pointer"
+                        >
+                          Clear
+                        </button>
+                      )}
+                    </div>
+                    {contractorSignature ? (
+                      <div>
+                        <img
+                          src={contractorSignature}
+                          alt="Contractor Digital Signature"
+                          className="h-10 w-auto max-w-[140px] object-contain mb-1"
+                        />
+                        <p className="text-[10px] text-emerald-700 font-medium">
+                          ✓ Digitally Signed • {contractorSignatureDate}
+                        </p>
+                      </div>
+                    ) : (
+                      <div>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSignatureTarget("contractor");
+                            setIsSignatureModalOpen(true);
+                          }}
+                          className="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-semibold transition cursor-pointer text-xs"
+                        >
+                          <span>✍️ Click to e-Sign</span>
+                        </button>
+                        <p className="text-[10px] text-zinc-400 mt-2">Date: _______________</p>
+                      </div>
+                    )}
                   </div>
-                  <div className="border-t border-zinc-300 pt-1">
-                    <p className="font-semibold text-zinc-800">Client Acceptance Signature</p>
-                    <p className="text-[10px] text-zinc-400 mt-4">Date</p>
+
+                  <div className="border-t border-zinc-300 pt-2">
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="font-semibold text-zinc-800">Client Acceptance Signature</p>
+                      {clientSignature && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setClientSignature(null);
+                            setClientSignatureDate(null);
+                          }}
+                          className="text-[10px] text-red-500 hover:underline cursor-pointer"
+                        >
+                          Clear
+                        </button>
+                      )}
+                    </div>
+                    {clientSignature ? (
+                      <div>
+                        <img
+                          src={clientSignature}
+                          alt="Client Digital Signature"
+                          className="h-10 w-auto max-w-[140px] object-contain mb-1"
+                        />
+                        <p className="text-[10px] text-emerald-700 font-medium">
+                          ✓ Client Accepted • {clientSignatureDate}
+                        </p>
+                      </div>
+                    ) : (
+                      <div>
+                        <div className="mt-1 flex flex-wrap gap-2">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSignatureTarget("client");
+                              setIsSignatureModalOpen(true);
+                            }}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-semibold transition cursor-pointer text-xs"
+                          >
+                            <span>✍️ e-Sign In-Person</span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setIsClientEsignModalOpen(true)}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold transition cursor-pointer text-xs"
+                          >
+                            <span>📱 Send to Client</span>
+                          </button>
+                        </div>
+                        <p className="text-[10px] text-zinc-400 mt-2">Date: _______________</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
 
-              {/* Watermark / Brand Footer */}
-              <div className="mt-8 pt-4 border-t border-zinc-100 text-center">
-                <p className="text-[10px] text-zinc-400 tracking-wide font-medium">
-                  Generated with <span className="font-bold text-zinc-900">CalculatorMint</span> — Free US Contractor Estimate & Bid Generator
-                </p>
-              </div>
+              {/* Watermark / Brand Footer: Hidden for Pro users */}
+              {(!mounted || !isPro) ? (
+                <div className="mt-8 pt-4 border-t border-zinc-100 text-center">
+                  <p className="text-[10px] text-zinc-400 tracking-wide font-medium">
+                    Generated with <span className="font-bold text-zinc-900">CalculatorMint</span> — Free US Contractor Estimate & Bid Generator
+                  </p>
+                </div>
+              ) : (
+                <div className="mt-8 pt-4 border-t border-zinc-100 text-center">
+                  <p className="text-[10px] text-zinc-400 tracking-wide font-medium">
+                    Authorized Client Estimate • Valid for 30 Days
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -1073,6 +1353,31 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
           if (data.email) {
             setContractorEmail(data.email);
           }
+        }}
+      />
+
+      {/* Digital e-Signature Modal */}
+      <SignatureModal
+        isOpen={isSignatureModalOpen}
+        onClose={() => setIsSignatureModalOpen(false)}
+        onSave={handleSaveSignature}
+        title={signatureTarget === "contractor" ? "Contractor Digital e-Signature" : "Client Acceptance e-Signature"}
+        defaultName={signatureTarget === "contractor" ? contractorName : clientName}
+      />
+
+      {/* Client e-Signature Dispatch Modal */}
+      <ClientEsignModal
+        isOpen={isClientEsignModalOpen}
+        onClose={() => setIsClientEsignModalOpen(false)}
+        contractorName={contractorName}
+        clientName={clientName}
+        clientEmail={clientEmail}
+        estimateNumber={estimateNumber}
+        grandTotal={grandTotal}
+        tradeName={trade.tradeName}
+        onSignNow={() => {
+          setSignatureTarget("client");
+          setIsSignatureModalOpen(true);
         }}
       />
     </div>
