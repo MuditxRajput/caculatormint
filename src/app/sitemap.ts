@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }[] = [
     { path: "/", priority: 1.0, changeFrequency: "daily" },
     { path: "/estimate-templates", priority: 0.95, changeFrequency: "daily" },
+    { path: "/billdu-alternative", priority: 0.92, changeFrequency: "weekly" },
     { path: "/blog", priority: 0.9, changeFrequency: "daily" },
     { path: "/cubic-yard-calculator", priority: 0.9, changeFrequency: "weekly" },
     { path: "/profit-margin-calculator", priority: 0.9, changeFrequency: "weekly" },

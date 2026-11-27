@@ -36,6 +36,13 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
   const [estimateDate, setEstimateDate] = useState(today);
   const [validUntil, setValidUntil] = useState(thirtyDaysOut);
 
+  // Document Type Switcher: Estimate vs Invoice
+  const [docType, setDocType] = useState<"estimate" | "invoice">("estimate");
+  const [paymentDueTerms, setPaymentDueTerms] = useState<string>("Due Upon Receipt");
+  const [paymentInstructions, setPaymentInstructions] = useState<string>(
+    "Payment accepted via Check, Bank Transfer / ACH, Zelle, or Credit Card. Please reference Invoice # on remittance."
+  );
+
   // Line items state (pre-filled with trade defaults)
   const [lineItems, setLineItems] = useState<LineItem[]>(() =>
     trade.defaultLineItems.map((item) => ({ ...item }))
@@ -222,12 +229,75 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
     }
   };
 
+  // Instant Spreadsheet (Excel / Google Sheets / Numbers CSV) Export
+  const handleExportSpreadsheet = () => {
+    fireAnalytics("spreadsheet_downloaded", {
+      trade: trade.slug,
+      docType,
+      estimateNumber,
+      total: grandTotal,
+    });
+
+    const docTitle = docType === "invoice" ? "INVOICE" : "ESTIMATE & PROPOSAL";
+    const numLabel = docType === "invoice" ? "Invoice #" : "Estimate #";
+    const dueLabel = docType === "invoice" ? "Payment Due Date" : "Valid Until";
+
+    const rows: (string | number)[][] = [
+      [docTitle, `Trade: ${trade.tradeName}`, `CalculatorMint (calculatormint.online)`],
+      [],
+      ["Contractor / Business:", contractorName || "Contractor Name", "License / Insured:", contractorLicense || "Licensed & Insured"],
+      ["Contact Info:", [contractorPhone, contractorEmail].filter(Boolean).join(" | ") || "N/A"],
+      [],
+      ["Client Name:", clientName || "Client Name", numLabel, estimateNumber || (docType === "invoice" ? "INV-1042" : "EST-1042")],
+      ["Project Location:", clientAddress || "Project Address", "Date Issued:", estimateDate || today],
+      ["Client Email:", clientEmail || "N/A", dueLabel, `${validUntil || thirtyDaysOut} (${paymentDueTerms})`],
+      [],
+      ["Item #", "Scope Description", "Quantity", "Unit", "Unit Rate ($)", "Total Amount ($)"],
+    ];
+
+    lineItems.forEach((item, idx) => {
+      rows.push([
+        idx + 1,
+        `"${(item.description || "Scope item").replace(/"/g, '""')}"`,
+        item.quantity || 1,
+        item.unit || "unit",
+        (Number(item.rate) || 0).toFixed(2),
+        ((Number(item.quantity) || 0) * (Number(item.rate) || 0)).toFixed(2),
+      ]);
+    });
+
+    rows.push([]);
+    rows.push(["", "", "", "", "Subtotal:", subtotal.toFixed(2)]);
+    if (discountAmount > 0) {
+      rows.push(["", "", "", "", "Discount:", `-${discountAmount.toFixed(2)}`]);
+    }
+    if (taxPercent > 0) {
+      rows.push(["", "", "", "", `Sales Tax (${taxPercent}%):`, tax.toFixed(2)]);
+    }
+    rows.push(["", "", "", "", docType === "invoice" ? "Total Due:" : "Estimated Total:", grandTotal.toFixed(2)]);
+    rows.push([]);
+    rows.push(["Terms & Conditions:", `"${(terms || "").replace(/"/g, '""')}"`]);
+    if (docType === "invoice" && paymentInstructions) {
+      rows.push(["Payment Instructions:", `"${paymentInstructions.replace(/"/g, '""')}"`]);
+    }
+
+    const csvContent = "data:text/csv;charset=utf-8," + rows.map((r) => r.join(",")).join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `${docType}-${(estimateNumber || "1042").toLowerCase()}-${trade.slug}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   // 100% Reliable Vector PDF Generation using jsPDF
   // This draws vector elements directly from state, eliminating canvas render / blank page bugs.
   const handleDownloadPdf = async () => {
     setIsGeneratingPdf(true);
     fireAnalytics("pdf_downloaded", {
       trade: trade.slug,
+      docType,
       estimateNumber,
       total: grandTotal,
     });
@@ -274,18 +344,21 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
         doc.text(contactLine, leftMargin, contractorY + 23);
       }
 
-      // Header: Estimate Meta (Right)
+      // Header: Estimate / Invoice Meta (Right)
+      const docHeaderTitle = docType === "invoice" ? "INVOICE" : "ESTIMATE";
       doc.setFont("helvetica", "bold");
       doc.setFontSize(18);
       doc.setTextColor(9, 9, 11);
-      doc.text("ESTIMATE", rightMargin, 52, { align: "right" });
+      doc.text(docHeaderTitle, rightMargin, 52, { align: "right" });
 
       doc.setFont("helvetica", "normal");
       doc.setFontSize(8.5);
       doc.setTextColor(82, 82, 91);
-      doc.text(`Estimate #: ${estimateNumber || "EST-1042"}`, rightMargin, 66, { align: "right" });
+      const numLabel = docType === "invoice" ? "Invoice #:" : "Estimate #:";
+      doc.text(`${numLabel} ${estimateNumber || (docType === "invoice" ? "INV-1042" : "EST-1042")}`, rightMargin, 66, { align: "right" });
       doc.text(`Date: ${estimateDate || today}`, rightMargin, 79, { align: "right" });
-      doc.text(`Valid Until: ${validUntil || thirtyDaysOut}`, rightMargin, 92, { align: "right" });
+      const dueLabel = docType === "invoice" ? `Due: ${validUntil || today} (${paymentDueTerms})` : `Valid Until: ${validUntil || thirtyDaysOut}`;
+      doc.text(dueLabel, rightMargin, 92, { align: "right" });
 
       // Divider line
       const dividerY = Math.max(104, contractorY + 34);
@@ -497,21 +570,25 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
       doc.setTextColor(161, 161, 170);
       if (!isPro) {
         doc.text(
-          "Generated with CalculatorMint • Free US Contractor Estimate Generator",
+          docType === "invoice"
+            ? "Generated with CalculatorMint • Free US Contractor Invoice & Estimate Generator"
+            : "Generated with CalculatorMint • Free US Contractor Estimate Generator",
           pageWidth / 2,
           760,
           { align: "center" }
         );
       } else {
         doc.text(
-          "Authorized Client Estimate • Valid for 30 Days",
+          docType === "invoice"
+            ? "Official Client Invoice • Thank you for your business!"
+            : "Authorized Client Estimate • Valid for 30 Days",
           pageWidth / 2,
           760,
           { align: "center" }
         );
       }
 
-      const filename = `${trade.slug}-estimate-${estimateNumber || "quote"}.pdf`;
+      const filename = `${trade.slug}-${docType}-${estimateNumber || "doc"}.pdf`;
       doc.save(filename);
     } catch (err) {
       console.warn("Direct vector PDF error, falling back to window.print():", err);
@@ -605,6 +682,57 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
             activeTab === "preview" ? "hidden md:block" : "block"
           }`}
         >
+          {/* Document Type Switcher: Estimate vs Invoice */}
+          <div className="bg-slate-900 text-white rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-sm border border-slate-800">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                  Mode: {docType === "invoice" ? "Billable Invoice" : "Estimate / Quote"}
+                </span>
+              </div>
+              <p className="text-[11px] text-slate-400 mt-0.5">
+                {docType === "invoice"
+                  ? "Generate a formal bill with payment due date and remittance details"
+                  : "Draft a client-ready proposal and job cost estimate with e-signatures"}
+              </p>
+            </div>
+            <div className="flex items-center p-1 bg-slate-800 rounded-lg border border-slate-700 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={() => {
+                  setDocType("estimate");
+                  if (estimateNumber.startsWith("INV-")) {
+                    setEstimateNumber(estimateNumber.replace("INV-", "EST-"));
+                  }
+                }}
+                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                  docType === "estimate"
+                    ? "bg-emerald-600 text-white shadow-xs"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                📄 Estimate / Bid
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setDocType("invoice");
+                  if (estimateNumber.startsWith("EST-")) {
+                    setEstimateNumber(estimateNumber.replace("EST-", "INV-"));
+                  }
+                }}
+                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                  docType === "invoice"
+                    ? "bg-emerald-600 text-white shadow-xs"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                💳 Final Invoice
+              </button>
+            </div>
+          </div>
+
           {/* Section: Contractor & Client Info */}
           <div className="bg-white rounded-xl border border-zinc-200 p-5 sm:p-6 shadow-sm">
             <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
@@ -758,11 +886,11 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                 />
               </div>
 
-              {/* Estimate Meta */}
-              <div className="pt-3 border-t border-zinc-100 grid grid-cols-3 gap-2">
+              {/* Estimate / Invoice Meta */}
+              <div className="pt-3 border-t border-zinc-100 grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <div>
                   <label className="block text-[10px] font-bold uppercase text-zinc-500 mb-1">
-                    Estimate #
+                    {docType === "invoice" ? "Invoice #" : "Estimate #"}
                   </label>
                   <input
                     type="text"
@@ -773,7 +901,7 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                 </div>
                 <div>
                   <label className="block text-[10px] font-bold uppercase text-zinc-500 mb-1">
-                    Date
+                    Date Issued
                   </label>
                   <input
                     type="date"
@@ -785,7 +913,7 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                 </div>
                 <div>
                   <label className="block text-[10px] font-bold uppercase text-zinc-500 mb-1">
-                    Valid Until
+                    {docType === "invoice" ? "Payment Due Date" : "Valid Until"}
                   </label>
                   <input
                     type="date"
@@ -796,6 +924,39 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                   />
                 </div>
               </div>
+
+              {docType === "invoice" && (
+                <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase text-zinc-500 mb-1">
+                      Payment Terms
+                    </label>
+                    <select
+                      value={paymentDueTerms}
+                      onChange={(e) => setPaymentDueTerms(e.target.value)}
+                      className="w-full px-2 py-1.5 text-xs bg-zinc-50 border border-zinc-200 rounded-md text-zinc-800"
+                    >
+                      <option value="Due Upon Receipt">Due Upon Receipt</option>
+                      <option value="Net 15 Days">Net 15 Days</option>
+                      <option value="Net 30 Days">Net 30 Days</option>
+                      <option value="Net 60 Days">Net 60 Days</option>
+                      <option value="50% Deposit / 50% Completion">50% Deposit / 50% Completion</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase text-zinc-500 mb-1">
+                      Payment Remittance Notes
+                    </label>
+                    <input
+                      type="text"
+                      value={paymentInstructions}
+                      onChange={(e) => setPaymentInstructions(e.target.value)}
+                      placeholder="e.g. Zelle: bids@company.com, ACH, Check"
+                      className="w-full px-2 py-1.5 text-xs bg-zinc-50 border border-zinc-200 rounded-md text-zinc-800"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -1018,6 +1179,16 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
 
               <button
                 type="button"
+                onClick={handleExportSpreadsheet}
+                className="px-3.5 py-3 rounded-xl border border-zinc-300 hover:bg-zinc-100 bg-white text-zinc-900 text-xs font-bold inline-flex items-center justify-center gap-1.5 transition cursor-pointer shadow-2xs"
+                title="Download estimate line items as Excel/Sheets compatible CSV spreadsheet"
+              >
+                <span className="text-emerald-700 font-mono font-black text-xs">📊</span>
+                <span>Excel / Sheets</span>
+              </button>
+
+              <button
+                type="button"
                 onClick={() => window.print()}
                 className="px-3.5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-900 text-xs font-bold inline-flex items-center justify-center gap-1.5 transition cursor-pointer"
                 title="Print or save via system printer dialog"
@@ -1095,17 +1266,21 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
 
                 <div className="text-left sm:text-right">
                   <span className="inline-block px-2.5 py-1 bg-zinc-950 text-white font-mono text-xs font-bold tracking-widest uppercase rounded">
-                    ESTIMATE
+                    {docType === "invoice" ? "INVOICE" : "ESTIMATE"}
                   </span>
                   <div className="mt-3 text-xs space-y-1">
                     <p className="font-semibold text-zinc-900">
-                      Estimate #: <span className="font-mono text-zinc-700">{estimateNumber}</span>
+                      {docType === "invoice" ? "Invoice #:" : "Estimate #:"}{" "}
+                      <span className="font-mono text-zinc-700">{estimateNumber}</span>
                     </p>
                     <p className="text-zinc-500">
                       Date: <span className="text-zinc-900" suppressHydrationWarning>{estimateDate}</span>
                     </p>
                     <p className="text-zinc-500">
-                      Valid Until: <span className="text-zinc-900" suppressHydrationWarning>{validUntil}</span>
+                      {docType === "invoice" ? "Payment Due:" : "Valid Until:"}{" "}
+                      <span className="text-zinc-900" suppressHydrationWarning>
+                        {validUntil} {docType === "invoice" ? `(${paymentDueTerms})` : ""}
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -1227,6 +1402,17 @@ export function EstimateBuilder({ trade }: EstimateBuilderProps) {
                     {terms}
                   </p>
                 </div>
+
+                {docType === "invoice" && paymentInstructions && (
+                  <div className="bg-emerald-50/70 p-3 rounded-lg border border-emerald-200 text-xs">
+                    <p className="font-bold text-emerald-950 uppercase tracking-wider text-[10px] mb-1">
+                      Payment Remittance Instructions:
+                    </p>
+                    <p className="leading-relaxed text-emerald-900 font-medium">
+                      {paymentInstructions}
+                    </p>
+                  </div>
+                )}
 
                 {/* Sign-off box with interactive e-Signatures */}
                 <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-[11px] text-zinc-500">

@@ -14,14 +14,7 @@ export function EstimateHubClient({ trades }: EstimateHubClientProps) {
 
   const categories = [
     "All",
-    "Cleaning & Janitorial",
-    "Exterior Maintenance",
-    "Lawn & Landscaping",
-    "Finishing & Remodeling",
-    "General Trades",
-    "Flooring & Concrete",
-    "Hauling & Cleanup",
-    "Exterior Construction",
+    ...Array.from(new Set(trades.map((t) => t.category))),
   ];
 
   const filteredTrades = trades.filter((trade) => {

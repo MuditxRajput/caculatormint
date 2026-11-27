@@ -1060,6 +1060,370 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "how-to-estimate-concrete-slabs-driveways",
+    title: "How to Estimate Concrete Slabs & Driveways: Yardage, Rebar & Labor (2026 Guide)",
+    seoTitle: "How to Estimate Concrete Slabs: Yardage Formulas & Cost Per Sq Ft (2026)",
+    seoDescription:
+      "Master concrete estimating: calculate cubic yardage with the 10% waste rule, price rebar grids, sub-base gravel, and broom vs stamped labor. Free concrete bid sheet.",
+    date: "2026-11-26",
+    author: "CalculatorMint Editorial Team",
+    readTime: "7 min read",
+    category: "Trade Estimating",
+    excerpt:
+      "Under-ordering concrete by even half a yard ruins your pour and triggers expensive dispatch fees. Learn how professional concrete contractors calculate yardage and quote profitable slabs.",
+    keywords: [
+      "how to estimate concrete slab",
+      "concrete driveway bid formula",
+      "concrete cubic yard calculator",
+      "cost to pour concrete per square foot",
+      "stamped concrete bidding guide",
+    ],
+    relatedTool: {
+      name: "Concrete & Masonry Estimate Generator",
+      href: "/estimate-template/concrete-masonry",
+      ctaText: "Open Free Concrete Bid Calculator",
+      description: "Pre-filled with 2026 US ready-mix pricing, rebar grids, and broom finish defaults.",
+    },
+    sections: [
+      {
+        heading: "The Golden Rule of Concrete Estimating: The 10% Cushion",
+        paragraphs: [
+          "The single most expensive mistake a new concrete contractor can make is ordering the exact mathematical volume of ready-mix concrete. Dirt subgrades are never laser-flat; a 1/2-inch dip across a 24x24 driveway slab can consume an entire extra half-yard of concrete.",
+          "If the pump truck runs dry with 20 square feet left unpoured, you face cold joints, structural weak spots, and emergency short-load charges ($150–$300 fee for under 4 yards). Always calculate volume to the exact tenth of a yard, then round up and add a mandatory 10% to 12% overage allowance.",
+        ],
+        callout: {
+          type: "formula",
+          title: "Exact Concrete Cubic Yard Formula",
+          body: "Cubic Yards = (Length in feet × Width in feet × Thickness in inches) ÷ 324\nExample for 20ft × 30ft slab at 4 inches thick:\n(20 × 30 × 4) ÷ 324 = 7.41 cubic yards + 10% buffer (0.74 yd) = Order 8.25 yards.",
+        },
+      },
+      {
+        heading: "2026 Material Cost Benchmarks Every Contractor Must Know",
+        paragraphs: [
+          "Ready-mix plant prices vary regionally based on local aggregate quarries and fuel surcharges. In 2026, standard 3,500 to 4,000 PSI residential concrete ranges from $145 to $185 per cubic yard delivered.",
+          "Reinforcement steel (#4 1/2-inch rebar on 18-inch centers) costs approximately $0.85 to $1.20 per square foot in material, while crushed gravel sub-base (#57 stone or crush-and-run) averages $38 to $55 per ton delivered.",
+        ],
+        table: {
+          headers: ["Component", "Standard Specification", "Cost Range (Installed / Delivered)"],
+          rows: [
+            ["Ready-Mix Concrete", "4,000 PSI with air entrainment", "$150 - $185 per cubic yard"],
+            ["Sub-Base Gravel", "4-inch compacted #57 stone", "$1.75 - $2.50 per sq ft"],
+            ["Rebar Reinforcement", "#4 1/2\" on 18\" grid with chairs", "$1.40 - $2.00 per sq ft"],
+            ["Broom Finish Labor", "Forming, pour, strike-off, broom", "$3.50 - $5.50 per sq ft"],
+            ["Stamped Finish Labor", "Color hardener, stamps, acrylic seal", "$7.00 - $12.00 per sq ft"],
+          ],
+        },
+      },
+      {
+        heading: "Control Joints and Saw Cutting: Preventing Random Cracking",
+        paragraphs: [
+          "All concrete shrinks and contracts as moisture evaporates during hydration. A successful contractor controls where the slab cracks rather than hoping it won't.",
+          "Space contraction joints at a maximum distance equal to 2 to 2.5 times the slab thickness in feet. For a 4-inch slab: 4 × 2.5 = maximum 10-foot spacing in both directions. Cut joints to a minimum depth of 1/4 the slab thickness (1 inch deep for 4-inch slab) within 6 to 18 hours of finishing using an early-entry green saw.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does a 24x24 concrete garage slab cost in 2026?",
+        answer:
+          "A standard 24x24 two-car garage slab (576 sq ft) at 4 inches thick with rebar reinforcement costs between $4,600 and $6,800 fully installed ($8.00 to $11.80 per sq ft), assuming minimal excavation on level ground.",
+      },
+      {
+        question: "When is a concrete line pump truck necessary?",
+        answer:
+          "If the ready-mix transit truck cannot pull within 15 to 20 feet of the forms due to fences, wet turf, or distance, you must schedule a concrete line pump. Pump dispatch fees range from $600 to $900 for up to 4 hours.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-price-fence-installation",
+    title: "How to Price Fence Installation: Cost Per Foot for Wood, Vinyl & Chain Link (2026)",
+    seoTitle: "How to Price Fence Installation: Per Foot Rates & Profit Formula (2026 Guide)",
+    seoDescription:
+      "Learn how to bid fence installations: linear foot cost formulas for wood privacy, vinyl, and chain link, post hole concrete calculations, and gate pricing.",
+    date: "2026-11-26",
+    author: "CalculatorMint Editorial Team",
+    readTime: "6 min read",
+    category: "Trade Estimating",
+    excerpt:
+      "From post hole augering and frost line depths to gate sagging callbacks, discover how professional fence contractors bid perimeter projects with 35%+ gross profit margins.",
+    keywords: [
+      "how to price fence installation",
+      "cost to install fence per linear foot",
+      "fence bidding calculator",
+      "wood privacy fence cost per foot",
+      "how to quote vinyl fencing",
+    ],
+    relatedTool: {
+      name: "Fence Installation & Repair Bid Calculator",
+      href: "/estimate-template/fencing",
+      ctaText: "Open Free Fence Estimate Generator",
+      description: "Pre-loaded with linear foot benchmarks for cedar, pressure-treated pine, and vinyl.",
+    },
+    sections: [
+      {
+        heading: "The 3 Pillars of Fence Estimating: Posts, Panels & Gates",
+        paragraphs: [
+          "Bidding fences by multiplying total linear feet by a single flat number often leads to severe losses on jobs with multiple corners, gates, or steep elevation changes.",
+          "Professional fence estimators separate the project into three distinct cost buckets: 1) The post and concrete system (hole depth and spacing); 2) The infill panels/rails (lumber or vinyl); 3) Custom gates and hardware (which consume 25% of the total labor time).",
+        ],
+        callout: {
+          type: "tip",
+          title: "Post Count Formula",
+          body: "Total Posts = (Total Linear Feet ÷ Post Spacing) + Corner Posts + End/Gate Posts.\nExample: 160 linear feet with 8ft spacing has 20 run posts + 2 corner posts + 2 gate posts = 24 total posts.",
+        },
+      },
+      {
+        heading: "2026 Installed Price Per Linear Foot Benchmarks",
+        paragraphs: [
+          "In 2026, standard 6-foot privacy fence installations average $28 to $52 per linear foot nationwide, with material accounting for 55% to 65% of the total cost and labor representing 35% to 45%.",
+        ],
+        table: {
+          headers: ["Fence Type", "Average Material Cost / Foot", "Labor Cost / Foot", "Contractor Total Bid / Foot"],
+          rows: [
+            ["Treated Pine 6ft Privacy", "$14 - $19", "$12 - $17", "$26 - $36"],
+            ["Western Red Cedar 6ft", "$22 - $30", "$14 - $20", "$36 - $50"],
+            ["White Vinyl / PVC Privacy", "$24 - $34", "$15 - $22", "$39 - $56"],
+            ["Black Chain Link (Residential)", "$10 - $15", "$9 - $14", "$19 - $29"],
+            ["Ornamental Aluminum / Steel", "$28 - $42", "$16 - $24", "$44 - $66"],
+          ],
+        },
+      },
+      {
+        heading: "Gates: Where Most Fence Contractors Lose Money",
+        paragraphs: [
+          "A 4-foot pedestrian gate takes almost as long to fabricate, level, and hang as 40 feet of straight-run fence line. Never include walk gates for free in your linear foot price.",
+          "Bid pedestrian walk gates at a minimum of $350 to $450 each. Double drive-through gates (10ft to 12ft wide) must be bid at $650 to $950, and should always include welded steel internal anti-sag truss frames to prevent warranty service callbacks.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How many bags of concrete should I bid per fence post?",
+        answer:
+          "In mild climates with a 24-inch to 30-inch post depth, bid 1.5 bags (80lb quick-setting concrete) per post. In northern freeze zones requiring 36-inch to 42-inch holes, bid 2 to 2.5 bags per post.",
+      },
+      {
+        question: "How do contractors handle underground obstacles like roots or bedrock?",
+        answer:
+          "Include an 'Unforeseen Subsurface Obstacle Clause' in your estimate terms stating that mechanical post hole digging through underground rock or thick tree roots requiring jackhammering is billed at a fixed rate of $35 to $65 per hole extra.",
+      },
+    ],
+  },
+  {
+    slug: "drywall-estimating-guide-hanging-taping-mudding",
+    title: "Drywall Estimating Guide: Hanging, Taping & Mudding Rates Per Square Foot (2026)",
+    seoTitle: "Drywall Estimating Guide: 2026 Rates for Hanging, Taping & Mudding",
+    seoDescription:
+      "How to estimate drywall: calculate square footage, sheet counts, Level 4 vs Level 5 finish rates, ceiling height multipliers, and dust containment.",
+    date: "2026-11-26",
+    author: "CalculatorMint Editorial Team",
+    readTime: "7 min read",
+    category: "Trade Estimating",
+    excerpt:
+      "Stop guessing sheetrock bids. Learn the industry-standard drywall estimating formulas used to quote residential basement finishes, room additions, and popcorn ceiling remodels.",
+    keywords: [
+      "drywall estimating guide",
+      "cost to hang and tape drywall per sq ft",
+      "drywall bid formula",
+      "sheetrock price per sheet installed",
+      "level 5 finish drywall cost",
+    ],
+    relatedTool: {
+      name: "Drywall & Sheetrock Bid Generator",
+      href: "/estimate-template/drywall",
+      ctaText: "Open Free Drywall Estimate Calculator",
+      description: "Pre-configured with per-sheet hanging, 3-coat mudding, and greenboard wet area rates.",
+    },
+    sections: [
+      {
+        heading: "How to Calculate Drywall Surface Area Accurately",
+        paragraphs: [
+          "To estimate a room, calculate the perimeter of all walls multiplied by ceiling height, plus the ceiling square footage. For standard residential estimates, professional contractors do not deduct for small windows and standard single doors under 30 square feet.",
+          "The labor required to measure, cut, bevel, and fit drywall sheets around window and door framing equals or exceeds the material cost of the cut-out waste. Leaving small openings in your square footage calculation naturally builds in the necessary 10% to 12% scrap buffer.",
+        ],
+        callout: {
+          type: "formula",
+          title: "Quick Square Foot to 4x12 Sheet Conversion",
+          body: "Total 4x8 Sheets = Total Square Feet ÷ 32\nTotal 4x12 Sheets = Total Square Feet ÷ 48\nAlways prefer 4x12 sheets on walls longer than 12 feet to eliminate 25% of vertical butt joints.",
+        },
+      },
+      {
+        heading: "2026 US Drywall Labor & Material Rates",
+        paragraphs: [
+          "In 2026, complete hanging, taping, and Level 4 mudding averages $3.25 to $4.85 per square foot nationwide for residential remodels.",
+        ],
+        table: {
+          headers: ["Task / Scope", "Low Rate (New Construction)", "Average Rate (Remodel)", "High Rate (Custom / High Ceilings)"],
+          rows: [
+            ["Hang Drywall (Labor Only)", "$1.20 / sq ft", "$1.65 / sq ft", "$2.25 / sq ft"],
+            ["Tape & Mud Level 4 Finish", "$1.40 / sq ft", "$1.85 / sq ft", "$2.60 / sq ft"],
+            ["Materials (Sheetrock, Screws, Mud)", "$0.65 / sq ft", "$0.85 / sq ft", "$1.15 / sq ft"],
+            ["Popcorn Ceiling Scraping & Skim", "$1.85 / sq ft", "$2.65 / sq ft", "$3.75 / sq ft"],
+            ["Level 5 Full Surface Skim Coat", "$0.95 / sq ft", "$1.35 / sq ft", "$1.95 / sq ft"],
+          ],
+        },
+      },
+      {
+        heading: "Ceiling Height and Overhead Multipliers",
+        paragraphs: [
+          "Hanging drywall on 8-foot walls is standard production work. However, ceiling heights over 9 feet require baker scaffolding or drywall stilts that significantly slow down crew speed.",
+          "Apply an automatic 15% surcharge for 9ft to 10ft ceilings, and a 25% to 35% surcharge for 12ft+ cathedral or vaulted ceilings. Include a mechanical drywall panel lifter in your equipment line items.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does it cost to drywall a 1,000 sq ft basement in 2026?",
+        answer:
+          "A 1,000 sq ft basement typically has around 2,800 to 3,200 square feet of wall and ceiling surface area. In 2026, hanging, taping, and sanding Level 4 drywall in this space costs between $9,500 and $13,500 complete with materials.",
+      },
+      {
+        question: "What is the difference between greenboard and purpleboard drywall?",
+        answer:
+          "Traditional greenboard is moisture-resistant for standard bathrooms. Newer purpleboard offers dual protection against both moisture and mold/mildew growth, making it the preferred standard for shower wet walls and basements.",
+      },
+    ],
+  },
+  {
+    slug: "tree-removal-pricing-guide",
+    title: "Tree Removal Pricing Guide: How to Bid Dangerous Trees & Stump Grinding (2026)",
+    seoTitle: "Tree Removal Pricing Guide: Hazard Tiers & Stump Grinding Rates (2026)",
+    seoDescription:
+      "How to bid tree removal: tree height pricing tiers, rope rigging over roofs, crane assistance, stump grinding per diameter inch, and insurance safeguards.",
+    date: "2026-11-26",
+    author: "CalculatorMint Editorial Team",
+    readTime: "7 min read",
+    category: "Trade Estimating",
+    excerpt:
+      "Tree removal carries the highest liability in property maintenance. Learn how professional arborists evaluate tree hazards, plan equipment access, and quote profitable removals.",
+    keywords: [
+      "tree removal pricing guide",
+      "how to quote tree removal",
+      "tree trimming bid calculator",
+      "stump grinding cost per inch",
+      "hazardous tree removal cost",
+    ],
+    relatedTool: {
+      name: "Tree Service & Removal Bid Calculator",
+      href: "/estimate-template/tree-service",
+      ctaText: "Open Free Tree Service Proposal Maker",
+      description: "Pre-loaded with sectional rigging, stump grinding, and chipper cleanup defaults.",
+    },
+    sections: [
+      {
+        heading: "The 4 Hazard Tiers of Tree Removal Pricing",
+        paragraphs: [
+          "A 50-foot pine in an open meadow takes 45 minutes to drop with a face cut. That same 50-foot pine leaning 10 feet over an asphalt shingle roof with power lines on the side takes 6 hours of sectional rope rigging with friction brakes.",
+          "Never bid trees solely on trunk height. Always categorize tree jobs into one of four distinct hazard tiers:",
+        ],
+        list: [
+          "Tier 1: Open Drop Zone (Under 30ft, no structures within reach) — $300 to $550",
+          "Tier 2: Standard Suburban Removal (30ft to 50ft, light landscaping nearby) — $650 to $1,100",
+          "Tier 3: Complex Sectional Rigging (50ft to 75ft, over roof, deck, or fence) — $1,250 to $2,400",
+          "Tier 4: Extreme Hazard / Crane Assist (75ft+, rotted hollow core, power lines) — $2,500 to $5,000+",
+        ],
+      },
+      {
+        heading: "Stump Grinding: How to Measure and Price for Profit",
+        paragraphs: [
+          "Beginner contractors make the mistake of measuring the cut trunk diameter at chest height (DBH). However, the stump grinder's carbide teeth must cut through the root flare spreading into the soil.",
+          "Measure across the widest ground root flare at soil level. In 2026, standard contractor pricing is $4.50 to $6.50 per diameter inch, with a minimum trip charge of $150 to $185 to cover towing and tooth sharpening costs.",
+        ],
+        callout: {
+          type: "tip",
+          title: "Root Flare Measurement Rule",
+          body: "A tree trunk measuring 20 inches across at the cut may have a 36-inch root flare where it enters the ground. At $5.50/inch, that is $198.00 rather than $110.00. Always measure at ground level.",
+        },
+      },
+      {
+        heading: "Debris Haul-Away vs. Cut On-Site Discounts",
+        paragraphs: [
+          "Wood disposal is a massive hidden cost in tree service. Commercial landfill tipping fees for heavy green oak or pine logs range from $65 to $110 per ton.",
+          "Win more bids by offering the client two options: 1) Full debris haul-off where the yard is raked clean; 2) A $200–$400 discount if the tree trunk is cut into 16-inch firewood rounds left stacked on-site for the homeowner's fire pit.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why do professional tree bids require $2M liability insurance?",
+        answer:
+          "Tree branches falling from 60 feet can cause tens of thousands of dollars in structural roof or vehicle damage in a split second. Proof of $2,000,000 commercial liability and active workers' comp is mandatory to win commercial and affluent residential bids.",
+      },
+      {
+        question: "What depth should stump grinding be performed to?",
+        answer:
+          "Standard residential stump grinding is performed 6 to 8 inches below existing grade, which allows for backfilling topsoil and planting grass seed. Deep replanting prep requires grinding 12 to 18 inches below grade.",
+      },
+    ],
+  },
+  {
+    slug: "contractor-invoicing-guide-getting-paid-fast",
+    title: "Contractor Invoicing Guide: Payment Terms, Retainage & How to Get Paid in 48 Hours",
+    seoTitle: "Contractor Invoicing Guide: Payment Terms & Getting Paid in 48 Hours (2026)",
+    seoDescription:
+      "Stop chasing unpaid contractor invoices. Learn the 50/30/20 deposit milestone structure, Net 15 vs Due on Receipt rules, and how to write legally airtight billing terms.",
+    date: "2026-11-26",
+    author: "CalculatorMint Editorial Team",
+    readTime: "6 min read",
+    category: "Pricing & Profit",
+    excerpt:
+      "Waiting 45 days for customer checks destroys contractor cash flow. Learn how to structure progressive invoice milestones, collect digital payments, and get paid within 48 hours.",
+    keywords: [
+      "contractor invoicing guide",
+      "how to invoice clients as a contractor",
+      "contractor payment terms",
+      "progress billing milestones",
+      "due on receipt vs net 30 contractors",
+    ],
+    relatedTool: {
+      name: "CalculatorMint Invoice & Estimate Maker",
+      href: "/billdu-alternative",
+      ctaText: "Create Free Professional Invoices",
+      description: "Switch from estimate to invoice in 1 click with customizable payment remittance notes.",
+    },
+    sections: [
+      {
+        heading: "The Fatal Flaw: Waiting Until 100% Completion to Invoice",
+        paragraphs: [
+          "The fastest way for an independent contractor to go out of business is financing a customer's project out of their own personal checking account.",
+          "When you buy materials, pay helpers, and wait until the final punch-list is signed off to hand over an invoice, you hold 100% of the financial risk. If the homeowner disputes a minor trim paint touch-up, they hold your entire $12,000 payment hostage.",
+        ],
+        callout: {
+          type: "formula",
+          title: "The Battle-Tested 50 / 30 / 20 Milestone Structure",
+          body: "• 50% Upfront Deposit: Paid upon contract signing to order materials and lock schedule.\n• 30% Progress Payment: Billed when rough-in / substructure is complete (framing, hang, or prep).\n• 20% Final Balance: Due on final walk-through day upon project completion.",
+        },
+      },
+      {
+        heading: "Due Upon Receipt vs. Net 15 vs. Net 30 Terms",
+        paragraphs: [
+          "For residential contracting jobs (roofing, painting, fencing, remodels, landscaping), **NEVER offer Net 30 terms**. Net 30 was designed for corporate Fortune 500 procurement departments, not homeowner driveways.",
+          "In residential services, your payment terms should strictly read: **'Due Upon Receipt'**. For commercial general contractors or property management companies, use **'Net 15 Days'** with an automatic 1.5% per month late fee clearly stated on the face of the invoice.",
+        ],
+      },
+      {
+        heading: "Eliminate Check Friction with Instant Digital Remittance",
+        paragraphs: [
+          "'The check is in the mail' is the oldest excuse in construction. In 2026, waiting for physical paper checks delays your cash flow by an average of 9 to 14 days.",
+          "On every invoice you send, include direct digital payment instructions: 1) Instant bank transfer via Zelle (zero merchant fees); 2) Same-day ACH direct deposit with your routing and account number; 3) A credit card option with a transparent 3% processing convenience fee.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do I handle customer change orders on invoices?",
+        answer:
+          "Never perform extra work requested by a client based on verbal agreement alone. Issue a written Change Order Invoice immediately detailing the scope adjustment and cost, and require a signature or text approval before buying additional materials.",
+      },
+      {
+        question: "What should I do if a client refuses to pay their final invoice?",
+        answer:
+          "Send a certified formal demand letter referencing the signed contract and completion date. If unpaid after 30 days, file a Mechanics Lien against the customer's real estate property, which clouds the property title and legally blocks refinancing or selling until your invoice is paid.",
+      },
+    ],
+  },
 ];
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {

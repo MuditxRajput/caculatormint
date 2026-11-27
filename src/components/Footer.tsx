@@ -70,7 +70,7 @@ export function Footer() {
                   href="/estimate-templates"
                   className="text-emerald-400 font-semibold hover:text-emerald-300 hover:underline inline-flex items-center gap-1"
                 >
-                  View All 10 Trades →
+                  View All 20 Trades →
                 </Link>
               </li>
             </ul>
@@ -167,6 +167,11 @@ export function Footer() {
               <li>
                 <Link href="/about" className="hover:text-emerald-400 transition">
                   About CalculatorMint
+                </Link>
+              </li>
+              <li>
+                <Link href="/billdu-alternative" className="text-emerald-400 font-semibold hover:text-emerald-300 transition">
+                  Billdu Alternative
                 </Link>
               </li>
               <li>

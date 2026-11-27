@@ -1595,6 +1595,1533 @@ export const TRADES: TradeConfig[] = [
     ],
     relatedTrades: ["pressure-washing", "epoxy-flooring", "handyman"],
   },
+  {
+    slug: "drywall",
+    tradeName: "Drywall & Sheetrock",
+    h1: "Free Drywall Estimate Template & Sheetrock Bid Calculator",
+    seoTitle: "Free Drywall Estimate Template, Sheetrock Quote Maker & Bid Sheet (2026 PDF)",
+    seoDescription:
+      "Generate accurate drywall hanging, taping, mudding, and popcorn ceiling removal quotes with 2026 US per-sheet and square foot rates. Free PDF bid generator.",
+    keywords: [
+      "drywall estimate template",
+      "sheetrock quote template pdf",
+      "drywall bid calculator",
+      "drywall hanging cost calculator",
+      "drywall taping and mudding price per sq ft",
+      "popcorn ceiling removal estimate template",
+      "drywall repair bid sheet",
+    ],
+    category: "Interior Construction & Renovation",
+    shortDescription:
+      "Hanging 1/2\" and 5/8\" drywall sheets, Level 4 & 5 smooth finishing, taping, mudding, and popcorn ceiling texture removal.",
+    defaultLineItems: [
+      {
+        id: "dw-1",
+        description: "Drywall Hanging — 1/2\" Sheetrock on 16\" O.C. Studs (Labor & Screws)",
+        quantity: 1200,
+        unit: "sq ft",
+        rate: 1.65,
+      },
+      {
+        id: "dw-2",
+        description: "Drywall Taping & 3-Coat Mudding (Level 4 Paint-Ready Smooth Finish)",
+        quantity: 1200,
+        unit: "sq ft",
+        rate: 1.85,
+      },
+      {
+        id: "dw-3",
+        description: "Corner Bead Installation (Metal / Vinyl Bullnose / Square)",
+        quantity: 80,
+        unit: "lin ft",
+        rate: 3.50,
+      },
+      {
+        id: "dw-4",
+        description: "Moisture-Resistant Greenboard Installation (Bathroom & Laundry Wet Walls)",
+        quantity: 350,
+        unit: "sq ft",
+        rate: 2.30,
+      },
+      {
+        id: "dw-5",
+        description: "Popcorn Ceiling Texture Scraping, Skim Coat & Sanding",
+        quantity: 600,
+        unit: "sq ft",
+        rate: 2.75,
+      },
+      {
+        id: "dw-6",
+        description: "Drywall Scrap Disposal & Daily Jobsite Broom/HEPA Vacuum Sweep",
+        quantity: 1,
+        unit: "job",
+        rate: 250.00,
+      },
+    ],
+    defaultTerms:
+      "50% deposit required prior to material delivery and sheet hanging; 30% upon taping completion; remaining 20% balance due upon final sand inspection. Substrate framing must be plumb, level, and inspected before hanging. Excludes electrical, plumbing, and HVAC modifications behind walls.",
+    pricingBenchmarks: [
+      {
+        service: "Hang Drywall (Labor Only)",
+        lowRate: 1.25,
+        avgRate: 1.65,
+        highRate: 2.20,
+        unit: "per sq ft",
+        notes: "Higher on 10ft+ ceilings and ceiling overhead hangs",
+      },
+      {
+        service: "Tape & Mud Level 4",
+        lowRate: 1.40,
+        avgRate: 1.85,
+        highRate: 2.50,
+        unit: "per sq ft",
+        notes: "Includes 3 coats plus final 150-grit machine sanding",
+      },
+      {
+        service: "Level 5 Skim Coat (High-End)",
+        lowRate: 0.90,
+        avgRate: 1.35,
+        highRate: 1.95,
+        unit: "per sq ft",
+        notes: "Full skim coat for critical lighting and gloss paint",
+      },
+      {
+        service: "Popcorn Ceiling Removal",
+        lowRate: 2.00,
+        avgRate: 2.75,
+        highRate: 3.75,
+        unit: "per sq ft",
+        notes: "Requires plastic containment and air scrubbing",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Measure Total Wall & Ceiling Surface Area",
+        description:
+          "Calculate total square footage by multiplying perimeter by ceiling height, plus ceiling area. Add a 10% to 15% waste factor for windows, doorways, and angle cuts.",
+      },
+      {
+        stepNumber: 2,
+        title: "Determine Sheet Count & Dimensions",
+        description:
+          "Standardize on 4x12 sheets instead of 4x8 where possible to reduce butt joints by 25%, drastically cutting taping labor and finishing time.",
+      },
+      {
+        stepNumber: 3,
+        title: "Specify Finishing Level (Level 3 vs 4 vs 5)",
+        description:
+          "Clarify finishing expectations in your bid: Level 3 for heavy textured walls, Level 4 for standard flat/eggshell paint, and Level 5 for high-gloss finishes and architectural raking light.",
+      },
+      {
+        stepNumber: 4,
+        title: "Itemize Containment and Dust Control",
+        description:
+          "Include plastic poly masking, floor protection, and HEPA air filtration. Drywall dust is the #1 complaint of homeowners; pricing dust containment establishes immediate professional credibility.",
+      },
+    ],
+    checklist: [
+      "Verify framing spacing (16\" vs 24\" on center) and screw penetration depth",
+      "Inspect electrical boxes and plumbing stub-outs before hanging sheets",
+      "Specify Greenboard / Purpleboard in all high-humidity and bathroom locations",
+      "Confirm ceiling drywall orientation (hung perpendicular to ceiling joists)",
+      "Set up negative air pressure and zipper doors on occupied home renovations",
+      "Perform cross-light raking inspection with 500W halogen before painting sign-off",
+    ],
+    faqs: [
+      {
+        question: "How do drywallers charge per sheet vs per square foot?",
+        answer:
+          "In 2026, hanging and finishing a standard 4x8 sheet (32 sq ft) typically costs between $65 and $95 per sheet installed and taped (materials and labor included). For larger commercial projects, contractors bid $2.75 to $4.20 per total square foot.",
+      },
+      {
+        question: "What is the difference between Level 4 and Level 5 drywall finishing?",
+        answer:
+          "Level 4 finish includes tape embedded in joint compound plus two separate coats over joints and fastener heads, sanded smooth. Level 5 finish adds a complete skim coat across the entire surface of the board, concealing all microscopic drywall paper texture so glossy paint does not flash under sunlight.",
+      },
+      {
+        question: "How much extra should I charge for 10-foot or 12-foot ceilings?",
+        answer:
+          "Ceilings over 9 feet require bakers scaffolding, drywall panel lifters, and extra labor, adding 20% to 35% to standard hanging and mudding rates. Always specify ceiling heights in your initial quote.",
+      },
+    ],
+    relatedTrades: ["painting", "handyman", "epoxy-flooring"],
+  },
+  {
+    slug: "fencing",
+    tradeName: "Fence Installation & Repair",
+    h1: "Free Fence Estimate Template & Bidding Calculator",
+    seoTitle: "Free Fence Estimate Template, Quote Generator & Cost Per Foot Calculator (2026)",
+    seoDescription:
+      "Generate wood privacy, vinyl, chain link, and aluminum fence estimates with 2026 US linear foot rates, post hole digging, and gate hardware. Free printable PDF bid sheet.",
+    keywords: [
+      "fence estimate template",
+      "fence quote template pdf",
+      "fence installation bid calculator",
+      "cost to install privacy fence per foot",
+      "vinyl fence estimate generator",
+      "chain link fence bid sheet",
+      "fence post hole digging quote",
+    ],
+    category: "Outdoor Construction & Perimeter",
+    shortDescription:
+      "Wood privacy fences, cedar board-on-board, vinyl PVC, chain link, aluminum decorative panels, and post digging in concrete.",
+    defaultLineItems: [
+      {
+        id: "fn-1",
+        description: "6ft Cedar Wood Privacy Fence Installation (Dog-Ear / Flat Top on 4x4 Treated Posts)",
+        quantity: 150,
+        unit: "lin ft",
+        rate: 34.00,
+      },
+      {
+        id: "fn-2",
+        description: "Post Hole Digging & Setting in 80lb Quick-Setting Concrete (36\" Frost Depth)",
+        quantity: 19,
+        unit: "each",
+        rate: 45.00,
+      },
+      {
+        id: "fn-3",
+        description: "Single Walk-Through Gate (4ft Wide with Heavy-Duty Self-Closing Hardware & Drop Rod)",
+        quantity: 1,
+        unit: "each",
+        rate: 385.00,
+      },
+      {
+        id: "fn-4",
+        description: "Double Drive-Through Gate (10ft Wide with Welded Steel Anti-Sag Frame)",
+        quantity: 1,
+        unit: "each",
+        rate: 750.00,
+      },
+      {
+        id: "fn-5",
+        description: "Existing Fence Tear-Out & Haul-Off Disposal",
+        quantity: 150,
+        unit: "lin ft",
+        rate: 6.50,
+      },
+      {
+        id: "fn-6",
+        description: "Rot-Resistant 2x6 Pressure-Treated Bottom Kickboard / Rot Board",
+        quantity: 150,
+        unit: "lin ft",
+        rate: 5.25,
+      },
+    ],
+    defaultTerms:
+      "50% deposit required upon contract execution to reserve build schedule and purchase lumber/vinyl materials; remaining 50% balance due upon fence line completion. Contractor calls 811 utility locate prior to digging. Homeowner is solely responsible for property boundary verification and HOA permits.",
+    pricingBenchmarks: [
+      {
+        service: "Wood Privacy Fence (Pine/Fir)",
+        lowRate: 24.00,
+        avgRate: 32.00,
+        highRate: 42.00,
+        unit: "per linear ft",
+        notes: "Standard 6ft dog-ear on 4x4 posts with 2x4 rails",
+      },
+      {
+        service: "Western Red Cedar Fence",
+        lowRate: 34.00,
+        avgRate: 44.00,
+        highRate: 58.00,
+        unit: "per linear ft",
+        notes: "Naturally rot and insect resistant; premium aesthetic",
+      },
+      {
+        service: "White Vinyl / PVC Privacy",
+        lowRate: 38.00,
+        avgRate: 48.00,
+        highRate: 65.00,
+        unit: "per linear ft",
+        notes: "Zero maintenance; lifetime manufacturer warranty",
+      },
+      {
+        service: "Black Chain Link (Residential)",
+        lowRate: 18.00,
+        avgRate: 25.00,
+        highRate: 34.00,
+        unit: "per linear ft",
+        notes: "Includes tension wire, top rail, and vinyl coating",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Measure Total Linear Footage & Count Corners",
+        description:
+          "Walk the perimeter with a rolling measuring wheel. Note the number of end posts, corner posts, and gate openings. Subtract gate widths from your fence panel count.",
+      },
+      {
+        stepNumber: 2,
+        title: "Calculate Post Spacing and Concrete Bags",
+        description:
+          "Posts are placed strictly 6 or 8 feet on center. Multiply post count by 1.5 to 2 bags of 80lb quick-setting concrete per hole based on local frost depth (typically 30\" to 42\").",
+      },
+      {
+        stepNumber: 3,
+        title: "Check Slope and Elevation Grade Changes",
+        description:
+          "Determine if the fence will be 'racked' (follows the ground contour) or 'stepped' (panels stay level with stair-step gaps). Stepped fences require longer posts on downhill runs.",
+      },
+      {
+        stepNumber: 4,
+        title: "Verify Underground Utilities and Tree Roots",
+        description:
+          "Specify in your contract that 811 Dig-Safe will be called. Note surcharges if mechanical augering is blocked by large tree roots or limestone bedrock requiring jackhammering.",
+      },
+    ],
+    checklist: [
+      "Require homeowner property survey or signed boundary waiver",
+      "Submit 811 locate request at least 72 hours before post digging",
+      "Check local building code on front yard vs backyard height limits (typically 4ft front, 6ft back)",
+      "Use hot-dipped galvanized or stainless steel ring-shank nails to prevent black wood streaking",
+      "Include heavy-duty anti-sag cable kits or welded steel gate frames on all wide gates",
+      "Quote bottom rot boards so pickets never touch damp soil",
+    ],
+    faqs: [
+      {
+        question: "How much does a 6-foot privacy fence cost per linear foot in 2026?",
+        answer:
+          "In 2026, average US installed costs for 6ft wood privacy fencing range from $28 to $45 per linear foot for pressure treated pine, and $38 to $58 per linear foot for western red cedar. Premium vinyl fencing ranges from $42 to $65 per foot.",
+      },
+      {
+        question: "How deep must fence posts be set in concrete?",
+        answer:
+          "A rule of thumb is setting posts at least 1/3 of their total length in the ground, and at least 6 inches below your local regional frost line (minimum 24\" to 36\" in warm climates; 36\" to 48\" in northern freeze zones).",
+      },
+      {
+        question: "Who is responsible for property lines and boundary disputes?",
+        answer:
+          "The homeowner is legally responsible for verifying property line pins through an official land survey. Professional fence contractors explicitly disclaim boundary liabilities in their estimates to prevent costly repositioning lawsuits.",
+      },
+    ],
+    relatedTrades: ["landscaping", "deck-building", "handyman"],
+  },
+  {
+    slug: "concrete-masonry",
+    tradeName: "Concrete & Masonry",
+    h1: "Free Concrete Estimate Template & Masonry Bid Generator",
+    seoTitle: "Free Concrete Estimate Template, Slab & Driveway Bid Calculator (2026 PDF)",
+    seoDescription:
+      "Calculate concrete yardage, rebar, sub-base gravel, pouring, and broom/stamped finish costs with 2026 US cubic yard & square foot defaults. Instant PDF quote maker.",
+    keywords: [
+      "concrete estimate template",
+      "concrete bid calculator",
+      "concrete driveway quote template pdf",
+      "concrete slab cost per square foot calculator",
+      "stamped concrete estimate generator",
+      "masonry bid sheet",
+      "retaining wall cost calculator",
+    ],
+    category: "Heavy Construction & Paving",
+    shortDescription:
+      "Driveways, patio slabs, garage floors, stamped decorative concrete, footing excavations, and CMU cinder block retaining walls.",
+    defaultLineItems: [
+      {
+        id: "cm-1",
+        description: "4\" Residential Concrete Slab Pour (4,000 PSI Ready-Mix with Fiber Mesh)",
+        quantity: 800,
+        unit: "sq ft",
+        rate: 8.50,
+      },
+      {
+        id: "cm-2",
+        description: "Sub-Base Grading & Compaction — 4\" Crushed Gravel (#57 / Crushed Run)",
+        quantity: 800,
+        unit: "sq ft",
+        rate: 2.25,
+      },
+      {
+        id: "cm-3",
+        description: "Rebar Grid Reinforcement (#4 1/2\" Rebar on 18\" Grid with Plastic Chairs)",
+        quantity: 800,
+        unit: "sq ft",
+        rate: 1.75,
+      },
+      {
+        id: "cm-4",
+        description: "Wood Formwork Perimeter Framing & Steel Staking",
+        quantity: 120,
+        unit: "lin ft",
+        rate: 4.50,
+      },
+      {
+        id: "cm-5",
+        description: "Broom Finish with Tooled Control Joints (Every 10ft for Crack Control)",
+        quantity: 800,
+        unit: "sq ft",
+        rate: 1.50,
+      },
+      {
+        id: "cm-6",
+        description: "Concrete Saw Cutting (Early Entry Green-Cut Joints at 1\" Depth)",
+        quantity: 80,
+        unit: "lin ft",
+        rate: 2.75,
+      },
+      {
+        id: "cm-7",
+        description: "Existing Concrete Breakout, Bobcat Loading & Disposal Haul-Away",
+        quantity: 400,
+        unit: "sq ft",
+        rate: 4.25,
+      },
+    ],
+    defaultTerms:
+      "50% deposit required upon contract approval to schedule ready-mix concrete pump truck and dispatch crew; balance due upon pour completion and final broom finish. Concrete requires 7 days of moist curing before light vehicle traffic and 28 days for full cure strength. Hairline surface crazing is inherent to Portland cement and does not constitute structural defect.",
+    pricingBenchmarks: [
+      {
+        service: "Standard Broom Finish Slab (4\")",
+        lowRate: 7.00,
+        avgRate: 9.50,
+        highRate: 13.00,
+        unit: "per sq ft",
+        notes: "Includes forms, ready-mix, rebar, pour, and finish",
+      },
+      {
+        service: "Stamped & Colored Decorative Concrete",
+        lowRate: 13.00,
+        avgRate: 18.00,
+        highRate: 26.00,
+        unit: "per sq ft",
+        notes: "Includes integral dye, release agent, and clear gloss acrylic sealer",
+      },
+      {
+        service: "Concrete Tear-Out & Haul",
+        lowRate: 3.50,
+        avgRate: 4.75,
+        highRate: 6.50,
+        unit: "per sq ft",
+        notes: "Higher for reinforced 6\" industrial concrete",
+      },
+      {
+        service: "Block Retaining Wall (CMU)",
+        lowRate: 35.00,
+        avgRate: 55.00,
+        highRate: 85.00,
+        unit: "per face sq ft",
+        notes: "Includes gravel backfill, drainage pipe, and rebar cores",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Calculate Exact Cubic Yardage with Waste",
+        description:
+          "Formula: (Length in ft × Width in ft × Depth in inches) ÷ 324. Always add 10% for uneven sub-base soil and over-digging so the pump truck never comes up short on the pour.",
+      },
+      {
+        stepNumber: 2,
+        title: "Assess Truck and Concrete Pump Access",
+        description:
+          "Check if ready-mix transit mixers (weighing 60,000 lbs) can back up directly to the site. If access is tight or crosses lawns, bid a separate concrete line pump or boom pump ($600-$1,200 dispatch fee).",
+      },
+      {
+        stepNumber: 3,
+        title: "Itemize Sub-Base Grading & Compaction",
+        description:
+          "A concrete slab is only as durable as the dirt beneath it. Always bid 4 inches of crushed stone compacted with a plate compactor to prevent frost heave and slab settling.",
+      },
+      {
+        stepNumber: 4,
+        title: "Plan Expansion & Control Joints",
+        description:
+          "Concrete contracts as it cures. Space control joints at maximum 2.5 times the slab thickness in feet (e.g. 4\" slab = maximum 10-foot joint spacing) to ensure clean, controlled cracking.",
+      },
+    ],
+    checklist: [
+      "Use our built-in Cubic Yard Material Calculator to verify exact ready-mix yardage",
+      "Specify rebar chairs so steel stays centered in the top 1/3 of the slab",
+      "Call 811 utility locate before digging perimeter footing trenches",
+      "Check weather forecast: do not pour if ambient temperatures drop below 40°F within 24 hours",
+      "Apply high-solids penetrating siloxane or acrylic sealer 28 days post-pour",
+      "Instruct client: no vehicle parking on new slab for minimum 7 days",
+    ],
+    faqs: [
+      {
+        question: "How much does a concrete driveway or patio cost per square foot in 2026?",
+        answer:
+          "In 2026, standard broom-finished concrete slabs (4\" thick, 4,000 PSI with rebar) cost between $8 and $12 per square foot installed. Decorative stamped and colored concrete ranges from $14 to $24 per square foot.",
+      },
+      {
+        question: "How do I calculate concrete cubic yards for a slab?",
+        answer:
+          "Multiply length × width × depth in feet, then divide by 27. For a 20' × 20' slab that is 4 inches thick: 20 × 20 × 0.333 = 133.3 cu ft ÷ 27 = 4.94 yards. Add a 10% safety cushion (5.5 yards total).",
+      },
+      {
+        question: "Why is rebar or wire mesh mandatory in professional bids?",
+        answer:
+          "Concrete has incredible compressive strength but virtually zero tensile strength. Reinforcement steel (#4 rebar) ties the slab together, preventing slabs from shifting, separating, and sinking when seasonal ground freezing occurs.",
+      },
+    ],
+    relatedTrades: ["epoxy-flooring", "landscaping", "deck-building"],
+  },
+  {
+    slug: "tree-service",
+    tradeName: "Tree Service & Removal",
+    h1: "Free Tree Service Estimate Template & Tree Removal Bid Sheet",
+    seoTitle: "Free Tree Service Estimate Template, Tree Removal & Trimming Bid Calculator (2026)",
+    seoDescription:
+      "Create professional tree removal, crane-assisted felling, canopy trimming, and stump grinding bids with 2026 US heights and safety standards. Free PDF quote generator.",
+    keywords: [
+      "tree service estimate template",
+      "tree removal bid calculator",
+      "tree trimming quote template pdf",
+      "stump grinding cost calculator",
+      "hazardous tree removal proposal template",
+      "arborist estimate generator",
+      "emergency tree work bid sheet",
+    ],
+    category: "Outdoor Property & Arboriculture",
+    shortDescription:
+      "Tree removal, dangerous overhang rigging, canopy deadwood trimming, wood chipping, and below-grade stump grinding.",
+    defaultLineItems: [
+      {
+        id: "tr-1",
+        description: "Hazardous Tree Removal — 65ft Mature Oak (Sectional Rigging over Roof & Power Lines)",
+        quantity: 1,
+        unit: "tree",
+        rate: 1850.00,
+      },
+      {
+        id: "tr-2",
+        description: "Crown Thinning, Deadwood Removal & Elevation Pruning (40ft Hardwood)",
+        quantity: 2,
+        unit: "trees",
+        rate: 475.00,
+      },
+      {
+        id: "tr-3",
+        description: "Commercial Stump Grinding (6\" to 8\" Below Grade with Root Flare Chasing)",
+        quantity: 1,
+        unit: "stump",
+        rate: 220.00,
+      },
+      {
+        id: "tr-4",
+        description: "Brush Chipping & Wood Debris Haul-Away (Leaves Yard Raked Clean)",
+        quantity: 1,
+        unit: "job",
+        rate: 350.00,
+      },
+      {
+        id: "tr-5",
+        description: "Log Firewood Cutting (16\" Stove-Length Fireplace Cut Logs Stacked On-Site)",
+        quantity: 1,
+        unit: "cord",
+        rate: 180.00,
+      },
+    ],
+    defaultTerms:
+      "Payment due in full upon completion of tree work and final lawn raking. Tree service operations carry $2,000,000 commercial liability and workers' compensation insurance. Contractor is not liable for minor turf indentation caused by equipment outriggers or chip residue left in deep stump holes unless backfill is explicitly contracted.",
+    pricingBenchmarks: [
+      {
+        service: "Small Tree Removal (under 30ft)",
+        lowRate: 300.00,
+        avgRate: 500.00,
+        highRate: 750.00,
+        unit: "per tree",
+        notes: "Open yard access with clear drop zones",
+      },
+      {
+        service: "Large Tree Removal (60ft to 80ft)",
+        lowRate: 1100.00,
+        avgRate: 1750.00,
+        highRate: 2800.00,
+        unit: "per tree",
+        notes: "Sectional rope rigging or bucket truck required",
+      },
+      {
+        service: "Stump Grinding (Per Diameter Inch)",
+        lowRate: 3.50,
+        avgRate: 5.50,
+        highRate: 8.00,
+        unit: "per inch diameter",
+        notes: "Measured at widest soil-level root flare",
+      },
+      {
+        service: "Canopy Trimming & Pruning",
+        lowRate: 350.00,
+        avgRate: 550.00,
+        highRate: 900.00,
+        unit: "per tree",
+        notes: "Structural crown thinning and clearance from structures",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Assess Tree Height, Lean, and Target Hazards",
+        description:
+          "Inspect proximity to roofs, service drops, fences, and swimming pools. Determine if the tree can be straight-felled or must be climbed and dismantled section-by-section using friction brakes.",
+      },
+      {
+        stepNumber: 2,
+        title: "Evaluate Machine Access and Equipment Needs",
+        description:
+          "Can a 60ft towable bucket truck, skid steer, or wood chipper access the backyard through a fence gate? Hand-carrying heavy timber across 200 feet of lawn triples labor hours.",
+      },
+      {
+        stepNumber: 3,
+        title: "Measure Stump Flare Diameter",
+        description:
+          "Never measure just the cut trunk top. Measure the widest soil flare at ground level where the grinder teeth must pass, and check for hidden stones or buried fence wire.",
+      },
+      {
+        stepNumber: 4,
+        title: "Specify Wood Disposal vs Customer Keeping Firewood",
+        description:
+          "Clarify whether logs will be hauled away (which incurs heavy landfill or transfer station fees) or cut into firewood on site for a lower cost option.",
+      },
+    ],
+    checklist: [
+      "Verify valid Certificate of Insurance (COI) listing workers' comp before high-climb jobs",
+      "Check overhead power lines (call power company for line drops if within 10 feet)",
+      "Call 811 utility locate prior to operating heavy stump grinders",
+      "Use ground protection mats to prevent heavy tire ruts on client turf",
+      "Confirm city tree removal permits for heritage oaks or protected native species",
+      "Rake yard and sweep driveways of all wood chips and sawdust before requesting payment",
+    ],
+    faqs: [
+      {
+        question: "How much does it cost to remove a tree in 2026?",
+        answer:
+          "In 2026, standard tree removal costs range from $400 for small trees (under 30ft) to $1,500–$2,800 for large hazardous trees (60–80ft) near houses and power lines. Emergency storm damage removals involving cranes can exceed $3,500.",
+      },
+      {
+        question: "How do contractors calculate stump grinding prices?",
+        answer:
+          "Most professional arborists charge $4 to $7 per diameter inch measured across the widest ground root flare, with a standard minimum trip fee of $150 to $200.",
+      },
+      {
+        question: "Why is liability insurance so critical on tree bids?",
+        answer:
+          "Tree care has the highest risk profile in construction trades. High-end homeowners demand bids that explicitly prove $2M liability and active workers' comp, filtering out unlicensed amateur handymen.",
+      },
+    ],
+    relatedTrades: ["landscaping", "lawn-care", "pressure-washing"],
+  },
+  {
+    slug: "flooring-tile",
+    tradeName: "Flooring & Tile Installation",
+    h1: "Free Flooring & Tile Estimate Template & Bid Calculator",
+    seoTitle: "Free Flooring & Tile Estimate Template, LVP, Hardwood & Tile Bid Maker (2026 PDF)",
+    seoDescription:
+      "Generate instant quotes for Luxury Vinyl Plank (LVP), hardwood installation, bathroom porcelain tile, and subfloor leveling with 2026 US per-sq-ft rates. Free PDF quote maker.",
+    keywords: [
+      "flooring estimate template",
+      "tile quote template pdf",
+      "lvp installation bid calculator",
+      "hardwood flooring quote generator",
+      "tile labor cost calculator per sq ft",
+      "bathroom tile proposal template",
+      "subfloor leveling estimate sheet",
+    ],
+    category: "Interior Finish & Surface",
+    shortDescription:
+      "Luxury Vinyl Plank (LVP), solid hardwood, engineered wood, porcelain/ceramic tile, shower surrounds, and self-leveling subfloor prep.",
+    defaultLineItems: [
+      {
+        id: "fl-1",
+        description: "Luxury Vinyl Plank (LVP) Flooring Installation (Click-Lock Floating Floor with Attached Pad)",
+        quantity: 1100,
+        unit: "sq ft",
+        rate: 2.75,
+      },
+      {
+        id: "fl-2",
+        description: "Existing Carpet & Pad Tear-Out, Haul-Off & Disposal",
+        quantity: 1100,
+        unit: "sq ft",
+        rate: 0.65,
+      },
+      {
+        id: "fl-3",
+        description: "Subfloor Self-Leveling Underlayment & High-Spot Grinding",
+        quantity: 400,
+        unit: "sq ft",
+        rate: 1.85,
+      },
+      {
+        id: "fl-4",
+        description: "Porcelain Floor Tile Installation — 12x24 Tile with 1/16\" Grout Spacing (Thin-Set Mortar)",
+        quantity: 250,
+        unit: "sq ft",
+        rate: 9.50,
+      },
+      {
+        id: "fl-5",
+        description: "Waterproof Schluter Kerdi Membrane Installation (Bathroom Floor Moisture Barrier)",
+        quantity: 250,
+        unit: "sq ft",
+        rate: 3.25,
+      },
+      {
+        id: "fl-6",
+        description: "MDF Baseboard & Shoe Molding / Quarter Round Installation (Painted White)",
+        quantity: 220,
+        unit: "lin ft",
+        rate: 3.75,
+      },
+      {
+        id: "fl-7",
+        description: "Doorway Transition T-Molding & Reducer Strips",
+        quantity: 6,
+        unit: "each",
+        rate: 45.00,
+      },
+    ],
+    defaultTerms:
+      "50% deposit required upon project scheduling to reserve start date; remaining 50% due upon final walk-through inspection. Homeowner must acclimate wood/LVP flooring materials inside temperature-controlled residence for 48 hours prior to installation. Subfloor moisture tests performed on bare concrete prior to install.",
+    pricingBenchmarks: [
+      {
+        service: "LVP Installation (Labor Only)",
+        lowRate: 2.00,
+        avgRate: 2.85,
+        highRate: 3.75,
+        unit: "per sq ft",
+        notes: "Floating click-lock planks; glue-down adds $1.00/sq ft",
+      },
+      {
+        service: "Solid Hardwood (Nail-Down)",
+        lowRate: 4.50,
+        avgRate: 6.50,
+        highRate: 9.00,
+        unit: "per sq ft",
+        notes: "Includes moisture paper underlayment and blind nailing",
+      },
+      {
+        service: "Floor Tile (12x24 Porcelain)",
+        lowRate: 7.50,
+        avgRate: 10.50,
+        highRate: 15.00,
+        unit: "per sq ft",
+        notes: "Includes lippage tuning clips, thinset, and grout",
+      },
+      {
+        service: "Shower Wall Tile",
+        lowRate: 14.00,
+        avgRate: 20.00,
+        highRate: 30.00,
+        unit: "per sq ft",
+        notes: "Requires waterproof cement backer board or Kerdi membrane",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Measure Net Square Footage and Add Waste Factor",
+        description:
+          "Measure room dimensions length × width. Always add 10% waste for standard rectangular rooms, and 15% for diagonal herringbone patterns or irregular layouts with closets.",
+      },
+      {
+        stepNumber: 2,
+        title: "Check Subfloor Flatness Tolerance",
+        description:
+          "LVP and large format tile require a subfloor flat to 3/16\" over 10 feet. Check with a 6-foot aluminum straightedge and bid self-leveling cement for dips to prevent locking-tab failure.",
+      },
+      {
+        stepNumber: 3,
+        title: "Inventory Moldings and Door Jambs",
+        description:
+          "Count linear footage of baseboards, quarter round, and doorways. Note whether door casings will be undercut with an oscillating saw so new flooring slides underneath cleanly.",
+      },
+      {
+        stepNumber: 4,
+        title: "Clarify Furniture Moving and Appliance Disconnects",
+        description:
+          "Specify whether bidding includes moving heavy furniture, pulling toilets in bathrooms, and moving refrigerators and stoves, or if rooms must be cleared prior to arrival.",
+      },
+    ],
+    checklist: [
+      "Confirm material acclimation (48 hours in room at 65-75°F)",
+      "Test concrete subfloors with calcium chloride moisture test (under 3 lbs/1,000 sq ft)",
+      "Undercut all door jambs and vertical casing moldings",
+      "Stagger vinyl plank end joints by at least 8 to 12 inches across rows",
+      "Use mechanical leveling clips on all tile 12x24 and larger to eliminate floor lippage",
+      "Install 1/4\" expansion gap around all perimeter walls concealed by baseboard",
+    ],
+    faqs: [
+      {
+        question: "How much does labor cost to install LVP flooring in 2026?",
+        answer:
+          "In 2026, labor for installing click-lock Luxury Vinyl Plank (LVP) averages $2.50 to $3.50 per square foot across the US. Carpet tear-out adds $0.50–$0.80/sq ft, and subfloor leveling adds $1.50–$2.50/sq ft.",
+      },
+      {
+        question: "Why do flooring bids require a 10% to 15% waste allowance?",
+        answer:
+          "Planks and tiles must be cut to fit perimeter edges, closets, and door transitions. Cut end pieces under 8 inches cannot be reused, meaning ordering exact square footage guarantees running out of material near project completion.",
+      },
+      {
+        question: "Should baseboards be removed or covered with quarter round?",
+        answer:
+          "Removing baseboards and reinstalling them over the new floor looks cleaner and more modern, but costs more in labor. Installing shoe molding / quarter round against existing baseboards saves homeowners 30% on trim costs.",
+      },
+    ],
+    relatedTrades: ["painting", "handyman", "epoxy-flooring"],
+  },
+  {
+    slug: "deck-building",
+    tradeName: "Deck Building & Staining",
+    h1: "Free Deck Building Estimate Template & Decking Quote Calculator",
+    seoTitle: "Free Deck Estimate Template, Composite & Wood Deck Bid Calculator (2026 PDF)",
+    seoDescription:
+      "Generate custom deck building, Trex composite, pressure treated wood, railing, and staining bids with 2026 US per-square-foot rates. Free instant PDF estimate template.",
+    keywords: [
+      "deck building estimate template",
+      "deck quote template pdf",
+      "composite decking bid calculator",
+      "deck cost per square foot calculator",
+      "trex deck proposal template",
+      "deck staining estimate generator",
+      "deck replacement bid sheet",
+    ],
+    category: "Outdoor Living & Carpentry",
+    shortDescription:
+      "Trex composite decking, pressure treated lumber, cedar framing, aluminum cable railings, concrete footings, and deck staining/restoration.",
+    defaultLineItems: [
+      {
+        id: "dk-1",
+        description: "Composite Decking Installation — Trex / TimberTech Hidden Fastener System (20x16, 320 sq ft)",
+        quantity: 320,
+        unit: "sq ft",
+        rate: 42.00,
+      },
+      {
+        id: "dk-2",
+        description: "Pressure-Treated 2x10 Substructure Framing (16\" O.C. Joists with Joist Tape Protection)",
+        quantity: 320,
+        unit: "sq ft",
+        rate: 16.50,
+      },
+      {
+        id: "dk-3",
+        description: "Concrete Pier Footings — 12\" Sonotube Dug Below Frost Line (42\" Depth with Post Anchors)",
+        quantity: 8,
+        unit: "footings",
+        rate: 285.00,
+      },
+      {
+        id: "dk-4",
+        description: "Black Aluminum Powder-Coated Baluster Railing System (36\" Code-Compliant Height)",
+        quantity: 48,
+        unit: "lin ft",
+        rate: 85.00,
+      },
+      {
+        id: "dk-5",
+        description: "Deck Box Steps & Stair Stringer Assembly (4-Step Run with Handrail)",
+        quantity: 1,
+        unit: "flight",
+        rate: 650.00,
+      },
+      {
+        id: "dk-6",
+        description: "Old Deck Demolition, Teardown & Haul-Off Disposal",
+        quantity: 320,
+        unit: "sq ft",
+        rate: 7.00,
+      },
+    ],
+    defaultTerms:
+      "40% deposit upon contract signing to order framing and decking lumber; 30% upon footing inspection and substructure framing; 30% final balance upon railing and deck board completion. Building permit fees invoiced at cost. Ledger board attachment must comply with IRC R507 standards with flashing.",
+    pricingBenchmarks: [
+      {
+        service: "Pressure Treated Wood Deck",
+        lowRate: 28.00,
+        avgRate: 38.00,
+        highRate: 50.00,
+        unit: "per sq ft",
+        notes: "Framing, standard decking, and wood 2x2 railings",
+      },
+      {
+        service: "Trex / Composite Deck",
+        lowRate: 55.00,
+        avgRate: 75.00,
+        highRate: 110.00,
+        unit: "per sq ft",
+        notes: "Hidden fasteners, composite boards, and aluminum railings",
+      },
+      {
+        service: "Aluminum / Cable Railing",
+        lowRate: 65.00,
+        avgRate: 90.00,
+        highRate: 140.00,
+        unit: "per linear ft",
+        notes: "Includes posts, top rails, and stainless tension cables",
+      },
+      {
+        service: "Deck Pressure Wash & Staining",
+        lowRate: 2.25,
+        avgRate: 3.50,
+        highRate: 5.00,
+        unit: "per sq ft",
+        notes: "Includes sodium percarbonate clean and oil/acrylic penetrating stain",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Calculate Square Footage and Joist Spacing",
+        description:
+          "Standard wood decking permits 16\" on-center joist spacing. Composite decking requires 12\" on-center for diagonal layouts or 16\" for perpendicular boards to prevent summer sagging.",
+      },
+      {
+        stepNumber: 2,
+        title: "Calculate Footing Depth and Soil Load Bearing",
+        description:
+          "Check municipal building code for regional frost depth (typically 36\" to 48\" in northern states). Calculate beam spans and tributary loads to size concrete pier footings accurately.",
+      },
+      {
+        stepNumber: 3,
+        title: "Specify Ledger Board Flashing and Fasteners",
+        description:
+          "90% of deck collapses occur at the house ledger board. Bid tension tie brackets (like Simpson Strong-Tie DTT2Z) and Z-flashing to guarantee code compliance.",
+      },
+      {
+        stepNumber: 4,
+        title: "Itemize Railing Linear Footage & Stair Rise",
+        description:
+          "Code requires railings on any deck surface over 30 inches above grade. Balusters must be spaced so a 4-inch sphere cannot pass through.",
+      },
+    ],
+    checklist: [
+      "Submit plan drawings to local building inspection department for permit approval",
+      "Call 811 utility locate prior to digging 42\" footing holes",
+      "Apply butyl joist tape to framing tops to prevent dry rot under composite boards",
+      "Use approved structural through-bolts or code-compliant LedgerLOK screws on house band joist",
+      "Verify stair riser height (maximum 7-3/4\") and tread depth (minimum 10\")",
+      "Install self-closing latch on any deck gate accessing a pool area",
+    ],
+    faqs: [
+      {
+        question: "How much does it cost to build a 20x20 deck in 2026?",
+        answer:
+          "A 400 sq ft (20x20) pressure-treated wood deck costs $14,000 to $19,000 in 2026. A premium composite deck (Trex/TimberTech) with aluminum railings ranges from $24,000 to $38,000 fully installed.",
+      },
+      {
+        question: "Why is joist tape recommended for composite decking?",
+        answer:
+          "Composite deck boards last 25 to 50 years, but wood framing beneath can rot in 15 years if rain pools on top of joists. Butyl joist tape waterproofs joist tops, ensuring the framing matches the composite lifespan.",
+      },
+      {
+        question: "What permits are required to build a backyard deck?",
+        answer:
+          "Most US municipalities require a building permit for any deck attached to a house, higher than 30 inches off the ground, or exceeding 200 square feet. Inspection stages include footing inspection, framing inspection, and final safety sign-off.",
+      },
+    ],
+    relatedTrades: ["fencing", "landscaping", "pressure-washing"],
+  },
+  {
+    slug: "hvac",
+    tradeName: "HVAC & AC Service",
+    h1: "Free HVAC Estimate Template & Heating/Cooling Bid Calculator",
+    seoTitle: "Free HVAC Estimate Template, AC Replacement & Furnace Quote Maker (2026 PDF)",
+    seoDescription:
+      "Create professional residential HVAC replacement, AC tune-up, heat pump, and ductwork quotes with 2026 US tonnage and SEER2 rates. Free printable PDF bid sheet.",
+    keywords: [
+      "hvac estimate template",
+      "ac replacement quote template pdf",
+      "hvac bid calculator",
+      "heat pump quote generator",
+      "furnace replacement cost calculator",
+      "air conditioning proposal template",
+      "ductwork installation estimate sheet",
+    ],
+    category: "Mechanical & Climate Systems",
+    shortDescription:
+      "Central air conditioning, heat pumps, gas furnaces, mini-split ductless systems, seasonal maintenance tune-ups, and duct replacements.",
+    defaultLineItems: [
+      {
+        id: "hv-1",
+        description: "Complete 3.5-Ton 16 SEER2 High-Efficiency Heat Pump & Air Handler Replacement",
+        quantity: 1,
+        unit: "system",
+        rate: 8200.00,
+      },
+      {
+        id: "hv-2",
+        description: "New Refrigerant Line Set (3/4\" Suction & 3/8\" Liquid Line with UV-Resistant Insulation)",
+        quantity: 35,
+        unit: "lin ft",
+        rate: 18.00,
+      },
+      {
+        id: "hv-3",
+        description: "Condensate Drain Line Overhaul with Float Switch & Safety Overflow Pan",
+        quantity: 1,
+        unit: "each",
+        rate: 275.00,
+      },
+      {
+        id: "hv-4",
+        description: "Digital Smart Thermostat Installation (Ecobee / Google Nest with WiFi App Sync)",
+        quantity: 1,
+        unit: "each",
+        rate: 340.00,
+      },
+      {
+        id: "hv-5",
+        description: "Old Condenser & Furnace Removal, EPA Freon Recovery & Recycle Disposal",
+        quantity: 1,
+        unit: "job",
+        rate: 350.00,
+      },
+      {
+        id: "hv-6",
+        description: "Concrete Equipment Pad (Composite Vibration-Dampening Pad for Outdoor Unit)",
+        quantity: 1,
+        unit: "each",
+        rate: 165.00,
+      },
+    ],
+    defaultTerms:
+      "50% deposit required upon equipment ordering to reserve serialized heat pump/condenser units; 50% balance due upon system startup, refrigerant charge verification, and thermostat commissioning. Includes 10-year manufacturer parts warranty and 1-year contractor labor warranty. Duct modifications invoiced separately if static pressure exceeds OEM limits.",
+    pricingBenchmarks: [
+      {
+        service: "Complete AC & Furnace System (3-Ton)",
+        lowRate: 6500.00,
+        avgRate: 8800.00,
+        highRate: 13500.00,
+        unit: "per system",
+        notes: "Includes 15-16 SEER2 condenser, coil, and 80-96% gas furnace",
+      },
+      {
+        service: "Ductless Mini-Split (Single Zone)",
+        lowRate: 2800.00,
+        avgRate: 4200.00,
+        highRate: 6000.00,
+        unit: "per zone",
+        notes: "Includes outdoor inverter unit, wall cassette, and electrical whip",
+      },
+      {
+        service: "Seasonal AC / Furnace Tune-Up",
+        lowRate: 89.00,
+        avgRate: 145.00,
+        highRate: 220.00,
+        unit: "per visit",
+        notes: "21-point check, coil rinse, capacitor test, and temp split measurement",
+      },
+      {
+        service: "Air Duct Cleaning (Whole Home)",
+        lowRate: 350.00,
+        avgRate: 550.00,
+        highRate: 850.00,
+        unit: "per home",
+        notes: "Includes rotobrush vacuuming, return plenum, and antimicrobial fog",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Perform Manual J Heat Load Calculation",
+        description:
+          "Never size HVAC equipment by square footage alone. Calculate window orientation, insulation R-values, and ceiling heights to determine exact tonnage, preventing short-cycling and humidity issues.",
+      },
+      {
+        stepNumber: 2,
+        title: "Test Existing Ductwork Static Pressure",
+        description:
+          "Verify that existing supply and return trunks can handle the new CFM airflow. High-efficiency modern systems will throw high-limit error codes if paired with undersized 1980s ductwork.",
+      },
+      {
+        stepNumber: 3,
+        title: "Check Electrical Panel Breaker & Disconnect",
+        description:
+          "Verify breaker amperage and wire gauge running to the outdoor condenser pad. Note in the estimate if an upgraded 30A/40A breaker or new outdoor fused disconnect box is required.",
+      },
+      {
+        stepNumber: 4,
+        title: "Detail Rebate and Tax Credit Eligibility",
+        description:
+          "Federal Inflation Reduction Act (IRA Section 25C) provides up to $2,000 tax credits for qualifying high-efficiency heat pumps. Listing these credits directly on your estimate closes 40% more jobs.",
+      },
+    ],
+    checklist: [
+      "EPA Section 608 certified technician on-site for all refrigerant recovery and charging",
+      "Pull nitrogen vacuum down to below 500 microns to confirm zero line set leaks",
+      "Check temperature split (Delta T should measure 16°F to 21°F across evaporator coil)",
+      "Install secondary drain pan float switch to protect ceiling from water leaks",
+      "Register equipment serial numbers with manufacturer for 10-year warranty activation",
+      "Test emergency heat strip operation on winter electric heat pump setups",
+    ],
+    faqs: [
+      {
+        question: "How much does a new AC and heating system cost in 2026?",
+        answer:
+          "In 2026, a complete residential 3-ton to 4-ton system replacement averages $7,500 to $11,500 installed for standard 15-16 SEER2 systems. High-end variable speed heat pumps can reach $14,000 to $18,000 before federal tax credits.",
+      },
+      {
+        question: "What is the 2026 SEER2 efficiency standard?",
+        answer:
+          "Department of Energy SEER2 standards mandate higher testing pressures for residential air conditioners and heat pumps (minimum 14.3 to 15.2 SEER2 depending on northern vs southern US climate zones).",
+      },
+      {
+        question: "Why should contractor estimates mention federal tax credits?",
+        answer:
+          "Under the Energy Efficient Home Improvement Credit, homeowners receive up to a 30% tax credit (capped at $2,000) on qualifying Consortium for Energy Efficiency (CEE) Tier 1 heat pumps, drastically reducing their net project cost.",
+      },
+    ],
+    relatedTrades: ["roofing", "handyman", "cleaning"],
+  },
+  {
+    slug: "carpet-cleaning",
+    tradeName: "Carpet & Upholstery Cleaning",
+    h1: "Free Carpet Cleaning Estimate Template & Bid Calculator",
+    seoTitle: "Free Carpet Cleaning Estimate Template, Steam Clean & Upholstery Quote Maker (2026)",
+    seoDescription:
+      "Generate truck-mount steam carpet cleaning, pet urine treatment, upholstery, and tile/grout estimates with 2026 US per-room and square foot rates. Free PDF quote maker.",
+    keywords: [
+      "carpet cleaning estimate template",
+      "carpet cleaning quote template pdf",
+      "steam cleaning bid calculator",
+      "upholstery cleaning cost calculator",
+      "commercial carpet cleaning quote sheet",
+      "pet odor removal estimate template",
+      "tile and grout cleaning bid generator",
+    ],
+    category: "Cleaning & Property Care",
+    shortDescription:
+      "Truck-mounted hot water extraction, pet stain odor remediation, sofa upholstery cleaning, and high-pressure tile/grout restoration.",
+    defaultLineItems: [
+      {
+        id: "cc-1",
+        description: "Truck-Mount Hot Water Extraction Steam Cleaning (3 Bedrooms, Hallway & Living Room)",
+        quantity: 5,
+        unit: "rooms",
+        rate: 55.00,
+      },
+      {
+        id: "cc-2",
+        description: "Enzyme Pet Urine Odor & Stain Sub-Surface Extraction (Deep Pad Neutralizer)",
+        quantity: 2,
+        unit: "areas",
+        rate: 65.00,
+      },
+      {
+        id: "cc-3",
+        description: "Scotchgard Carpet Fiber Protector Application (Soil & Spill Shield)",
+        quantity: 5,
+        unit: "rooms",
+        rate: 25.00,
+      },
+      {
+        id: "cc-4",
+        description: "Carpeted Staircase Deep Steam Clean (Bullnose Step & Riser)",
+        quantity: 14,
+        unit: "steps",
+        rate: 4.50,
+      },
+      {
+        id: "cc-5",
+        description: "3-Seat Fabric Sofa & Chaise Sectional Steam Cleaning & Deodorizing",
+        quantity: 1,
+        unit: "piece",
+        rate: 165.00,
+      },
+      {
+        id: "cc-6",
+        description: "Commercial Tile & Grout Hydro-Force Scrub & Acid Extraction",
+        quantity: 350,
+        unit: "sq ft",
+        rate: 0.85,
+      },
+    ],
+    defaultTerms:
+      "Payment due upon completion of cleaning services. Carpet drying time ranges from 4 to 8 hours depending on humidity and airflow. High-velocity air movers provided during service. Homeowner must clear small breakables and personal items off carpet prior to crew arrival.",
+    pricingBenchmarks: [
+      {
+        service: "Residential Steam Clean (Per Room)",
+        lowRate: 40.00,
+        avgRate: 58.00,
+        highRate: 85.00,
+        unit: "per room",
+        notes: "Rooms over 250 sq ft (great rooms) count as 2 rooms",
+      },
+      {
+        service: "Commercial Carpet (Per Sq Ft)",
+        lowRate: 0.15,
+        avgRate: 0.25,
+        highRate: 0.40,
+        unit: "per sq ft",
+        notes: "Large open office spaces and corporate hallways",
+      },
+      {
+        service: "Pet Odor & Stain Remediation",
+        lowRate: 45.00,
+        avgRate: 75.00,
+        highRate: 120.00,
+        unit: "per room",
+        notes: "Requires deep enzymatic subsurface probe extraction",
+      },
+      {
+        service: "Tile & Grout Cleaning",
+        lowRate: 0.65,
+        avgRate: 0.95,
+        highRate: 1.45,
+        unit: "per sq ft",
+        notes: "Includes alkaline pre-spray and 1,000 PSI spinner extraction",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Determine Room Count vs Square Footage",
+        description:
+          "Residential carpet is typically priced per room ($50-$70/room up to 200 sq ft). Commercial carpet is priced by square footage ($0.20-$0.35/sq ft) using a measuring wheel.",
+      },
+      {
+        stepNumber: 2,
+        title: "Inspect Pet Staining with Black Light",
+        description:
+          "Pet urine dries into alkaline salt crystals deep inside the carpet padding. Use a UV blacklight during walkthrough to show the homeowner hidden stains and justify enzyme line items.",
+      },
+      {
+        stepNumber: 3,
+        title: "Upsell Carpet Protection (Scotchgard)",
+        description:
+          "Hot water extraction strips old factory fluorochemical protectors. Bidding Scotchgard reapplication at $20-$30 per room increases average ticket size by 25% with 85% gross margins.",
+      },
+      {
+        stepNumber: 4,
+        title: "Set Minimum Service Trip Charge",
+        description:
+          "Enforce a mandatory $125 to $150 minimum trip charge so running heavy truck-mount hoses for a single hallway remains highly profitable.",
+      },
+    ],
+    checklist: [
+      "Check fiber type (nylon, polyester, olefin, or wool requiring neutral pH cleaners)",
+      "Set up corner guards on drywall walls to prevent hose rub marks",
+      "Pre-vacuum carpet with commercial pile lifter before hot water extraction",
+      "Place plastic foam blocks under heavy furniture legs to prevent wood varnish transfer",
+      "Position snail air movers in completed rooms to accelerate dry times",
+      "Conduct post-cleaning walk-through under homeowner inspection before invoicing",
+    ],
+    faqs: [
+      {
+        question: "How much does professional carpet cleaning cost in 2026?",
+        answer:
+          "In 2026, average US prices range from $150 to $250 for a standard 3-bedroom home (around $50–$65 per room). Whole-house deep cleans with stairs and pet treatment average $300 to $450.",
+      },
+      {
+        question: "How long does carpet take to dry after truck-mount steam cleaning?",
+        answer:
+          "With professional truck-mount extraction (producing 220°F water and high-cfm vacuum blowers), carpets dry within 4 to 6 hours. Running ceiling fans and AC dramatically speeds drying.",
+      },
+      {
+        question: "Why can't standard steam cleaning remove pet urine odor?",
+        answer:
+          "Standard surface cleaning only rinses carpet yarn fibers. Urine penetrates the latex backing and subfloor pad, where bacteria off-gas ammonia. True pet remediation requires flood-extracting enzyme neutralizers down into the pad.",
+      },
+    ],
+    relatedTrades: ["cleaning", "janitorial-bid-calculator", "pressure-washing"],
+  },
+  {
+    slug: "demolition",
+    tradeName: "Demolition & Debris Hauling",
+    h1: "Free Demolition Estimate Template & Debris Hauling Bid Sheet",
+    seoTitle: "Free Demolition Estimate Template, Interior Gut & Teardown Quote Maker (2026 PDF)",
+    seoDescription:
+      "Generate kitchen tear-outs, bathroom guts, shed tear-downs, and commercial interior demolition estimates with 2026 US dump and labor rates. Free PDF bid generator.",
+    keywords: [
+      "demolition estimate template",
+      "demolition bid calculator",
+      "interior demo quote template pdf",
+      "kitchen gut cost calculator",
+      "bathroom demolition estimate generator",
+      "shed teardown quote sheet",
+      "debris removal and dumpster estimate",
+    ],
+    category: "Heavy Construction & Site Prep",
+    shortDescription:
+      "Interior kitchen/bath gutting, non-load-bearing wall removal, shed/deck teardowns, concrete breaking, and 30-yard dumpster haul-away.",
+    defaultLineItems: [
+      {
+        id: "dm-1",
+        description: "Full Kitchen Demolition — Cabinets, Countertops, Backsplash, Soffits & Appliances (Down to Studs)",
+        quantity: 1,
+        unit: "kitchen",
+        rate: 2200.00,
+      },
+      {
+        id: "dm-2",
+        description: "Full Bathroom Gut Demolition — Tile Surround, Cast Iron Tub, Vanity, Toilet & Subfloor",
+        quantity: 1,
+        unit: "bathroom",
+        rate: 1450.00,
+      },
+      {
+        id: "dm-3",
+        description: "Non-Load Bearing Interior Partition Wall Removal (Includes Capping Electrical)",
+        quantity: 24,
+        unit: "lin ft",
+        rate: 38.00,
+      },
+      {
+        id: "dm-4",
+        description: "Heavy Construction Roll-Off Dumpster Rental (30-Yard Container, 4-Ton Weight Allowance & Landfill Fees)",
+        quantity: 1,
+        unit: "dumpster",
+        rate: 595.00,
+      },
+      {
+        id: "dm-5",
+        description: "Plastic Poly Dust Wall Containment & Floor Masonite Protection Path",
+        quantity: 1,
+        unit: "job",
+        rate: 280.00,
+      },
+      {
+        id: "dm-6",
+        description: "Final Magnetic Floor Sweep & HEPA Vacuum Air Scrub",
+        quantity: 1,
+        unit: "job",
+        rate: 175.00,
+      },
+    ],
+    defaultTerms:
+      "50% deposit required upon project scheduling to reserve dumpster delivery and demo crew; balance due upon debris removal and broom-clean inspection. Bidding assumes drywall, tile, and plumbing free from asbestos and lead-based paint. Homeowner must identify and disconnect all primary gas, water, and power shut-offs prior to demolition.",
+    pricingBenchmarks: [
+      {
+        service: "Kitchen Gut Demolition",
+        lowRate: 1500.00,
+        avgRate: 2200.00,
+        highRate: 3500.00,
+        unit: "per kitchen",
+        notes: "Full gut down to framing studs, ready for remodel",
+      },
+      {
+        service: "Bathroom Gut Demolition",
+        lowRate: 900.00,
+        avgRate: 1450.00,
+        highRate: 2200.00,
+        unit: "per bathroom",
+        notes: "Includes tile jackhammering, tub removal, and drywall tear-out",
+      },
+      {
+        service: "Interior Wall Removal (Non-Load Bearing)",
+        lowRate: 25.00,
+        avgRate: 38.00,
+        highRate: 60.00,
+        unit: "per linear ft",
+        notes: "Drywall, studs, and disposal (load-bearing requires beam engineering)",
+      },
+      {
+        service: "Detached Shed Demolition",
+        lowRate: 900.00,
+        avgRate: 1600.00,
+        highRate: 2800.00,
+        unit: "per shed",
+        notes: "Teardown of 10x12 to 12x16 wood/metal shed and haul-off",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Identify Structural Load-Bearing Status",
+        description:
+          "Inspect attic trusses or basement floor joists above the wall. Removing load-bearing walls requires temporary shoring, structural LVL headers, and engineering stamps that double or triple the bid.",
+      },
+      {
+        stepNumber: 2,
+        title: "Calculate Debris Volume and Dumpster Weight",
+        description:
+          "Tile, concrete, plaster, and cast-iron tubs are extremely heavy. A 30-yard dumpster with a 4-ton allowance will quickly incur $80/ton overweight fees if filled with heavy tile mud beds.",
+      },
+      {
+        stepNumber: 3,
+        title: "Itemize Dust Containment & HVAC Seal-Off",
+        description:
+          "Seal all HVAC return grilles and install zippered poly barrier walls. Dust traveling into the client's furnace can ruin $8,000 systems and trigger client disputes.",
+      },
+      {
+        stepNumber: 4,
+        title: "Verify Lead Paint & Asbestos Disclaimers",
+        description:
+          "Houses built prior to 1978 may contain lead paint; pre-1985 homes often have asbestos in duct insulation, popcorn ceilings, or 9x9 floor tile. Explicitly disclaim hazardous material abatement in your terms.",
+      },
+    ],
+    checklist: [
+      "Locate and tag main water shut-off valve, gas meter valve, and electrical panel",
+      "Confirm building permits for structural wall teardown",
+      "Lay 1/8\" Masonite or heavy Ram Board over finished hardwood walkways",
+      "Verify street permit if roll-off dumpster must be parked on public roadway",
+      "Check with voltage sensor before cutting any in-wall Romex electrical wiring",
+      "Cap all plumbing supply pipes with SharkBite caps before turning main water back on",
+    ],
+    faqs: [
+      {
+        question: "How much does interior demolition cost in 2026?",
+        answer:
+          "In 2026, residential interior demolition costs range from $3.50 to $7.00 per square foot. Gutting an average kitchen costs $1,800 to $2,800, while a full bathroom gut costs $1,100 to $1,800 including dumpster fees.",
+      },
+      {
+        question: "What is the difference between non-load bearing and load-bearing demo?",
+        answer:
+          "Non-load-bearing partition walls simply divide rooms and can be dismantled in 2 hours. Load-bearing walls support the ceiling, roof, or upper stories; removing them requires temporary hydraulic jacks and installing a structural steel or LVL support beam ($3,500–$9,000).",
+      },
+      {
+        question: "Who pays for dumpster tonnage overage fees?",
+        answer:
+          "Professional demolition contracts stipulate a maximum included weight (e.g. 3 or 4 tons). Any municipal landfill overage fees ($75–$110 per ton) are billed directly to the customer with attached scale tickets.",
+      },
+    ],
+    relatedTrades: ["junk-removal", "handyman", "drywall"],
+  },
+  {
+    slug: "siding-gutters",
+    tradeName: "Siding & Gutter Installation",
+    h1: "Free Siding & Gutter Estimate Template & Cost Calculator",
+    seoTitle: "Free Siding & Gutter Estimate Template, Vinyl, Hardie & Gutter Bid Maker (2026 PDF)",
+    seoDescription:
+      "Generate accurate siding installation, James Hardie fiber cement, seamless aluminum gutters, and gutter guard bids with 2026 US per-square and linear foot rates. Free PDF bid sheet.",
+    keywords: [
+      "siding estimate template",
+      "gutter quote template pdf",
+      "seamless gutter bid calculator",
+      "james hardie siding cost calculator",
+      "vinyl siding estimate generator",
+      "gutter guard installation bid sheet",
+      "fascia and soffit repair estimate",
+    ],
+    category: "Exterior Envelope & Weatherization",
+    shortDescription:
+      "Vinyl siding, James Hardie fiber cement, 5\" & 6\" seamless aluminum gutters, downspouts, leaf guards, and aluminum fascia/soffit wrap.",
+    defaultLineItems: [
+      {
+        id: "sg-1",
+        description: "James Hardie ColorPlus Fiber Cement Lap Siding Installation (7\" Reveal on Tyvek Housewrap)",
+        quantity: 22,
+        unit: "squares",
+        rate: 785.00,
+      },
+      {
+        id: "sg-2",
+        description: "Old Siding Tear-Off & Haul-Off Disposal (Wood / Old Vinyl)",
+        quantity: 22,
+        unit: "squares",
+        rate: 125.00,
+      },
+      {
+        id: "sg-3",
+        description: "6\" Seamless K-Style Aluminum Gutters (0.032 Heavy Gauge with Hidden Screw Hangers Every 24\")",
+        quantity: 140,
+        unit: "lin ft",
+        rate: 13.50,
+      },
+      {
+        id: "sg-4",
+        description: "3x4\" Oversized Aluminum Downspouts with Hinged Flip-Up Extensions",
+        quantity: 60,
+        unit: "lin ft",
+        rate: 15.00,
+      },
+      {
+        id: "sg-5",
+        description: "Stainless Steel Micro-Mesh Gutter Guard Leaf Protection System",
+        quantity: 140,
+        unit: "lin ft",
+        rate: 8.50,
+      },
+      {
+        id: "sg-6",
+        description: "Aluminum Fascia Board Wrap & Vented Soffit Overhang Trim",
+        quantity: 80,
+        unit: "lin ft",
+        rate: 11.50,
+      },
+    ],
+    defaultTerms:
+      "50% deposit required upon contract approval to custom-order factory-colored siding and seamless gutter coils; balance due upon exterior completion and ground magnetic cleanup. Includes 30-year manufacturer siding warranty and 5-year contractor installation leak warranty. Damaged or rotted plywood sheathing discovered after tear-off invoiced at $85 per 4x8 sheet replacement.",
+    pricingBenchmarks: [
+      {
+        service: "Standard Vinyl Siding",
+        lowRate: 450.00,
+        avgRate: 625.00,
+        highRate: 850.00,
+        unit: "per square (100 sq ft)",
+        notes: "Includes Tyvek housewrap, starter strip, corner posts, and trim",
+      },
+      {
+        service: "James Hardie Fiber Cement",
+        lowRate: 750.00,
+        avgRate: 950.00,
+        highRate: 1350.00,
+        unit: "per square (100 sq ft)",
+        notes: "Heavy fire-resistant composite; requires diamond blades and specialized guns",
+      },
+      {
+        service: "6\" Seamless Aluminum Gutters",
+        lowRate: 9.50,
+        avgRate: 13.50,
+        highRate: 18.00,
+        unit: "per linear ft",
+        notes: "Custom on-site roll-formed from mobile truck machine",
+      },
+      {
+        service: "Stainless Micro-Mesh Gutter Guards",
+        lowRate: 6.50,
+        avgRate: 9.00,
+        highRate: 14.00,
+        unit: "per linear ft",
+        notes: "Blocks pine needles, seed pods, and roof grit",
+      },
+    ],
+    biddingSteps: [
+      {
+        stepNumber: 1,
+        title: "Calculate Exterior Wall Square Footage into 'Squares'",
+        description:
+          "Siding is quoted by the 'square' (100 square feet). Measure each wall section (length × height). Include gable triangles (1/2 base × height) and add 10% for lap cut waste.",
+      },
+      {
+        stepNumber: 2,
+        title: "Measure Roof Eave Run for Gutters & Downspouts",
+        description:
+          "Measure the linear footage of roof drip edges. Plan 1 downspout for every 30 to 40 linear feet of gutter run to prevent overflowing in heavy thunderstorms.",
+      },
+      {
+        stepNumber: 3,
+        title: "Inspect Rotted Fascia Boards",
+        description:
+          "Old leaking gutters frequently rot the 1x6 or 2x6 wood fascia board behind them. Always include a per-foot price clause in your estimate for replacing hidden rotted fascia ($8-$14/ft).",
+      },
+      {
+        stepNumber: 4,
+        title: "Specify Gauge and Hanger Spacing",
+        description:
+          "Cheap gutters use thin 0.027 gauge aluminum and nail spikes that pull out in 2 years. Win bids by highlighting heavy 0.032 gauge aluminum with heavy-duty internal hidden screw hangers secured every 24 inches into rafter tails.",
+      },
+    ],
+    checklist: [
+      "Use mobile roll-forming machine to extrude seamless gutters directly on-site",
+      "Pitch gutters strictly 1/4 inch per 10 feet toward downspout drops",
+      "Install Tyvek HomeWrap with taped seams before siding installation",
+      "Leave 1/4\" expansion clearance on vinyl siding ends so panels expand without buckling in summer",
+      "Seal all end caps and miter joints with high-grade UV-resistant elastomeric gutter sealant",
+      "Roll magnetic sweeper around entire foundation to collect stray siding nails and metal scraps",
+    ],
+    faqs: [
+      {
+        question: "How much does new siding cost per square in 2026?",
+        answer:
+          "In 2026, vinyl siding averages $550 to $750 per square (100 sq ft) fully installed with tear-off. James Hardie fiber cement averages $850 to $1,250 per square. A typical 2,000 sq ft two-story home requires about 22 to 26 squares.",
+      },
+      {
+        question: "Why are 6-inch gutters preferred over 5-inch gutters?",
+        answer:
+          "6-inch seamless gutters carry 40% more water volume than standard 5-inch gutters, preventing water from overtopping during heavy downpours on steep roofs or multi-story homes.",
+      },
+      {
+        question: "How do contractors price hidden rotted wood discovered behind siding?",
+        answer:
+          "Professional estimates include a transparent 'Rotted Wood Clause' stipulating that damaged OSB/plywood sheathing or fascia boards discovered after tear-off are replaced at a fixed rate (typically $75–$95 per 4x8 sheet of plywood).",
+      },
+    ],
+    relatedTrades: ["roofing", "pressure-washing", "painting"],
+  },
 ];
 
 export function getTradeBySlug(slug: string): TradeConfig | undefined {

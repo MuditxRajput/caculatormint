@@ -5,11 +5,12 @@ import { TRADES } from "@/data/trades";
 import { EstimateHubClient } from "./EstimateHubClient";
 
 export const metadata: Metadata = {
-  title: "10 Free Contractor Estimate Templates, Quote Makers & Bid Calculators (2026)",
+  title: "20 Free Contractor Estimate & Invoice Templates, Quote Makers & Bid Calculators (2026)",
   description:
-    "Browse 10 free, customizable PDF estimate templates and bid calculators for US trades: house cleaning, commercial janitorial, roofing, painting, pressure washing, epoxy flooring, landscaping, lawn care, junk removal & handyman.",
+    "Browse 20 free, customizable PDF estimate & invoice templates and bid calculators for US trades: painting, roofing, drywall, fencing, concrete, tree service, flooring, deck building, HVAC, cleaning, landscaping & handyman.",
   keywords: [
     "contractor estimate templates",
+    "free invoice templates pdf",
     "free quote templates pdf",
     "trade bid calculators",
     "service quote generator",
@@ -21,9 +22,9 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.url}/estimate-templates`,
   },
   openGraph: {
-    title: "10 Free Contractor Estimate Templates & Bid Calculators | CalculatorMint",
+    title: "20 Free Contractor Estimate & Invoice Templates | CalculatorMint",
     description:
-      "Generate client-ready bids and PDF quotes in 60 seconds with 2026 US trade pricing benchmarks. Instant vector PDF export with zero signup.",
+      "Generate client-ready bids, invoices, and PDF quotes in 60 seconds with 2026 US trade pricing benchmarks. Instant vector PDF & Excel export with zero signup.",
     url: `${siteConfig.url}/estimate-templates`,
   },
 };
